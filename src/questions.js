@@ -272,8 +272,29 @@ module.exports = function (container, options) {
             + (d.midAngle > Math.PI ? "rotate(180)" : "");
       });
     
-      
-    var arcExit = questionArcs.exit().remove();
+    // EXIT BEHAVIOR
+    // Exit transition:
+    // http://bl.ocks.org/mbostock/5779690
+    // ARC Tween
+    // https://bl.ocks.org/mbostock/5100636
+
+    var arcExit = questionArcs.exit()
+      .transition()
+      // .attrTween('d', function (d, i) {
+      //   // draw an empty arc at the startAngle
+      //   return drawQuestionArc({
+      //     startAngle: d.startAngle,
+      //     endAngle: d.endAngle
+      //   });
+      // })
+      .attr('d', function (d, i) {
+        // draw an empty arc at the startAngle
+        return drawQuestionArc({
+          startAngle: d.startAngle,
+          endAngle: d.endAngle
+        });
+      })
+      .remove();
     
     // update existing arcs
     questionArcContainer
@@ -282,55 +303,6 @@ module.exports = function (container, options) {
       .attr('d', drawQuestionArc)
       .attr('fill', 'transparent')
       .attr('stroke', 'darkred');
-    
-    
-    // questionArc
-    //   .enter()
-    //   .append('g')
-    //   .attr('class', function (d) {
-        
-    //     console.log('enter', d)
-        
-    //     var arcClasses = ['question-arc'];
-        
-    //     if (d.type === 'closed-question') {
-    //       arcClasses.push('closed-question');
-    //     } else if (d.type === 'open-question') {
-    //       arcClasses.push('open-question');
-    //     } else if (d.type === 'question-option') {
-    //       arcClasses.push('question-option');
-    //     }
-        
-    //     return arcClasses.join(' ');
-    //   });
-        
-    // questionArc.append('path')
-    //   .attr('d', drawQuestionArc)
-    //   .attr('fill', 'transparent')
-    //   .attr('stroke', 'darkred');
-      
-    // questionArc.append('text')
-    //   .text(function (d) {
-    //     return d.name;
-    //   })
-    //   .style("text-anchor", function(d) {
-    //     return d.angle > Math.PI ? "end" : null;
-    //   })
-    //   .style('font-size', '14px')
-    //   .attr('fill', function (d) {
-    //     if (d.type === 'closed-question') {
-    //       return 'lightgrey';
-    //     } else if (d.type === 'open-question') {
-    //       return 'red';
-    //     } else if (d.type === 'question-option') {
-    //       return 'blue';
-    //     }
-    //   })
-    //   .attr("transform", function(d) {
-    //     return "rotate(" + (d.midAngle * 180 / Math.PI - 90) + ")"
-    //         + "translate(" + (options.innerRadius + 26) + ")"
-    //         + (d.midAngle > Math.PI ? "rotate(180)" : "");
-    //   });
   }
   
   return update;
