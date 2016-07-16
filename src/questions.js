@@ -176,12 +176,20 @@ module.exports = function (container, options) {
       
       targetAngleSpans: {
         closed: twoPI / 9,
-        open: twoPI / 50,
-        option: twoPI / 100,
+        open: twoPI / 25,
+        option: twoPI / 50,
       }
     });
     
-    console.log(layoutItems);
+    // before binding new data, save the old data onto objects
+    questionArcContainer.selectAll('g.question-arc path')
+      .each(function (d, i) {
+        this.__previousData = d;
+      });
+    questionArcContainer.selectAll('g.question-arc text')
+      .each(function (d, i) {
+        this.__previousData = d;
+      });
     
     // the data join pattern
     // https://bl.ocks.org/mbostock/3808218
@@ -191,9 +199,83 @@ module.exports = function (container, options) {
     var questionArcs = questionArcContainer
       .selectAll('g.question-arc')
       .data(layoutItems, function (d) {
-        return d.type + d.name;
+          
+        var type = d.type === 'open-question' || d.type === 'closed-question' ?
+          'question' : 'option';
+        
+        return type + d.name;
       });
     
+    // UPDATE
+    // update existing arcs before running enter and exit
+    // so that transitions do not interfere with one another
+    questionArcContainer
+      .selectAll('g.question-arc')
+      .select('path')
+      .transition()
+      .duration(400)
+      .attrTween('d', function (d, i) {
+        
+        var previous = this.__previousData;
+        
+        var interpolateStart = d3.interpolate(
+          previous.startAngle,
+          d.startAngle
+        );
+        
+        var interpolateEnd = d3.interpolate(
+          previous.endAngle,
+          d.endAngle
+        );
+        
+        return function (t) {
+          return drawQuestionArc({
+            startAngle: interpolateStart(t),
+            endAngle: interpolateEnd(t)
+          });
+        };
+      })
+      // .attr('d', drawQuestionArc)
+      .attr('fill', 'transparent')
+      .attr('stroke', 'darkred');
+    
+    // update text position
+    questionArcContainer
+      .selectAll('g.question-arc')
+      .select('text')
+      .transition()
+      .duration(400)
+      .attrTween("transform", function(d) {
+        
+        var previous = this.__previousData;
+        
+        var interpolate = d3.interpolate(previous.midAngle, d.midAngle);
+        
+        return function (t) {
+          var midAngle = interpolate(t);
+          
+          return "rotate(" + (midAngle * 180 / Math.PI - 90) + ")"
+              + "translate(" + (options.innerRadius + 26) + ")"
+              + (midAngle > Math.PI ? "rotate(180)" : "");
+        }
+      })
+      .style("text-anchor", function(d) {
+        return d.midAngle > Math.PI ? "end" : null;
+      })
+      .style('font-size', function (d) {
+        
+        // console.log((d.endAngle - d.startAngle));
+        
+        var angleSpan = d.endAngle - d.startAngle;
+        var circumference = twoPI * options.outerRadius;
+        
+        var size = (angleSpan / twoPI) * circumference;
+        size = size > 14 ? 14 : size;
+        
+        return size + 'px';
+      });
+    
+    // ENTER
     // define ENTER behavior
     var arcEnter = questionArcs
       .enter()
@@ -241,22 +323,53 @@ module.exports = function (container, options) {
           console.log('clicked on option')
         }
       });
-      
+    
+    // ENTER path
     // enter path behavior
-    arcEnter.append('path')
-      .attr('d', drawQuestionArc)
+    arcEnter
+      .append('path')
+      .style('opacity', 0)
+      .transition()
+      .duration(400)
+      .style('opacity', 1)
+      .attrTween('d', function (d, i) {
+        
+        var interpolateStart = d3.interpolate(d.midAngle, d.startAngle);
+        var interpolateEnd   = d3.interpolate(d.midAngle, d.endAngle);
+        
+        return function (t) {
+          return drawQuestionArc({
+            startAngle: interpolateStart(t),
+            endAngle: interpolateEnd(t)
+          });
+        };
+      })
+      // .attr('d', drawQuestionArc)
       .attr('fill', 'transparent')
       .attr('stroke', 'darkred');
     
+    // ENTER text
     // enter text behavior
     arcEnter.append('text')
       .text(function (d) {
         return d.name;
       })
       .style("text-anchor", function(d) {
-        return d.angle > Math.PI ? "end" : null;
+        return d.midAngle > Math.PI ? "end" : null;
       })
-      .style('font-size', '14px')
+      .style('font-size', function (d) {
+        
+        // console.log((d.endAngle - d.startAngle));
+        
+        var angleSpan = d.endAngle - d.startAngle;
+        var circumference = twoPI * options.outerRadius;
+        
+        var size = (angleSpan / twoPI) * circumference;
+        size = size > 14 ? 14 : size;
+        
+        return size + 'px';
+      })
+      .style('opacity', 0)
       .attr('fill', function (d) {
         if (d.type === 'closed-question') {
           return 'lightgrey';
@@ -270,39 +383,51 @@ module.exports = function (container, options) {
         return "rotate(" + (d.midAngle * 180 / Math.PI - 90) + ")"
             + "translate(" + (options.innerRadius + 26) + ")"
             + (d.midAngle > Math.PI ? "rotate(180)" : "");
-      });
+      })
+      .transition()
+      .delay(200)
+      .duration(600)
+      .style('opacity', 1);
     
     // EXIT BEHAVIOR
     // Exit transition:
     // http://bl.ocks.org/mbostock/5779690
     // ARC Tween
     // https://bl.ocks.org/mbostock/5100636
-
-    var arcExit = questionArcs.exit()
-      .transition()
-      // .attrTween('d', function (d, i) {
-      //   // draw an empty arc at the startAngle
-      //   return drawQuestionArc({
-      //     startAngle: d.startAngle,
-      //     endAngle: d.endAngle
-      //   });
-      // })
-      .attr('d', function (d, i) {
-        // draw an empty arc at the startAngle
-        return drawQuestionArc({
-          startAngle: d.startAngle,
-          endAngle: d.endAngle
-        });
-      })
-      .remove();
+    var arcExit = questionArcs.exit();
     
-    // update existing arcs
-    questionArcContainer
-      .selectAll('g')
+    // animate arc path
+    arcExit
       .select('path')
-      .attr('d', drawQuestionArc)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'darkred');
+      .transition()
+      .duration(400)
+      .style('opacity', 0)
+      .attrTween('d', function (d, i) {
+        
+        var interpolateStart = d3.interpolate(d.startAngle, d.midAngle);
+        var interpolateEnd   = d3.interpolate(d.endAngle, d.midAngle);
+        
+        return function (t) {
+          var arcPath = drawQuestionArc({
+            startAngle: interpolateStart(t),
+            endAngle: interpolateEnd(t),
+          });
+          return arcPath;
+        };
+      });
+    
+    // animate arc text
+    arcExit
+      .select('text')
+      .transition()
+      .duration(400)
+      .style('opacity', 0);
+    
+    // wait for animation to end before removing the arc group element
+    arcExit
+      .transition()
+      .delay(400)
+      .remove();
   }
   
   return update;
