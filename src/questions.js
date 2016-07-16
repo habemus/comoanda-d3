@@ -1,8 +1,5 @@
 const d3 = require('d3');
 
-
-var questions = require('./data/questions');
-
 function computeQuestionsLayout(questionsData, options) {
   /**
    * Start and End angles for the
@@ -181,7 +178,8 @@ module.exports = function (container, options) {
       }
     });
     
-    // before binding new data, save the old data onto objects
+    // before binding new data, save the old data onto DOM Elements
+    // so that we may access them later
     questionArcContainer.selectAll('g.question-arc path')
       .each(function (d, i) {
         this.__previousData = d;
@@ -269,7 +267,7 @@ module.exports = function (container, options) {
         var angleSpan = d.endAngle - d.startAngle;
         var circumference = twoPI * options.outerRadius;
         
-        var size = (angleSpan / twoPI) * circumference;
+        var size = (angleSpan / twoPI) * circumference * 1.2;
         size = size > 14 ? 14 : size;
         
         return size + 'px';
@@ -364,7 +362,7 @@ module.exports = function (container, options) {
         var angleSpan = d.endAngle - d.startAngle;
         var circumference = twoPI * options.outerRadius;
         
-        var size = (angleSpan / twoPI) * circumference;
+        var size = (angleSpan / twoPI) * circumference * 1.2;
         size = size > 14 ? 14 : size;
         
         return size + 'px';

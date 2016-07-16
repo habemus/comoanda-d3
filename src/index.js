@@ -2,6 +2,7 @@ const d3 = require('d3');
 
 // load question source data
 var questions = require('./data/questions.json');
+var entities  = require('./data/entities.json');
 
 window.addEventListener('DOMContentLoaded', function () {
   
@@ -39,4 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
   
   var updateQuestions = require('./questions')(container, options);
   updateQuestions(questions);
+  
+  var updateEntities = require('./entities')(container, options);
+  updateEntities(entities);
 });
