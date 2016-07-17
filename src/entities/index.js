@@ -28,7 +28,7 @@ module.exports = function (app, options) {
       startAngle: entitiesArcStartAngle,
       endAngle: entitiesArcEndAngle 
     }))
-    .attr('fill', 'magenta');
+    .attr('fill', 'transparent');
   
   /**
    * Draw a group element that wraps all entity-arcs
@@ -70,7 +70,7 @@ module.exports = function (app, options) {
     stateEnter
       .append('path')
       .attr('d', drawEntityArc)
-      .attr('fill', 'yellow');
+      .attr('fill', '#efefef');
     
     var entityEnter = entityArcs
       .enter()
@@ -121,8 +121,7 @@ module.exports = function (app, options) {
     entityEnter
       .append('path')
       .attr('d', drawEntityArc)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'darkred');
+      .attr('fill', 'transparent');
     entityEnter
       .append('text')
       .text(function (d) {

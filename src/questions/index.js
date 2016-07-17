@@ -27,7 +27,7 @@ module.exports = function (app, options) {
       startAngle: 0,
       endAngle: questionsFullAngleSpan 
     }))
-    .attr('fill', 'skyblue');
+    .attr('fill', 'transparent');
   
   /**
   * Draw a group element that wraps all question-arcs
@@ -105,9 +105,7 @@ module.exports = function (app, options) {
           });
         };
       })
-      // .attr('d', drawQuestionArc)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'darkred');
+      .attr('fill', '#efefef');
     
     // update text position
     questionArcContainer
@@ -193,7 +191,7 @@ module.exports = function (app, options) {
           console.log('clicked on option')
         }
       })
-      .on('mouseover', function (d, i) {
+      .on('mouseenter', function (d, i) {
         if (d.type === 'question-option') {
           
           var hoveredOption = d;
@@ -247,10 +245,14 @@ module.exports = function (app, options) {
           
           // link
           app.ui.links.update(links);
+          
+          d3.select(this).classed('active', true);
         }
       })
       .on('mouseout', function (d) {
         app.ui.links.update([]);
+        
+        d3.select(this).classed('active', false);
       });
     
     // ENTER path
@@ -273,9 +275,8 @@ module.exports = function (app, options) {
           });
         };
       })
-      // .attr('d', drawQuestionArc)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'darkred');
+      .attr('stroke', '#ccc')
+      .attr('fill', '#efefef');
     
     // ENTER text
     // enter text behavior
@@ -391,6 +392,14 @@ module.exports = function (app, options) {
       return _currentLayout.filter(function (layoutItem) {
         return (layoutItem.type === 'open-question');
       });
+    },
+    
+    activate: function (requestedItem) {
+      
+    },
+    
+    deactivate: function (requestedItem) {
+      
     },
   };
 }

@@ -135,6 +135,8 @@ module.exports = function (app, options) {
           app.ui.entities.activate(target);
         } else if (target.type === 'year') {
           app.ui.years.activate(target);
+        } else if (target.type === 'question-option') {
+          app.ui.questions.activate(target);
         }
       });
     linkEnter
@@ -156,6 +158,8 @@ module.exports = function (app, options) {
           app.ui.entities.deactivate(target);
         } else if (target.type === 'year') {
           app.ui.years.deactivate(target);
+        } else if (target.type === 'question-option') {
+          app.ui.questions.deactivate(target);
         }
       })
       .remove();

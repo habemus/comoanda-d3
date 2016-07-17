@@ -7,8 +7,10 @@ module.exports = function (app, options) {
   
   var twoPI = (2 * Math.PI);
   
-  var yearsStartAngle = twoPI * 4/9;
-  var yearsEndAngle   = twoPI * 5/9;
+  var pad = twoPI / 200;
+  
+  var yearsStartAngle = twoPI * 4/9 + pad;
+  var yearsEndAngle   = twoPI * 5/9 - pad;
   
   /**
   * Generators
@@ -77,8 +79,7 @@ module.exports = function (app, options) {
     yearEnter
       .append('path')
       .attr('d', drawYearArc)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'black');
+      .attr('fill', '#efefef');
 
     yearEnter
       .append('text')
