@@ -7,8 +7,8 @@ module.exports = function (app, options) {
   
   var twoPI = (2 * Math.PI);
   
-  var yearsStartAngle = twoPI * 2/5;
-  var yearsEndAngle   = twoPI * 3/5;
+  var yearsStartAngle = twoPI * 4/9;
+  var yearsEndAngle   = twoPI * 5/9;
   
   /**
   * Generators
@@ -46,6 +46,9 @@ module.exports = function (app, options) {
       .enter()
       .append('g')
       .attr('class', 'year-arc')
+      .attr('id', function (d) {
+        return 'year-' + d.data.year;
+      })
       .on('mouseenter', function (d) {
         var yearEntities = entities.filter(function (entity) {
           return parseInt(entity.ano, 10) === d.data.year;
@@ -114,5 +117,16 @@ module.exports = function (app, options) {
         };
       }
     },
+    activate: function (requestedItem) {
+      arcContainer
+        .select('#year-' + requestedItem.year)
+        .classed('active', true);
+    },
+    
+    deactivate: function (requestedItem) {
+      arcContainer
+        .select('#year-' + requestedItem.year)
+        .classed('active', false);
+    }
   }
 };

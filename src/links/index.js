@@ -127,19 +127,37 @@ module.exports = function (app, options) {
     var linkEnter = linkLines
       .enter()
       .append('g')
-      .attr('class', 'link-line');
+      .attr('class', 'link-line')
+      .each(function activateTarget(d) {
+        var target = d.link[1];
+        
+        if (target.type === 'entity') {
+          app.ui.entities.activate(target);
+        } else if (target.type === 'year') {
+          app.ui.years.activate(target);
+        }
+      });
     linkEnter
       .append('path')
       .attr('d', drawLinkLine)
       .attr('fill', 'none')
       .attr('stroke', 'steelblue')
       .attr('stroke-width', 1)
-      .attr('opacity', 0.3);
+      .attr('opacity', 0.4);
       
     //////
     // EXIT
     var linkExit = linkLines
       .exit()
+      .each(function deactivateTarget(d) {
+        var target = d.link[1];
+        
+        if (target.type === 'entity') {
+          app.ui.entities.deactivate(target);
+        } else if (target.type === 'year') {
+          app.ui.years.deactivate(target);
+        }
+      })
       .remove();
   }
   

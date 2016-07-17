@@ -1,4 +1,5 @@
 const d3 = require('d3');
+const slug = require('slug');
 
 const computeEntitiesLayout = require('./layout');
 
@@ -8,7 +9,7 @@ module.exports = function (app, options) {
   
   // global variables
   var twoPI = (2 * Math.PI);
-  var entitiesArcStartAngle = twoPI * 3/5;
+  var entitiesArcStartAngle = twoPI * 5/9;
   var entitiesArcEndAngle   = twoPI;
   
   /**
@@ -75,6 +76,9 @@ module.exports = function (app, options) {
       .enter()
       .append('g')
       .attr('class', 'entity-arc')
+      .attr('id', function (d) {
+        return 'entity-' + slug(d.data.name, { lower: true });
+      })
       .on('mouseenter', function (d) {
         
         var entity = d.data;
@@ -124,7 +128,7 @@ module.exports = function (app, options) {
       .text(function (d) {
         return d.data.name;
       })
-      .style('font-size', 14)
+      .style('font-size', 8)
       .style('text-anchor', function(d) {
         var midAngle = (d.startAngle + d.endAngle) / 2;
         return midAngle > Math.PI ? 'end' : null;
@@ -155,5 +159,17 @@ module.exports = function (app, options) {
         radius: options.innerRadius
       };
     },
+    
+    activate: function (requestedItem) {
+      arcContainer
+        .select('#entity-' + slug(requestedItem.name, { lower: true }))
+        .classed('active', true);
+    },
+    
+    deactivate: function (requestedItem) {
+      arcContainer
+        .select('#entity-' + slug(requestedItem.name, { lower: true }))
+        .classed('active', false);
+    }
   };
 };

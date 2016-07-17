@@ -6,11 +6,10 @@ const entities = require('../data/entities');
 
 module.exports = function (app, options) {
   
-  var questionsStartAngle = 0;
-  var questionsFullAngleSpan = (2 * Math.PI) * 2/5;
-  
   var twoPI = (2 * Math.PI);
   
+  var questionsStartAngle = 0;
+  var questionsFullAngleSpan = twoPI * 4/9;
   
   /**
   * Generators
@@ -366,6 +365,9 @@ module.exports = function (app, options) {
       var item;
       
       if (requestedItem.type === 'question-option') {
+        
+        console.log(requestedItem);
+        
         item = _currentLayout.find(function (arc) {
           return arc.name === requestedItem.name;
         });
