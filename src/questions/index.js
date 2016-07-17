@@ -202,11 +202,11 @@ module.exports = function (app, options) {
           // TODO: move query logic to service
           
           var entitiesWithOption = entities.filter(function (entity) {
-            if (!entity[d.question.name]) {
+            if (!entity[hoveredOption.question.name]) {
               return false;
             } else {
-              return entity[d.question.name].some(function (opt) {
-                return opt.name === d.name;
+              return entity[hoveredOption.question.name].some(function (opt) {
+                return opt.name === hoveredOption.name;
               });
             }
           });

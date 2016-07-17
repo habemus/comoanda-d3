@@ -105,10 +105,14 @@ module.exports = function (app, options) {
         return parseInt(i.data.year) === parseInt(requestedItem.year);
       });
       
-      return {
-        angle: (item.endAngle + item.startAngle) / 2,
-        radius: options.innerRadius,
-      };
+      if (!item) {
+        return false;
+      } else {
+        return {
+          angle: (item.endAngle + item.startAngle) / 2,
+          radius: options.innerRadius,
+        };
+      }
     },
   }
 };

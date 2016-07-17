@@ -69,7 +69,7 @@ module.exports = function (app, options) {
     .radius(function (d) {
       return d.radius;
     })
-    .curve(d3.curveBundle.beta(1))
+    .curve(d3.curveBundle.beta(.7))
   
   /**
    * Draw a group element that wraps all link-lines
@@ -133,8 +133,8 @@ module.exports = function (app, options) {
       .attr('d', drawLinkLine)
       .attr('fill', 'none')
       .attr('stroke', 'steelblue')
-      .attr('stroke-width', 2)
-      .attr('opacity', 0.2);
+      .attr('stroke-width', 1)
+      .attr('opacity', 0.3);
       
     //////
     // EXIT
