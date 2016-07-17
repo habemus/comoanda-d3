@@ -1,138 +1,10 @@
 const d3 = require('d3');
 
-function computeQuestionsLayout(questionsData, options) {
-  /**
-   * Start and End angles for the
-   * full questionsData arc.
-   */
-  var startAngle = options.startAngle;
-  var endAngle   = options.endAngle;
-  
-  if (typeof startAngle !== 'number') {
-    throw new Error('startAngle is required');
-  }
-  if (typeof endAngle !== 'number') {
-    throw new Error('endAngle is required');
-  }
-  
-  // check for targetAngleSpans
-  if (!options.targetAngleSpans) {
-    throw new Error('targetAngleSpans is required');
-  }
-  
-  if (!options.targetAngleSpans.closed) {
-    throw new Error('targetAngleSpans.closed is required');
-  }
-  if (!options.targetAngleSpans.open) {
-    throw new Error('targetAngleSpans.open is required');
-  }
-  if (!options.targetAngleSpans.option) {
-    throw new Error('targetAngleSpans.option is required');
-  }
-  
-  // target angleSpans
-  var targetAngleSpans = options.targetAngleSpans;
-  
-  /**
-   * Array to hold the final list of items
-   * to be rendered
-   */
-  var layoutItems = [];
-  
-  // loop through questions and build an array
-  // of items to be displayed (both questions and question-options)
-  questionsData.forEach(function (question, index) {
-    
-    if (!question.isOpen) {
-      layoutItems.push(Object.assign({
-        type: 'closed-question',
-      }, question));
-    } else {
-      
-      layoutItems.push(Object.assign({
-        type: 'open-question',
-      }, question));
-      
-      // loop through responses and add them to the layout
-      question.options.forEach(function (opt) {
-        
-        layoutItems.push(Object.assign({
-          type: 'question-option',
-        }, opt));
-        
-      });
-    }
-  });
-  
-  /**
-   * How much space all items aim to occupy
-   */
-  var targetTotalAngleSpan = layoutItems.reduce(function (res, item) {
-    var itemAngleSpan;
-    
-    switch (item.type) {
-      case 'closed-question':
-        return res + targetAngleSpans.closed;
-        break;
-      case 'open-question':
-        return res + targetAngleSpans.open;
-        break;
-      case 'question-option':
-        return res + targetAngleSpans.option;
-        break;
-    }
-    
-  }, 0);
-  
-  // compute multiplier that adapts the target angle spans
-  // to the available angleSpan
-  // should work in both target > available and target < available
-  var availableTotalAngleSpan = options.endAngle - options.startAngle;
-  var angleSpanMultiplier = availableTotalAngleSpan / targetTotalAngleSpan;
-  
-  
-  // holds the last end angle used
-  // starts at the global startAngle
-  var _lastAngle = startAngle;
-  
-  // loop through layoutItems and calculate their positions
-  // and angles
-  layoutItems.forEach(function (item, index) {
-    var isFirst = (index === 0);
-    var isLast = (index === layoutItems.length - 1);
-    
-    var itemStartAngle = _lastAngle;
-    var itemEndAngle;
-    
-    switch (item.type) {
-      case 'closed-question':
-        itemEndAngle =
-          itemStartAngle + (targetAngleSpans.closed * angleSpanMultiplier);
-        break;
-      case 'open-question':
-        itemEndAngle =
-          itemStartAngle + (targetAngleSpans.open * angleSpanMultiplier);
-        break;
-      case 'question-option':
-        itemEndAngle =
-          itemStartAngle + (targetAngleSpans.option * angleSpanMultiplier);
-        break;
-    }
-    
-    item.startAngle = itemStartAngle;
-    item.endAngle   = itemEndAngle;
-    
-    // auxiliary
-    item.midAngle   = (itemStartAngle + itemEndAngle) / 2;
-    
-    // update _lastAngle
-    _lastAngle = itemEndAngle;
-  });
+const computeQuestionsLayout = require('./layout');
 
-  return layoutItems;
-}
+const entities = require('../data/entities');
 
-module.exports = function (container, options) {
+module.exports = function (app, options) {
   
   var questionsStartAngle = 0;
   var questionsFullAngleSpan = (2 * Math.PI) * 2/5;
@@ -150,7 +22,7 @@ module.exports = function (container, options) {
   /**
   * Draw the full question arc
   */
-  container.append('path')
+  app.container.append('path')
     .attr('id', 'questions-bg-arc')
     .attr('d', drawQuestionArc({
       startAngle: 0,
@@ -161,9 +33,11 @@ module.exports = function (container, options) {
   /**
   * Draw a group element that wraps all question-arcs
   */
-  var questionArcContainer = container
+  var questionArcContainer = app.container
     .append('g')
     .attr('id', 'question-arc-container');
+    
+  var _currentLayout;
   
   function update(questionsSourceData) {
     
@@ -177,6 +51,9 @@ module.exports = function (container, options) {
         option: twoPI / 50,
       }
     });
+    
+    // save currentLayout
+    _currentLayout = layoutItems;
     
     // before binding new data, save the old data onto DOM Elements
     // so that we may access them later
@@ -197,11 +74,7 @@ module.exports = function (container, options) {
     var questionArcs = questionArcContainer
       .selectAll('g.question-arc')
       .data(layoutItems, function (d) {
-          
-        var type = d.type === 'open-question' || d.type === 'closed-question' ?
-          'question' : 'option';
-        
-        return type + d.name;
+        return d.type + d.name + d.value;
       });
     
     // UPDATE
@@ -243,7 +116,7 @@ module.exports = function (container, options) {
       .select('text')
       .transition()
       .duration(400)
-      .attrTween("transform", function(d) {
+      .attrTween('transform', function(d) {
         
         var previous = this.__previousData;
         
@@ -252,13 +125,13 @@ module.exports = function (container, options) {
         return function (t) {
           var midAngle = interpolate(t);
           
-          return "rotate(" + (midAngle * 180 / Math.PI - 90) + ")"
-              + "translate(" + (options.innerRadius + 26) + ")"
-              + (midAngle > Math.PI ? "rotate(180)" : "");
+          return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
+              + 'translate(' + (options.innerRadius + 26) + ')'
+              + (midAngle > Math.PI ? 'rotate(180)' : '');
         }
       })
-      .style("text-anchor", function(d) {
-        return d.midAngle > Math.PI ? "end" : null;
+      .style('text-anchor', function(d) {
+        return d.midAngle > Math.PI ? 'end' : null;
       })
       .style('font-size', function (d) {
         
@@ -299,27 +172,86 @@ module.exports = function (container, options) {
         
         if (d.type === 'closed-question') {
           // toggle the clicked question's `isOpen` value
-          var clickedQuestion = questions.find(function (q) {
+          var clickedQuestion = questionsSourceData.find(function (q) {
             return q.name === d.name;
           });
           
           clickedQuestion.isOpen = true;
-          update(questions);
+          update(questionsSourceData);
           
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
-          var clickedQuestion = questions.find(function (q) {
+          var clickedQuestion = questionsSourceData.find(function (q) {
             return q.name === d.name;
           });
           
           console.log('oepn question')
           
           clickedQuestion.isOpen = false;
-          update(questions);
+          update(questionsSourceData);
           
         } else {
           console.log('clicked on option')
         }
+      })
+      .on('mouseover', function (d, i) {
+        if (d.type === 'question-option') {
+          
+          var hoveredOption = d;
+          
+          // TODO: move query logic to service
+          
+          var entitiesWithOption = entities.filter(function (entity) {
+            if (!entity[d.question.name]) {
+              return false;
+            } else {
+              return entity[d.question.name].some(function (opt) {
+                return opt.name === d.name;
+              });
+            }
+          });
+          
+          // build links with THIS OPTION
+          var links = [];
+          entitiesWithOption.forEach(function (entity) {
+            links.push([
+              Object.assign({ type: 'question-option' }, hoveredOption),
+              Object.assign({ type: 'entity' }, entity)
+            ]);
+            
+            // year link
+            links.push([
+              Object.assign({ type: 'entity' }, entity),
+              { type: 'year', year: entity.ano }
+            ]);
+          });
+          
+          // build links with all other open dimensions
+          // TODO: this must go elsewhere!!!!
+          var otherOpenQuestions = _currentLayout.filter(function (layoutItem) {
+            return (layoutItem.type === 'open-question' &&
+                    layoutItem.name !== hoveredOption.question.name);
+          });
+          
+          otherOpenQuestions.forEach(function (question) {
+            entitiesWithOption.forEach(function (entity) {
+              if (entity[question.name]) {
+                entity[question.name].forEach(function (opt) {
+                  links.push([
+                    Object.assign({ type: 'entity' }, entity),
+                    Object.assign({ type: 'question-option' }, opt),
+                  ]);
+                });
+              }
+            });
+          });
+          
+          // link
+          app.ui.links.update(links);
+        }
+      })
+      .on('mouseout', function (d) {
+        app.ui.links.update([]);
       });
     
     // ENTER path
@@ -352,8 +284,8 @@ module.exports = function (container, options) {
       .text(function (d) {
         return d.name;
       })
-      .style("text-anchor", function(d) {
-        return d.midAngle > Math.PI ? "end" : null;
+      .style('text-anchor', function(d) {
+        return d.midAngle > Math.PI ? 'end' : null;
       })
       .style('font-size', function (d) {
         
@@ -377,10 +309,10 @@ module.exports = function (container, options) {
           return 'blue';
         }
       })
-      .attr("transform", function(d) {
-        return "rotate(" + (d.midAngle * 180 / Math.PI - 90) + ")"
-            + "translate(" + (options.innerRadius + 26) + ")"
-            + (d.midAngle > Math.PI ? "rotate(180)" : "");
+      .attr('transform', function(d) {
+        return 'rotate(' + (d.midAngle * 180 / Math.PI - 90) + ')'
+            + 'translate(' + (options.innerRadius + 26) + ')'
+            + (d.midAngle > Math.PI ? 'rotate(180)' : '');
       })
       .transition()
       .delay(200)
@@ -428,5 +360,35 @@ module.exports = function (container, options) {
       .remove();
   }
   
-  return update;
+  return {
+    update: update,
+    computeItemPosition: function (requestedItem) {
+      var item;
+      
+      if (requestedItem.type === 'question-option') {
+        item = _currentLayout.find(function (arc) {
+          return arc.name === requestedItem.name;
+        });
+      } else {
+        throw new Error('unsupported');
+      }
+      
+      if (!item) {
+        return false;
+      } else {
+        return {
+          angle: (item.startAngle + item.endAngle) / 2,
+          radius: options.innerRadius
+        };
+      }
+    },
+    
+    getOpenQuestions: function () {
+      // build links with all other open dimensions
+      // TODO: this must go elsewhere!!!!
+      return _currentLayout.filter(function (layoutItem) {
+        return (layoutItem.type === 'open-question');
+      });
+    },
+  };
 }

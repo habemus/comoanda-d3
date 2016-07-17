@@ -6,41 +6,60 @@ var entities  = require('./data/entities.json');
 
 window.addEventListener('DOMContentLoaded', function () {
   
-  var options = {};
+  const OUTER_RADIUS = 250;
+  const ARC_WIDTH    = 20;
+  const INNER_RADIUS = OUTER_RADIUS - ARC_WIDTH;
+  const MAX_TEXT_WIDTH = 100;
+  
+  const GRAPH_HALF = OUTER_RADIUS + MAX_TEXT_WIDTH;
   
   /**
-   * Defines the full radius of the circle, with the arc width accounted
+   * The application singleton
    */
-  options.outerRadius  = 250;
-  /**
-   * Width of the arc
-   */
-  options.arcWidth     = 20;
-  /**
-   * Radius of the inner circle
-   */
-  options.innerRadius  = options.outerRadius - options.arcWidth;
-  /**
-   * Max length in pixels of the text labels
-   */
-  options.maxTextWidth = 100;
-  
-  var _graphHalf = options.outerRadius + options.maxTextWidth;
+  var app = {};
   
   /**
    * The container of the graph.
    * It is centralized in the SVG
    */
-  var container = d3.select('body').append('svg')
-    .attr('width', _graphHalf * 2)
-    .attr('height', _graphHalf * 2)
+  app.container = d3.select('body').append('svg')
+    .attr('width', GRAPH_HALF * 2)
+    .attr('height', GRAPH_HALF * 2)
     // centralize the graph
     .append('g')
-      .attr('transform', 'translate(' + _graphHalf + ',' + _graphHalf + ')');
+      .attr('transform', 'translate(' + GRAPH_HALF + ',' + GRAPH_HALF + ')');
   
-  var updateQuestions = require('./questions')(container, options);
-  updateQuestions(questions);
+  app.ui = {};
+  app.ui.questions = require('./questions')(app, {
+    outerRadius: OUTER_RADIUS,
+    arcWidth: ARC_WIDTH,
+    innerRadius: INNER_RADIUS,
+    maxTextWidth: MAX_TEXT_WIDTH
+  });
+  app.ui.questions.update(questions);
   
-  var updateEntities = require('./entities')(container, options);
-  updateEntities(entities);
+  app.ui.entities = require('./entities')(app, {
+    outerRadius: OUTER_RADIUS,
+    arcWidth: ARC_WIDTH,
+    innerRadius: INNER_RADIUS,
+    maxTextWidth: MAX_TEXT_WIDTH
+  });
+  app.ui.entities.update(entities);
+  
+  app.ui.years = require('./years')(app, {
+    outerRadius: OUTER_RADIUS,
+    arcWidth: ARC_WIDTH,
+    innerRadius: INNER_RADIUS,
+    maxTextWidth: MAX_TEXT_WIDTH
+  });
+  // generate years data
+  var years = d3.range(1930, 2016 + 1);
+  // years.sort(d3.descending);
+  app.ui.years.update(years.map(function (y) {
+    return {
+      year: y
+    }
+  }));
+    
+  app.ui.links = require('./links')(app, {});
 });

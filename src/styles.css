@@ -1,0 +1,32 @@
+/**
+ * Entity arc styles
+ */
+.entity-arc text {
+  opacity: 0;
+}
+.entity-arc.active text {
+  opacity: 1;
+}
+.entity-arc.active path {
+  fill: red;
+}
+
+/**
+ * Year arc styles
+ */
+.year-arc text {
+  opacity: 0;
+}
+.year-arc.active text {
+  opacity: 1;
+}
+.year-arc.active path {
+  fill: red;
+}
+
+/**
+ * Question arc styles
+ */
+.question-arc {
+  cursor: pointer;
+}
