@@ -57,13 +57,13 @@ module.exports = function (app, options) {
         });
         
         var links = yearEntities.map(function (entity) {
-          return [
-            {
+          return {
+            from: {
               type: 'year',
               year: d.data.year
             },
-            Object.assign({ type: 'entity' }, entity),
-          ];
+            to: Object.assign({ type: 'entity' }, entity),
+          };
         });
         
         app.ui.links.update(links);

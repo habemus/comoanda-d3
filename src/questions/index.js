@@ -4,6 +4,32 @@ const computeQuestionsLayout = require('./layout');
 
 const entities = require('../data/entities');
 
+
+// https://bl.ocks.org/mbostock/7555321
+function wrap(text, width) {
+  text.each(function() {
+    var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        y = text.attr("y"),
+        dy = parseFloat(text.attr("dy")),
+        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
+}
+
 module.exports = function (app, options) {
   
   var twoPI = (2 * Math.PI);
@@ -73,7 +99,7 @@ module.exports = function (app, options) {
     var questionArcs = questionArcContainer
       .selectAll('g.question-arc')
       .data(layoutItems, function (d) {
-        return d.type + d.name + d.value;
+        return d._type + d.name + d.value;
       });
     
     // UPDATE
@@ -147,6 +173,9 @@ module.exports = function (app, options) {
     var arcEnter = questionArcs
       .enter()
       .append('g')
+      .attr('id', function (d) {
+        return 'question-arc-' + d.name;
+      })
       .attr('class', function (d) {
         
         var arcClasses = ['question-arc'];
@@ -210,16 +239,16 @@ module.exports = function (app, options) {
           // build links with THIS OPTION
           var links = [];
           entitiesWithOption.forEach(function (entity) {
-            links.push([
-              Object.assign({ type: 'question-option' }, hoveredOption),
-              Object.assign({ type: 'entity' }, entity)
-            ]);
+            links.push({
+              from: Object.assign({ type: 'question-option' }, hoveredOption),
+              to: Object.assign({ type: 'entity' }, entity)
+            });
             
             // year link
-            links.push([
-              Object.assign({ type: 'entity' }, entity),
-              { type: 'year', year: entity.ano }
-            ]);
+            links.push({
+              from: Object.assign({ type: 'entity' }, entity),
+              to: { type: 'year', year: entity.ano }
+            });
           });
           
           // build links with all other open dimensions
@@ -233,10 +262,10 @@ module.exports = function (app, options) {
             entitiesWithOption.forEach(function (entity) {
               if (entity[question.name]) {
                 entity[question.name].forEach(function (opt) {
-                  links.push([
-                    Object.assign({ type: 'entity' }, entity),
-                    Object.assign({ type: 'question-option' }, opt),
-                  ]);
+                  links.push({
+                    from: Object.assign({ type: 'entity' }, entity),
+                    to: Object.assign({ type: 'question-option' }, opt),
+                  });
                 });
               }
             });
@@ -274,14 +303,12 @@ module.exports = function (app, options) {
           });
         };
       });
-      // .attr('stroke', '#ccc')
-      // .attr('fill', '#efefef');
-    
+      
     // ENTER text
     // enter text behavior
     arcEnter.append('text')
       .text(function (d) {
-        return d.name;
+        return d.value;
       })
       // .style('alignment-baseline', 'middle')
       .style('text-anchor', function(d) {
@@ -300,20 +327,12 @@ module.exports = function (app, options) {
         return size + 'px';
       })
       .style('opacity', 0)
-      // .attr('fill', function (d) {
-      //   if (d.type === 'closed-question') {
-      //     return 'lightgrey';
-      //   } else if (d.type === 'open-question') {
-      //     return 'red';
-      //   } else if (d.type === 'question-option') {
-      //     return 'blue';
-      //   }
-      // })
       .attr('transform', function(d) {
         return 'rotate(' + (d.midAngle * 180 / Math.PI - 90) + ')'
             + 'translate(' + (options.innerRadius + 26) + ')'
             + (d.midAngle > Math.PI ? 'rotate(180)' : '');
       })
+      // .call(wrap, 60)
       .transition()
       .delay(200)
       .duration(600)
@@ -370,7 +389,8 @@ module.exports = function (app, options) {
         console.log(requestedItem);
         
         item = _currentLayout.find(function (arc) {
-          return arc.name === requestedItem.name;
+          return (arc.type === 'question-option' &&
+                  arc.name === requestedItem.name);
         });
       } else {
         throw new Error('unsupported');
@@ -395,11 +415,15 @@ module.exports = function (app, options) {
     },
     
     activate: function (requestedItem) {
-      
+      questionArcContainer
+        .select('#question-arc-' + requestedItem.name)
+        .classed('active', true);
     },
     
     deactivate: function (requestedItem) {
-      
+      questionArcContainer
+        .select('#question-arc-' + requestedItem.name)
+        .classed('active', false);
     },
   };
 }

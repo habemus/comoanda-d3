@@ -7,16 +7,8 @@ module.exports = function (app, options) {
    * Delegates the actual position computation
    * to the corresponding ui component
    */
-  function computeItemPosition(type, item) {
-    if (!type) {
-      throw new Error('type is required');
-    }
-    if (!item) {
-      throw new Error('item is required');
-    }
-    
-    switch (type) {
-      case 'question':
+  function computeItemPosition(item) {
+    switch (item.type) {
       case 'question-option':
         return app.ui.questions.computeItemPosition(item);
         break;
@@ -34,16 +26,10 @@ module.exports = function (app, options) {
    * transforms the link into mathematical data
    */
   function computeLinkPositions(link) {
-    if (!link[0]) {
-      throw new Error('from is required');
-    }
-    if (!link[1]) {
-      throw new Error('to is required');
-    }
-    
-    var positions = link.map(function (item) {
-      return computeItemPosition(item.type, item);
-    });
+    var positions = [
+      computeItemPosition(link.from),
+      computeItemPosition(link.to)
+    ];
     
     return positions;
   }
@@ -55,13 +41,6 @@ module.exports = function (app, options) {
   /**
   * Generators
   */
-  // var drawLinkLine = d3.line()
-  //   .x(function (d) {
-  //     return Math.sin(d.angle) * d.radius;
-  //   })
-  //   .y(function (d) {
-  //     return -1 * Math.cos(d.angle) * d.radius;
-  //   });
   var drawLinkLine = d3.radialLine()
     .angle(function (d) {
       return d.angle;
@@ -82,6 +61,17 @@ module.exports = function (app, options) {
   function update(links) {
     
     var linkLineLayout = links.map(function (link) {
+      /**
+       * Enforce link structure
+       */
+      if (!link.from) {
+        throw new TypeError('link.from is required');
+      }
+      
+      if (!link.to) {
+        throw new TypeError('link.to is required');
+      }
+      
       var lineData = computeLinkPositions(link);
       
       lineData.link = link;
@@ -93,7 +83,7 @@ module.exports = function (app, options) {
         radius: 0,
       });
       
-      return lineData
+      return lineData;
     })
     .filter(function (lineData) {
       // filter out incomplete links
@@ -115,10 +105,10 @@ module.exports = function (app, options) {
       .selectAll('g.link-line')
       .data(linkLineLayout, function getLineKey(d) {
         return [
-          d.link[0].type,
-          d.link[0].name,
-          d.link[1].type,
-          d.link[1].name
+          d.link.from.type,
+          d.link.from.name,
+          d.link.to.type,
+          d.link.to.name
         ].join('-');
       });
       
@@ -129,7 +119,7 @@ module.exports = function (app, options) {
       .append('g')
       .attr('class', 'link-line')
       .each(function activateTarget(d) {
-        var target = d.link[1];
+        var target = d.link.to;
         
         if (target.type === 'entity') {
           app.ui.entities.activate(target);
@@ -152,7 +142,7 @@ module.exports = function (app, options) {
     var linkExit = linkLines
       .exit()
       .each(function deactivateTarget(d) {
-        var target = d.link[1];
+        var target = d.link.to;
         
         if (target.type === 'entity') {
           app.ui.entities.deactivate(target);

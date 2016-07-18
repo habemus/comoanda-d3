@@ -112,18 +112,18 @@ module.exports = function (app, options) {
           }
           
           options.forEach(function (opt) {
-            links.push([
-              Object.assign({ type: 'entity' }, entity),
-              Object.assign({ type: 'question-option'}, opt)
-            ]);
+            links.push({
+              from: Object.assign({ type: 'entity' }, entity),
+              to: Object.assign({ type: 'question-option'}, opt)
+            });
           });
         });
         
         // add year link
-        links.push([
-          Object.assign({ type: 'entity' }, entity),
-          { type: 'year', year: entity.ano }
-        ]);
+        links.push({
+          from: Object.assign({ type: 'entity' }, entity),
+          to: { type: 'year', year: entity.ano }
+        });
         
         app.ui.links.update(links);
         

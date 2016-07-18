@@ -34,9 +34,12 @@ body {
 .year-arc path {
   fill: #C3C3C3;
 }
-.year-arc.active text {
+.year-arc.show-label text {
   opacity: 1;
 }
+/* .year-arc.active text {
+  opacity: 1;
+} */
 .year-arc.active path {
   fill: #E57435;
 }
