@@ -104,8 +104,7 @@ module.exports = function (app, options) {
             endAngle: interpolateEnd(t)
           });
         };
-      })
-      .attr('fill', '#efefef');
+      });
     
     // update text position
     questionArcContainer
@@ -274,9 +273,9 @@ module.exports = function (app, options) {
             endAngle: interpolateEnd(t)
           });
         };
-      })
-      .attr('stroke', '#ccc')
-      .attr('fill', '#efefef');
+      });
+      // .attr('stroke', '#ccc')
+      // .attr('fill', '#efefef');
     
     // ENTER text
     // enter text behavior
@@ -284,6 +283,7 @@ module.exports = function (app, options) {
       .text(function (d) {
         return d.name;
       })
+      // .style('alignment-baseline', 'middle')
       .style('text-anchor', function(d) {
         return d.midAngle > Math.PI ? 'end' : null;
       })
@@ -300,15 +300,15 @@ module.exports = function (app, options) {
         return size + 'px';
       })
       .style('opacity', 0)
-      .attr('fill', function (d) {
-        if (d.type === 'closed-question') {
-          return 'lightgrey';
-        } else if (d.type === 'open-question') {
-          return 'red';
-        } else if (d.type === 'question-option') {
-          return 'blue';
-        }
-      })
+      // .attr('fill', function (d) {
+      //   if (d.type === 'closed-question') {
+      //     return 'lightgrey';
+      //   } else if (d.type === 'open-question') {
+      //     return 'red';
+      //   } else if (d.type === 'question-option') {
+      //     return 'blue';
+      //   }
+      // })
       .attr('transform', function(d) {
         return 'rotate(' + (d.midAngle * 180 / Math.PI - 90) + ')'
             + 'translate(' + (options.innerRadius + 26) + ')'

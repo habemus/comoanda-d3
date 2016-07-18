@@ -1,18 +1,27 @@
 body {
-  font-family: sans-serif;
+  font-family: 'News Cycle', sans-serif;
+  background-color: #D9D9D9;
 }
 
 /**
  * Entity arc styles
  */
+.state-arc path {
+  fill: #8DBEE1;
+}
+.state-arc text {
+  alignment-baseline: middle;
+}
+
 .entity-arc text {
   opacity: 0;
+  alignment-baseline: middle;
 }
 .entity-arc.active text {
   opacity: 1;
 }
 .entity-arc.active path {
-  fill: red;
+  fill: #417295;
 }
 
 /**
@@ -20,21 +29,49 @@ body {
  */
 .year-arc text {
   opacity: 0;
+  alignment-baseline: middle;
+}
+.year-arc path {
+  fill: #C3C3C3;
 }
 .year-arc.active text {
   opacity: 1;
 }
 .year-arc.active path {
-  fill: red;
+  fill: #E57435;
 }
 
 /**
  * Question arc styles
  */
+/* question-arc is a class that is applied to all arcs in the questions */
 .question-arc {
   cursor: pointer;
 }
+.question-arc text {
+  alignment-baseline: middle;
+}
 
-.question-arc.active path {
-  fill: red;
+.closed-question path {
+  fill: #C3C3C3;
+}
+.closed-question text {
+  fill: black;
+}
+
+.open-question path {
+  fill: #C3C3C3;
+}
+.open-question text {
+  fill: #DF1E2D;
+}
+
+.question-option path {
+  fill: #F98F99;
+}
+.question-option text {
+  fill: #A5A5A5;
+}
+.question-option.active path {
+  fill: #DF1E2D;
 }

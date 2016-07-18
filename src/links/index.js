@@ -143,7 +143,7 @@ module.exports = function (app, options) {
       .append('path')
       .attr('d', drawLinkLine)
       .attr('fill', 'none')
-      .attr('stroke', 'steelblue')
+      .attr('stroke', '#A9CE90')
       .attr('stroke-width', 1)
       .attr('opacity', 0.4);
       

@@ -69,8 +69,25 @@ module.exports = function (app, options) {
       .attr('class', 'state-arc');
     stateEnter
       .append('path')
-      .attr('d', drawEntityArc)
-      .attr('fill', '#efefef');
+      .attr('d', drawEntityArc);
+    stateEnter
+      .append('text')
+      .text(function (d) {
+        return d.data.key;
+      })
+      .style('font-size', 10)
+      .style('text-anchor', function(d) {
+        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
+        return midAngle > Math.PI ? 'end' : null;
+      })
+      .attr('transform', function(d) {
+        
+        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
+        
+        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
+            + 'translate(' + (options.innerRadius + 26) + ')'
+            + (midAngle > Math.PI ? 'rotate(180)' : '');
+      });
     
     var entityEnter = entityArcs
       .enter()
@@ -137,7 +154,7 @@ module.exports = function (app, options) {
         var midAngle = (d.startAngle + d.endAngle) / 2;
         
         return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
-            + 'translate(' + (options.innerRadius + 26) + ')'
+            + 'translate(' + (options.innerRadius + 40) + ')'
             + (midAngle > Math.PI ? 'rotate(180)' : '');
       });
   }

@@ -13,6 +13,9 @@ window.addEventListener('DOMContentLoaded', function () {
   
   const GRAPH_HALF = OUTER_RADIUS + MAX_TEXT_WIDTH;
   
+  const WINDOW_X_CENTER = window.innerWidth / 2;
+  const WINDOW_Y_CENTER = window.innerHeight / 2;
+  
   /**
    * The application singleton
    */
@@ -23,11 +26,20 @@ window.addEventListener('DOMContentLoaded', function () {
    * It is centralized in the SVG
    */
   app.container = d3.select('body').append('svg')
-    .attr('width', GRAPH_HALF * 2)
+    // .attr('width', GRAPH_HALF * 2)
+    .attr('width', window.innerWidth)
     .attr('height', GRAPH_HALF * 2)
     // centralize the graph
     .append('g')
-      .attr('transform', 'translate(' + GRAPH_HALF + ',' + GRAPH_HALF + ')');
+      .attr('transform', 'translate(' + WINDOW_X_CENTER + ',' + GRAPH_HALF + ')');
+  
+  // draw the initial white inner circle
+  app.container.append('circle')
+    .attr('id', 'inner-circle')
+    .attr('cx', 0)
+    .attr('cy', 0)
+    .attr('r', INNER_RADIUS)
+    .attr('fill', 'white');
   
   app.ui = {};
   app.ui.questions = require('./questions')(app, {

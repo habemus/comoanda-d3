@@ -78,8 +78,7 @@ module.exports = function (app, options) {
       
     yearEnter
       .append('path')
-      .attr('d', drawYearArc)
-      .attr('fill', '#efefef');
+      .attr('d', drawYearArc);
 
     yearEnter
       .append('text')
