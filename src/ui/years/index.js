@@ -1,7 +1,7 @@
 const d3 = require('d3');
 
 const computeYearsLayout = require('./layout'); 
-const entities = require('../data/entities');
+const entities = require('../../data/entities');
 
 module.exports = function (app, options) {
   

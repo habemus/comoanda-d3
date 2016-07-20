@@ -1,34 +1,7 @@
 const d3 = require('d3');
+const DataObj = require('data-obj');
 
 const computeQuestionsLayout = require('./layout');
-
-const entities = require('../data/entities');
-
-
-// https://bl.ocks.org/mbostock/7555321
-function wrap(text, width) {
-  text.each(function() {
-    var text = d3.select(this),
-        words = text.text().split(/\s+/).reverse(),
-        word,
-        line = [],
-        lineNumber = 0,
-        lineHeight = 1.1, // ems
-        y = text.attr("y"),
-        dy = parseFloat(text.attr("dy")),
-        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-    while (word = words.pop()) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > width) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-      }
-    }
-  });
-}
 
 module.exports = function (app, options) {
   
@@ -61,10 +34,45 @@ module.exports = function (app, options) {
   var questionArcContainer = app.container
     .append('g')
     .attr('id', 'question-arc-container');
-    
-  var _currentLayout;
   
-  function update(questionsSourceData) {
+  /**
+   * Variable that stores the current layout data
+   */
+  var uiQuestionLayout;
+  
+  /**
+   * Variable that stores the current filter
+   */
+  var uiFilter = new DataObj();
+  uiFilter.on('change', function (changeData) {
+    
+    if (changeData.kind === 'array.remove') {
+      
+      uiDeactivate({
+        name: changeData.key + '--' + changeData.item
+      });
+      
+      if (changeData.newValue.length === 0) {
+        uiFilter.unset(changeData.key);
+      }
+      
+      console.log('remove')
+    } else if (changeData.kind === 'array.add') {
+      
+      uiActivate({
+        name: changeData.key + '--' + changeData.item
+      });
+      
+      
+      console.log('add')
+    }
+    
+  });
+  
+  /**
+   * Updates the layout by processing a new set of questions
+   */
+  function uiUpdate(questionsSourceData) {
     
     var layoutItems = computeQuestionsLayout(questionsSourceData, {
       startAngle: questionsStartAngle,
@@ -78,7 +86,7 @@ module.exports = function (app, options) {
     });
     
     // save currentLayout
-    _currentLayout = layoutItems;
+    uiQuestionLayout = layoutItems;
     
     // before binding new data, save the old data onto DOM Elements
     // so that we may access them later
@@ -198,89 +206,50 @@ module.exports = function (app, options) {
         if (d.type === 'closed-question') {
           // toggle the clicked question's `isOpen` value
           var clickedQuestion = questionsSourceData.find(function (q) {
-            return q.name === d.name;
+            return q._id === d._id;
           });
           
           clickedQuestion.isOpen = true;
-          update(questionsSourceData);
+          uiUpdate(questionsSourceData);
+          
+          // TODO improve link data update
+          setTimeout(function () {
+            app.ui.persistentLinks.update();
+          }, 500);
           
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
           var clickedQuestion = questionsSourceData.find(function (q) {
-            return q.name === d.name;
+            return q._id === d._id;
           });
           
-          console.log('oepn question')
+          // unset filter
+          uiFilter.unset(d._id);
           
           clickedQuestion.isOpen = false;
-          update(questionsSourceData);
+          uiUpdate(questionsSourceData);
+          
+          // TODO improve link data update
+          setTimeout(function () {
+            app.ui.persistentLinks.update();
+          }, 500);
           
         } else {
-          console.log('clicked on option')
+          // toggle the selected status of the filter
+          var exists;
+          var arr = uiFilter.get(d.question._id);
+          if (!arr) {
+            exists = false;
+          } else {
+            exists = arr.indexOf(d._id) !== -1;
+          }
+          
+          if (exists) {
+            uiFilter.arrayRemove(d.question._id, d._id);
+          } else {
+            uiFilter.arrayPush(d.question._id, d._id);
+          }
         }
-      })
-      .on('mouseenter', function (d, i) {
-        if (d.type === 'question-option') {
-          
-          var hoveredOption = d;
-          
-          // TODO: move query logic to service
-          
-          var entitiesWithOption = entities.filter(function (entity) {
-            if (!entity[hoveredOption.question.name]) {
-              return false;
-            } else {
-              return entity[hoveredOption.question.name].some(function (opt) {
-                return opt.name === hoveredOption.name;
-              });
-            }
-          });
-          
-          // build links with THIS OPTION
-          var links = [];
-          entitiesWithOption.forEach(function (entity) {
-            links.push({
-              from: Object.assign({ type: 'question-option' }, hoveredOption),
-              to: Object.assign({ type: 'entity' }, entity)
-            });
-            
-            // year link
-            links.push({
-              from: Object.assign({ type: 'entity' }, entity),
-              to: { type: 'year', year: entity.ano }
-            });
-          });
-          
-          // build links with all other open dimensions
-          // TODO: this must go elsewhere!!!!
-          var otherOpenQuestions = _currentLayout.filter(function (layoutItem) {
-            return (layoutItem.type === 'open-question' &&
-                    layoutItem.name !== hoveredOption.question.name);
-          });
-          
-          otherOpenQuestions.forEach(function (question) {
-            entitiesWithOption.forEach(function (entity) {
-              if (entity[question.name]) {
-                entity[question.name].forEach(function (opt) {
-                  links.push({
-                    from: Object.assign({ type: 'entity' }, entity),
-                    to: Object.assign({ type: 'question-option' }, opt),
-                  });
-                });
-              }
-            });
-          });
-          
-          // link
-          app.ui.links.update(links);
-          
-          d3.select(this).classed('active', true);
-        }
-      })
-      .on('mouseout', function (d) {
-        app.ui.links.update([]);
-        
-        d3.select(this).classed('active', false);
       });
     
     // ENTER path
@@ -332,7 +301,6 @@ module.exports = function (app, options) {
             + 'translate(' + (options.innerRadius + 26) + ')'
             + (d.midAngle > Math.PI ? 'rotate(180)' : '');
       })
-      // .call(wrap, 60)
       .transition()
       .delay(200)
       .duration(600)
@@ -379,51 +347,89 @@ module.exports = function (app, options) {
       .remove();
   }
   
-  return {
-    update: update,
-    computeItemPosition: function (requestedItem) {
-      var item;
-      
-      if (requestedItem.type === 'question-option') {
-        
-        console.log(requestedItem);
-        
-        item = _currentLayout.find(function (arc) {
-          return (arc.type === 'question-option' &&
-                  arc.name === requestedItem.name);
-        });
-      } else {
-        throw new Error('unsupported');
-      }
-      
-      if (!item) {
-        return false;
-      } else {
-        return {
-          angle: (item.startAngle + item.endAngle) / 2,
-          radius: options.innerRadius
-        };
-      }
-    },
+  /**
+   * Retrieves a list of open questions
+   */
+  function uiGetOpenQuestions() {
+    // build links with all other open dimensions
+    // TODO: this must go elsewhere!!!!
+    return uiQuestionLayout.filter(function (layoutItem) {
+      return (layoutItem.type === 'open-question');
+    });
+  }
+  
+  /**
+   * Activates the requested item
+   */
+  function uiActivate(requestedItem) {
+    questionArcContainer
+      .select('#question-arc-' + requestedItem.name)
+      .classed('active', true);
+  }
+  
+  /**
+   * Deactivates the requested item
+   */
+  function uiDeactivate(requestedItem) {
+    questionArcContainer
+      .select('#question-arc-' + requestedItem.name)
+      .classed('active', false);
+  }
+  
+  /**
+   * Computes the position of the requested item
+   */
+  function uiComputeItemPosition(requestedItem) {
+    var item;
     
-    getOpenQuestions: function () {
-      // build links with all other open dimensions
-      // TODO: this must go elsewhere!!!!
-      return _currentLayout.filter(function (layoutItem) {
-        return (layoutItem.type === 'open-question');
+    if (requestedItem.type === 'question-option') {
+      
+      item = uiQuestionLayout.find(function (arc) {
+        return (arc.type === 'question-option' &&
+                arc.name === requestedItem.name);
       });
-    },
+    } else {
+      throw new Error('unsupported');
+    }
     
-    activate: function (requestedItem) {
-      questionArcContainer
-        .select('#question-arc-' + requestedItem.name)
-        .classed('active', true);
-    },
-    
-    deactivate: function (requestedItem) {
-      questionArcContainer
-        .select('#question-arc-' + requestedItem.name)
-        .classed('active', false);
-    },
+    if (!item) {
+      return false;
+    } else {
+      return {
+        angle: (item.startAngle + item.endAngle) / 2,
+        radius: options.innerRadius
+      };
+    }
+  }
+  
+  function uiGetActiveOptions() {
+    return Object.keys(uiFilter.data).reduce(function (acc, questionId) {
+      
+      var questionActiveOptions = uiFilter.get(questionId);
+      
+      return acc.concat(questionActiveOptions.map(function (optionId) {
+        return {
+          _id: optionId,
+          name: questionId + '--' + optionId,
+          question: {
+            _id: questionId,
+          },
+        }
+      }))
+    }, []);
+  }
+  
+  /**
+   * The API to deal with the questions arc
+   */
+  return {
+    update: uiUpdate,
+    computeItemPosition: uiComputeItemPosition,
+    getOpenQuestions: uiGetOpenQuestions,
+    getActiveOptions: uiGetActiveOptions,
+    activate: uiActivate,
+    deactivate: uiDeactivate,
+    filter: uiFilter,
+    layout: uiQuestionLayout,
   };
 }

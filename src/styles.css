@@ -75,6 +75,13 @@ body {
 .question-option text {
   fill: #A5A5A5;
 }
+.question-option:hover text,
+.question-option.active text {
+  fill: #0C0C0C;
+}
+.question-option:hover path {
+  fill: green;
+}
 .question-option.active path {
   fill: #DF1E2D;
 }

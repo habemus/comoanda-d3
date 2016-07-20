@@ -19,7 +19,6 @@ module.exports = function (app, options) {
         return app.ui.years.computeItemPosition(item);
         break;
     }
-    
   }
   
   /**
@@ -54,11 +53,19 @@ module.exports = function (app, options) {
    * Draw a group element that wraps all link-lines
    */
   var linkLineContainer = app.container
-    .append('g')
-    .attr('id', 'link-line-container');
-  
+    .append('g');
+    
+  /**
+   * Stores currently used layout
+   */
+  var uiCurrentLinks;
   
   function update(links) {
+    
+    // let it use the previous link data if no links are passed
+    links = links || uiCurrentLinks || [];
+    
+    uiCurrentLinks = links;
     
     var linkLineLayout = links.map(function (link) {
       /**
@@ -100,6 +107,15 @@ module.exports = function (app, options) {
       return true;
     });
     
+    console.log(linkLineLayout)
+    
+    // before binding new data, save the old data onto DOM Elements
+    // so that we may access them later for tweening
+    linkLineContainer.selectAll('g.link-line path')
+      .each(function (d, i) {
+        this.__previousData = d;
+      });
+    
     // bind data to DOM elements
     var linkLines = linkLineContainer
       .selectAll('g.link-line')
@@ -111,7 +127,52 @@ module.exports = function (app, options) {
           d.link.to.name
         ].join('-');
       });
-      
+    
+    //////////
+    // UPDATE
+    linkLineContainer.selectAll('g.link-line')
+      .select('path')
+      .transition()
+      .duration(400)
+      .attrTween('d', function (d, i) {
+        var previous = this.__previousData;
+        
+        // OUR LINES HAVE 3 POINTS:
+        // FROM
+        // MIDDLE
+        // TO
+        
+        var interpolateFromAngle = d3.interpolate(
+          previous[0].angle,
+          d[0].angle
+        );
+        
+        var interpolateToAngle = d3.interpolate(
+          previous[2].angle,
+          d[2].angle
+        );
+        
+        return function (t) {
+          
+          var lineData = [
+            {
+              radius: d[0].radius,
+              angle: interpolateFromAngle(t)
+            },
+            {
+              radius: d[1].radius,
+              angle: d[1].radius,
+            },
+            {
+              radius: d[2].radius,
+              angle: interpolateToAngle(t)
+            }
+          ];
+          
+          return drawLinkLine(lineData);
+        };
+      });
+    
     //////////
     // ENTER
     var linkEnter = linkLines
@@ -156,6 +217,35 @@ module.exports = function (app, options) {
   }
   
   return {
-    update: update
+    update: update,
+    
+    computeLinks: function (entities, questionOptions) {
+      // build links
+      var links = entities.reduce(function (acc, entity) {
+        
+        // get the entity links among
+        // the questionOptions
+        entityActiveOptions = questionOptions.filter(function (option) {
+          var entityValue = entity[option.question._id];
+          
+          if (!entityValue) {
+            return false;
+          }
+          
+          return entityValue.some(function (v) {
+            return v._id === option._id;
+          });
+        });
+        
+        return acc.concat(entityActiveOptions.map(function (option) {
+          return {
+            from: Object.assign({ type: 'question-option' }, option),
+            to: Object.assign({ type: 'entity' }, entity),
+          }
+        }));
+      }, []);
+      
+      return links;
+    }
   };
 };
