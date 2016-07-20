@@ -212,10 +212,7 @@ module.exports = function (app, options) {
           clickedQuestion.isOpen = true;
           uiUpdate(questionsSourceData);
           
-          // TODO improve link data update
-          setTimeout(function () {
-            app.ui.persistentLinks.update();
-          }, 500);
+          app.ui.persistentLinks.update();
           
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
@@ -229,10 +226,7 @@ module.exports = function (app, options) {
           clickedQuestion.isOpen = false;
           uiUpdate(questionsSourceData);
           
-          // TODO improve link data update
-          setTimeout(function () {
-            app.ui.persistentLinks.update();
-          }, 500);
+          app.ui.persistentLinks.update();
           
         } else {
           // toggle the selected status of the filter
