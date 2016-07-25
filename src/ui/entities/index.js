@@ -1,5 +1,4 @@
 const d3 = require('d3');
-const slug = require('slug');
 
 const computeEntitiesLayout = require('./layout');
 
@@ -31,11 +30,20 @@ module.exports = function (app, options) {
     .attr('fill', 'transparent');
   
   /**
+   * Draw group element that wraps all state arcs
+   */
+  var stateArcContainer = app.container
+    .append('g')
+    .attr('id', 'state-arc-container');
+  
+  /**
    * Draw a group element that wraps all entity-arcs
    */
-  var arcContainer = app.container
+  var entityArcContainer = app.container
     .append('g')
     .attr('id', 'entity-arc-container');
+  
+  var uiCurrentLayout;
   
   function update(entities) {
     
@@ -45,21 +53,60 @@ module.exports = function (app, options) {
       padAngle: twoPI / 600,
     });
     
-    this._currentEntityLayout = entityLayout;
+    uiCurrentLayout = entityLayout;
     
     // bind data to DOM elements
     // ATTENTION: draw state arcs before entity arcs
     // so that entity arcs always appear over state arcs
-    var stateArcs = arcContainer
+    var stateArcs = stateArcContainer
       .selectAll('g.state-arc')
-      .data(entityLayout.stateArcs);
+      .data(entityLayout.stateArcs, function stateId(d) {
+        return d.data.key;
+      });
     
-    var entityArcs = arcContainer
+    var entityArcs = entityArcContainer
       .selectAll('g.entity-arc')
-      .data(entityLayout.entityArcs);
+      .data(entityLayout.entityArcs, function entityId(d) {
+        return d.data._id;
+      });
     
+    ///////////
     // UPDATE
+    stateArcs
+      .select('path')
+      .attr('d', drawEntityArc);
+    stateArcs
+      .select('text')
+      .style('text-anchor', function(d) {
+        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
+        return midAngle > Math.PI ? 'end' : null;
+      })
+      .attr('transform', function(d) {
+        
+        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
+        
+        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
+            + 'translate(' + (options.innerRadius + 26) + ')'
+            + (midAngle > Math.PI ? 'rotate(180)' : '');
+      });
     
+    entityArcs
+      .select('path')
+      .attr('d', drawEntityArc);
+    entityArcs
+      .select('text')
+      .style('text-anchor', function(d) {
+        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
+        return midAngle > Math.PI ? 'end' : null;
+      })
+      .attr('transform', function(d) {
+        
+        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
+        
+        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
+            + 'translate(' + (options.innerRadius + 26) + ')'
+            + (midAngle > Math.PI ? 'rotate(180)' : '');
+      })
     
     //////////
     // ENTER
@@ -94,7 +141,7 @@ module.exports = function (app, options) {
       .append('g')
       .attr('class', 'entity-arc')
       .attr('id', function (d) {
-        return 'entity-' + slug(d.data.name, { lower: true });
+        return 'entity-' + d.data._id;
       })
       .on('mouseenter', function (d) {
         
@@ -105,7 +152,7 @@ module.exports = function (app, options) {
         var links = [];
         
         openQuestions.forEach(function (question) {
-          var options = entity[question.name];
+          var options = entity[question._id];
           
           if (!options) {
             return;
@@ -142,7 +189,7 @@ module.exports = function (app, options) {
     entityEnter
       .append('text')
       .text(function (d) {
-        return d.data.name;
+        return d.data.label;
       })
       .style('font-size', 8)
       .style('text-anchor', function(d) {
@@ -157,16 +204,70 @@ module.exports = function (app, options) {
             + 'translate(' + (options.innerRadius + 40) + ')'
             + (midAngle > Math.PI ? 'rotate(180)' : '');
       });
+    
+    ////////////
+    // EXIT
+    var stateExit = stateArcs.exit();
+    
+    // animate arc path
+    stateExit
+      .select('path')
+      .transition()
+      .duration(400)
+      .style('opacity', 0)
+      .attrTween('d', function (d, i) {
+        
+        var midAngle = (d.startAngle + d.endAngle) / 2
+        
+        var interpolateStart = d3.interpolate(d.startAngle, midAngle);
+        var interpolateEnd   = d3.interpolate(d.endAngle, midAngle);
+        
+        return function (t) {
+          var arcPath = drawEntityArc({
+            startAngle: interpolateStart(t),
+            endAngle: interpolateEnd(t),
+          });
+          return arcPath;
+        };
+      });
+    
+    // animate arc text
+    stateExit
+      .select('text')
+      .transition()
+      .duration(400)
+      .style('opacity', 0);
+    
+    // wait for animation to end before removing the arc group element
+    stateExit
+      .transition()
+      .delay(400)
+      .remove();
   }
   
   return {
     update: update,
+    updateActiveEntities: function (activeEntities, activeClassName) {
+      activeClassName = activeClassName || 'active';
+      
+      entityArcContainer.selectAll('g.entity-arc').each(function (d) {
+        var isActive = activeEntities.some(function (entity) {
+          return d.data._type === 'entity' && entity._id === d.data._id;
+        });
+        
+        if (isActive) {
+          d3.select(this).classed(activeClassName, true);
+        } else {
+          d3.select(this).classed(activeClassName, false);
+        }
+      });
+    },
     computeItemPosition: function (requestedItem) {
       var item;
       
       if (requestedItem.type === 'entity') {
-        item = this._currentEntityLayout.entityArcs.find(function (arc) {
-          return arc.data.name === requestedItem.name;
+        item = uiCurrentLayout.entityArcs.find(function (arc) {
+          return arc.data._id === requestedItem._id;
         });
       }
       
@@ -177,14 +278,14 @@ module.exports = function (app, options) {
     },
     
     activate: function (requestedItem) {
-      arcContainer
-        .select('#entity-' + slug(requestedItem.name, { lower: true }))
+      entityArcContainer
+        .select('#entity-' + requestedItem._id)
         .classed('active', true);
     },
     
     deactivate: function (requestedItem) {
-      arcContainer
-        .select('#entity-' + slug(requestedItem.name, { lower: true }))
+      entityArcContainer
+        .select('#entity-' + requestedItem._id)
         .classed('active', false);
     }
   };

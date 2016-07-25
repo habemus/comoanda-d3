@@ -33,6 +33,39 @@ module.exports = function (app, options) {
     return positions;
   }
   
+  function computeactiveItems(links) {
+    
+    var activeItems = links.reduce(function (acc, link) {
+      
+      var addNodes = [];
+      
+      // check if the from node is in the list
+      var fromNodeIndex = acc.findIndex(function (item) {
+        return item._id === link.from._id;
+      });
+      
+      if (fromNodeIndex === -1) {
+        addNodes.push(link.from);
+      }
+      
+      // check if the to node is in the list
+      var toNodeIndex = acc.findIndex(function (item) {
+        return item._id === link.to._id;
+      });
+      
+      if (toNodeIndex === -1) {
+        addNodes.push(link.to);
+      }
+      
+      // add the nodes to the list
+      return acc.concat(addNodes);
+      
+    }, []);
+    
+    return activeItems;
+    
+  }
+  
   
   // SETUP
   var twoPI = (2 * Math.PI);
@@ -67,6 +100,28 @@ module.exports = function (app, options) {
     
     uiCurrentLinks = links;
     
+    /**
+     * Array of nodes that have at least one link attached
+     * to them
+     */
+    var activeItems = computeactiveItems(links);
+    
+    var activeEntities = activeItems.filter(function (item) {
+      return item._type === 'entity';
+    });
+    var activeYears    = activeItems.filter(function (item) {
+      return item._type === 'year';
+    });
+    var activeOptions  = activeItems.filter(function (item) {
+      return item._type === 'question-option';
+    });
+    
+    app.ui.entities.updateActiveEntities(activeEntities);
+    app.ui.questions.updateActiveOptions(activeOptions);
+    
+    /**
+     * Calculate the line layouts
+     */
     var linkLineLayout = links.map(function (link) {
       /**
        * Enforce link structure
@@ -107,8 +162,6 @@ module.exports = function (app, options) {
       return true;
     });
     
-    console.log(linkLineLayout)
-    
     // before binding new data, save the old data onto DOM Elements
     // so that we may access them later for tweening
     linkLineContainer.selectAll('g.link-line path')
@@ -122,9 +175,9 @@ module.exports = function (app, options) {
       .data(linkLineLayout, function getLineKey(d) {
         return [
           d.link.from.type,
-          d.link.from.name,
+          d.link.from._id,
           d.link.to.type,
-          d.link.to.name
+          d.link.to._id
         ].join('-');
       });
     
@@ -178,18 +231,8 @@ module.exports = function (app, options) {
     var linkEnter = linkLines
       .enter()
       .append('g')
-      .attr('class', 'link-line')
-      .each(function activateTarget(d) {
-        var target = d.link.to;
-        
-        if (target.type === 'entity') {
-          app.ui.entities.activate(target);
-        } else if (target.type === 'year') {
-          app.ui.years.activate(target);
-        } else if (target.type === 'question-option') {
-          app.ui.questions.activate(target);
-        }
-      });
+      .attr('class', 'link-line');
+      
     linkEnter
       .append('path')
       .attr('d', drawLinkLine)
@@ -202,17 +245,17 @@ module.exports = function (app, options) {
     // EXIT
     var linkExit = linkLines
       .exit()
-      .each(function deactivateTarget(d) {
-        var target = d.link.to;
+      // .each(function deactivateTarget(d) {
+      //   var target = d.link.to;
         
-        if (target.type === 'entity') {
-          app.ui.entities.deactivate(target);
-        } else if (target.type === 'year') {
-          app.ui.years.deactivate(target);
-        } else if (target.type === 'question-option') {
-          app.ui.questions.deactivate(target);
-        }
-      })
+      //   if (target.type === 'entity') {
+      //     app.ui.entities.deactivate(target);
+      //   } else if (target.type === 'year') {
+      //     app.ui.years.deactivate(target);
+      //   } else if (target.type === 'question-option') {
+      //     app.ui.questions.deactivate(target);
+      //   }
+      // })
       .remove();
   }
   
@@ -220,6 +263,7 @@ module.exports = function (app, options) {
     update: update,
     
     computeLinks: function (entities, questionOptions) {
+      
       // build links
       var links = entities.reduce(function (acc, entity) {
         

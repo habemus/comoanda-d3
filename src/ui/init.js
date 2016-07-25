@@ -1,8 +1,11 @@
 const d3 = require('d3');
 
 // load question source data
-var questions = require('../data/questions.json');
-var entities  = require('../data/entities.json');
+const data = require('../data/data.json');
+var questions = data.questions;
+var entities  = data.entities;
+
+console.log(data);
 
 module.exports = function (app, options) {
   const OUTER_RADIUS = 250;
@@ -15,14 +18,16 @@ module.exports = function (app, options) {
   const WINDOW_X_CENTER = window.innerWidth / 2;
   const WINDOW_Y_CENTER = window.innerHeight / 2;
 
+  app.svg = d3.select('body').append('svg')
+    // .attr('width', GRAPH_HALF * 2)
+    .attr('width', window.innerWidth)
+    .attr('height', GRAPH_HALF * 2)
+
   /**
    * The container of the graph.
    * It is centralized in the SVG
    */
-  app.container = d3.select('body').append('svg')
-    // .attr('width', GRAPH_HALF * 2)
-    .attr('width', window.innerWidth)
-    .attr('height', GRAPH_HALF * 2)
+  app.container = app.svg
     // centralize the graph
     .append('g')
       .attr('transform', 'translate(' + WINDOW_X_CENTER + ',' + GRAPH_HALF + ')');
@@ -36,6 +41,27 @@ module.exports = function (app, options) {
     .attr('fill', 'white');
   
   app.ui = {};
+  
+  
+  // map
+  app.ui.map = require('./map')(app, {
+    windowXCenter: WINDOW_X_CENTER,
+    windowYCenter: WINDOW_Y_CENTER,
+  });
+  
+  // listen to map filter changes
+  app.ui.map.filter.on('change', function (changeData) {
+    console.log('changed map', app.ui.map.filter.get('states'));
+    
+    var selectedStates = app.ui.map.filter.get('states');
+    
+    var filteredEntities = entities.filter(function (e) {
+      return selectedStates.indexOf(e.estado) !== -1;
+    });
+    
+    app.ui.entities.update(filteredEntities);
+  });
+  
   app.ui.questions = require('./questions')(app, {
     outerRadius: OUTER_RADIUS,
     arcWidth: ARC_WIDTH,
@@ -70,21 +96,24 @@ module.exports = function (app, options) {
   app.ui.links = require('./links')(app, {});
   
   /**
-   * Persistent links follow filter
-   */
+  * Persistent links follow filter
+  */
   app.ui.persistentLinks = require('./links')(app, {});
   
   app.ui.questions.filter.on('change', function (changeData) {
     
+    var selectedStates = app.ui.map.filter.get('states');
+    
     var entities = app.services.entityDataStore
-      .query(app.ui.questions.filter.data);
+      .query(app.ui.questions.filter.data)
+      .filter(function filterBySelectedStates(entity) {
+        return selectedStates.indexOf(entity.estado) !== -1;
+      });
     
     var activeOptions = app.ui.questions.getActiveOptions();
     
     var links = app.ui.persistentLinks.computeLinks(entities, activeOptions);
     
     app.ui.persistentLinks.update(links);
-    
-    
   });
 };

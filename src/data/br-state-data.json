@@ -1,0 +1,110 @@
+[
+	{
+		"name": "ACRE",
+		"code": "AC"
+	},
+	{
+		"name": "ALAGOAS",
+		"code": "AL"
+	},
+	{
+		"name": "AMAPÁ",
+		"code": "AP"
+	},
+	{
+		"name": "AMAZONAS",
+		"code": "AM"
+	},
+	{
+		"name": "BAHIA",
+		"code": "BA"
+	},
+	{
+		"name": "CEARÁ",
+		"code": "CE"
+	},
+	{
+		"name": "DISTRITO FEDERAL",
+		"code": "DF"
+	},
+	{
+		"name": "ESPIRITO SANTO",
+		"code": "ES"
+	},
+	{
+		"name": "GOIÁS",
+		"code": "GO"
+	},
+	{
+		"name": "MARANHÃO",
+		"code": "MA"
+	},
+	{
+		"name": "MATO GROSSO",
+		"code": "MT"
+	},
+	{
+		"name": "MATO GROSSO DO SUL",
+		"code": "MS"
+	},
+	{
+		"name": "MINAS GERAIS",
+		"code": "MG"
+	},
+	{
+		"name": "PARÁ",
+		"code": "PA"
+	},
+	{
+		"name": "PARAÍBA",
+		"code": "PB"
+	},
+	{
+		"name": "PARANÁ",
+		"code": "PR"
+	},
+	{
+		"name": "PERNAMBUCO",
+		"code": "PE"
+	},
+	{
+		"name": "PIAUÍ",
+		"code": "PI"
+	},
+	{
+		"name": "RIO DE JANEIRO",
+		"code": "RJ"
+	},
+	{
+		"name": "RIO GRANDE DO NORTE",
+		"code": "RN"
+	},
+	{
+		"name": "RIO GRANDE DO SUL",
+		"code": "RS"
+	},
+	{
+		"name": "RONDÔNIA",
+		"code": "RO"
+	},
+	{
+		"name": "RORAIMA",
+		"code": "RR"
+	},
+	{
+		"name": "SANTA CATARINA",
+		"code": "SC"
+	},
+	{
+		"name": "SÃO PAULO",
+		"code": "SP"
+	},
+	{
+		"name": "SERGIPE",
+		"code": "SE"
+	},
+	{
+		"name": "TOCANTINS",
+		"code": "TO"
+	}
+]

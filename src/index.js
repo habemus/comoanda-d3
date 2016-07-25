@@ -1,13 +1,14 @@
 const d3 = require('d3');
 
-// load question source data
-var questions = require('./data/questions.json');
-var entities  = require('./data/entities.json');
+const data   = require('./data/data.json');
+var entities = data.entities;
 
 window.addEventListener('DOMContentLoaded', function () {
   
   var app = {};
-  var options = {};
+  var options = {
+    entities: entities,
+  };
   
   /**
    * Initialize services

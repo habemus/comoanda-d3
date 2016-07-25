@@ -107,7 +107,7 @@ module.exports = function (app, options) {
     var questionArcs = questionArcContainer
       .selectAll('g.question-arc')
       .data(layoutItems, function (d) {
-        return d._type + d.name + d.value;
+        return d._type + d._id;
       });
     
     // UPDATE
@@ -182,7 +182,7 @@ module.exports = function (app, options) {
       .enter()
       .append('g')
       .attr('id', function (d) {
-        return 'question-arc-' + d.name;
+        return 'question-arc-' + d._id;
       })
       .attr('class', function (d) {
         
@@ -201,7 +201,6 @@ module.exports = function (app, options) {
         return arcClasses.join(' ');
       })
       .on('click', function (d, i) {
-        // TODO improve event handling
         
         if (d.type === 'closed-question') {
           // toggle the clicked question's `isOpen` value
@@ -271,7 +270,7 @@ module.exports = function (app, options) {
     // enter text behavior
     arcEnter.append('text')
       .text(function (d) {
-        return d.value;
+        return d.label || d._value;
       })
       // .style('alignment-baseline', 'middle')
       .style('text-anchor', function(d) {
@@ -357,7 +356,7 @@ module.exports = function (app, options) {
    */
   function uiActivate(requestedItem) {
     questionArcContainer
-      .select('#question-arc-' + requestedItem.name)
+      .select('#question-arc-' + requestedItem._id)
       .classed('active', true);
   }
   
@@ -366,8 +365,30 @@ module.exports = function (app, options) {
    */
   function uiDeactivate(requestedItem) {
     questionArcContainer
-      .select('#question-arc-' + requestedItem.name)
+      .select('#question-arc-' + requestedItem._id)
       .classed('active', false);
+  }
+  
+  
+  function uiUpdateActiveOptions(activeOptions, activeClassName) {
+    activeClassName = activeClassName || 'active';
+    
+    questionArcContainer.selectAll('g.question-arc').each(function (d) {
+      
+      if (!d._type === 'question-option') {
+        return;
+      }
+      
+      var isActive = activeOptions.some(function (option) {
+        return d._id === option._id;
+      });
+      
+      if (isActive) {
+        d3.select(this).classed(activeClassName, true);
+      } else {
+        d3.select(this).classed(activeClassName, false);
+      }
+    });
   }
   
   /**
@@ -380,7 +401,7 @@ module.exports = function (app, options) {
       
       item = uiQuestionLayout.find(function (arc) {
         return (arc.type === 'question-option' &&
-                arc.name === requestedItem.name);
+                arc._id === requestedItem._id);
       });
     } else {
       throw new Error('unsupported');
@@ -402,13 +423,16 @@ module.exports = function (app, options) {
       var questionActiveOptions = uiFilter.get(questionId);
       
       return acc.concat(questionActiveOptions.map(function (optionId) {
-        return {
-          _id: optionId,
-          name: questionId + '--' + optionId,
+        
+        var option = uiQuestionLayout.find(function (item) {
+          return item._id === optionId;
+        });
+        
+        return Object.assign({
           question: {
-            _id: questionId,
-          },
-        }
+            _id: questionId
+          }
+        }, option);
       }))
     }, []);
   }
@@ -421,6 +445,7 @@ module.exports = function (app, options) {
     computeItemPosition: uiComputeItemPosition,
     getOpenQuestions: uiGetOpenQuestions,
     getActiveOptions: uiGetActiveOptions,
+    updateActiveOptions: uiUpdateActiveOptions,
     activate: uiActivate,
     deactivate: uiDeactivate,
     filter: uiFilter,

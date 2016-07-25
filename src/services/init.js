@@ -1,12 +1,14 @@
 // own
 const EntityDataStore = require('./entity-data-store');
-const entities = require('../data/entities.json');
-const questions = require('../data/questions.json');
 
 module.exports = function (app, options) {
+  if (!options.entities) {
+    throw new Error('entities is required');
+  }
+  
   app.services = {};
   
-  app.services.entityDataStore = new EntityDataStore(entities);
+  app.services.entityDataStore = new EntityDataStore(options.entities);
   
   
 };
