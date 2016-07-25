@@ -44,30 +44,6 @@ module.exports = function (app, options) {
    * Variable that stores the current filter
    */
   var uiFilter = new DataObj();
-  uiFilter.on('change', function (changeData) {
-    
-    if (changeData.kind === 'array.remove') {
-      
-      uiDeactivate({
-        name: changeData.key + '--' + changeData.item
-      });
-      
-      if (changeData.newValue.length === 0) {
-        uiFilter.unset(changeData.key);
-      }
-      
-      console.log('remove')
-    } else if (changeData.kind === 'array.add') {
-      
-      uiActivate({
-        name: changeData.key + '--' + changeData.item
-      });
-      
-      
-      console.log('add')
-    }
-    
-  });
   
   /**
    * Updates the layout by processing a new set of questions
@@ -351,23 +327,23 @@ module.exports = function (app, options) {
     });
   }
   
-  /**
-   * Activates the requested item
-   */
-  function uiActivate(requestedItem) {
-    questionArcContainer
-      .select('#question-arc-' + requestedItem._id)
-      .classed('active', true);
-  }
+  // /**
+  // * Activates the requested item
+  // */
+  // function uiActivate(requestedItem) {
+  //   questionArcContainer
+  //     .select('#question-arc-' + requestedItem._id)
+  //     .classed('active', true);
+  // }
   
-  /**
-   * Deactivates the requested item
-   */
-  function uiDeactivate(requestedItem) {
-    questionArcContainer
-      .select('#question-arc-' + requestedItem._id)
-      .classed('active', false);
-  }
+  // /**
+  // * Deactivates the requested item
+  // */
+  // function uiDeactivate(requestedItem) {
+  //   questionArcContainer
+  //     .select('#question-arc-' + requestedItem._id)
+  //     .classed('active', false);
+  // }
   
   
   function uiUpdateActiveOptions(activeOptions, activeClassName) {
@@ -446,8 +422,6 @@ module.exports = function (app, options) {
     getOpenQuestions: uiGetOpenQuestions,
     getActiveOptions: uiGetActiveOptions,
     updateActiveOptions: uiUpdateActiveOptions,
-    activate: uiActivate,
-    deactivate: uiDeactivate,
     filter: uiFilter,
     layout: uiQuestionLayout,
   };

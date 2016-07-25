@@ -143,45 +143,45 @@ module.exports = function (app, options) {
       .attr('id', function (d) {
         return 'entity-' + d.data._id;
       })
-      .on('mouseenter', function (d) {
+      // .on('mouseenter', function (d) {
         
-        var entity = d.data;
+      //   var entity = d.data;
         
-        var openQuestions = app.ui.questions.getOpenQuestions();
+      //   var openQuestions = app.ui.questions.getOpenQuestions();
         
-        var links = [];
+      //   var links = [];
         
-        openQuestions.forEach(function (question) {
-          var options = entity[question._id];
+      //   openQuestions.forEach(function (question) {
+      //     var options = entity[question._id];
           
-          if (!options) {
-            return;
-          }
+      //     if (!options) {
+      //       return;
+      //     }
           
-          options.forEach(function (opt) {
-            links.push({
-              from: Object.assign({ type: 'entity' }, entity),
-              to: Object.assign({ type: 'question-option'}, opt)
-            });
-          });
-        });
+      //     options.forEach(function (opt) {
+      //       links.push({
+      //         from: Object.assign({ type: 'entity' }, entity),
+      //         to: Object.assign({ type: 'question-option'}, opt)
+      //       });
+      //     });
+      //   });
         
-        // add year link
-        links.push({
-          from: Object.assign({ type: 'entity' }, entity),
-          to: { type: 'year', year: entity.ano }
-        });
+      //   // add year link
+      //   links.push({
+      //     from: Object.assign({ type: 'entity' }, entity),
+      //     to: { type: 'year', year: entity.ano }
+      //   });
         
-        app.ui.links.update(links);
+      //   app.ui.links.update(links);
         
-        // console.log(openQuestions);
-        d3.select(this).classed('active', true);
-      })
-      .on('mouseout', function (d) {
-        app.ui.links.update([]);
+      //   // console.log(openQuestions);
+      //   d3.select(this).classed('active', true);
+      // })
+      // .on('mouseout', function (d) {
+      //   app.ui.links.update([]);
         
-        d3.select(this).classed('active', false);
-      });
+      //   d3.select(this).classed('active', false);
+      // });
     entityEnter
       .append('path')
       .attr('d', drawEntityArc)

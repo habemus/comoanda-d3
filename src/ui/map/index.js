@@ -41,9 +41,7 @@ module.exports = function (app, options) {
   /**
    * Variable that stores the current map filter
    */
-  var mapFilter = new DataObj({
-    states: BRStateData.map(function (s) { return s.code; }),
-  });
+  var mapFilter = app.services.filter;
   
   d3.json('/src/data/br-states-simplified.json', function (err, geoData) {
     var states = topojson.feature(geoData, geoData.objects.states);
