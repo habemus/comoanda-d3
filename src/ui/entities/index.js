@@ -188,46 +188,8 @@ module.exports = function (app, options) {
       .attr('class', 'entity-arc')
       .attr('id', function (d) {
         return 'entity-' + d.data._id;
-      })
-      // .on('mouseenter', function (d) {
-        
-      //   var entity = d.data;
-        
-      //   var openQuestions = app.ui.questions.getOpenQuestions();
-        
-      //   var links = [];
-        
-      //   openQuestions.forEach(function (question) {
-      //     var options = entity[question._id];
-          
-      //     if (!options) {
-      //       return;
-      //     }
-          
-      //     options.forEach(function (opt) {
-      //       links.push({
-      //         from: Object.assign({ type: 'entity' }, entity),
-      //         to: Object.assign({ type: 'question-option'}, opt)
-      //       });
-      //     });
-      //   });
-        
-      //   // add year link
-      //   links.push({
-      //     from: Object.assign({ type: 'entity' }, entity),
-      //     to: { type: 'year', year: entity.ano }
-      //   });
-        
-      //   app.ui.links.update(links);
-        
-      //   // console.log(openQuestions);
-      //   d3.select(this).classed('active', true);
-      // })
-      // .on('mouseout', function (d) {
-      //   app.ui.links.update([]);
-        
-      //   d3.select(this).classed('active', false);
-      // });
+      });
+    
     entityEnter
       .append('path')
       .attr('d', drawEntityArc)
@@ -255,6 +217,8 @@ module.exports = function (app, options) {
       })
       .on('click', function (d) {
         console.log('clicked entity text ', d.data.nome)
+        
+        app.ui.entityDetails.show(d.data._id);
       })
       .style('font-size', entityTextFontSize)
       .style('text-anchor', entityTextAnchor)
@@ -264,39 +228,37 @@ module.exports = function (app, options) {
     // EXIT
     var stateExit = stateArcs.exit();
     
-    // animate arc path
-    stateExit
-      .select('path')
-      .transition()
-      .duration(400)
-      .style('opacity', 0)
-      .attrTween('d', function (d, i) {
+    // // animate arc path
+    // stateExit
+    //   .select('path')
+    //   .transition()
+    //   .duration(100)
+    //   .style('opacity', 0)
+    //   .attrTween('d', function (d, i) {
         
-        var midAngle = (d.startAngle + d.endAngle) / 2
+    //     var midAngle = (d.startAngle + d.endAngle) / 2
         
-        var interpolateStart = d3.interpolate(d.startAngle, midAngle);
-        var interpolateEnd   = d3.interpolate(d.endAngle, midAngle);
+    //     var interpolateStart = d3.interpolate(d.startAngle, midAngle);
+    //     var interpolateEnd   = d3.interpolate(d.endAngle, midAngle);
         
-        return function (t) {
-          var arcPath = drawEntityArc({
-            startAngle: interpolateStart(t),
-            endAngle: interpolateEnd(t),
-          });
-          return arcPath;
-        };
-      });
+    //     return function (t) {
+    //       var arcPath = drawEntityArc({
+    //         startAngle: interpolateStart(t),
+    //         endAngle: interpolateEnd(t),
+    //       });
+    //       return arcPath;
+    //     };
+    //   });
     
-    // animate arc text
-    stateExit
-      .select('text')
-      .transition()
-      .duration(400)
-      .style('opacity', 0);
+    // // animate arc text
+    // stateExit
+    //   .select('text')
+    //   .transition()
+    //   .duration(100)
+    //   .style('opacity', 0);
     
     // wait for animation to end before removing the arc group element
     stateExit
-      .transition()
-      .delay(400)
       .remove();
   }
   

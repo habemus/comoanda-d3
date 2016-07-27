@@ -12,6 +12,7 @@
     "bluebird": "^3.4.1",
     "d3": "^4.1.1",
     "data-obj": "0.0.0",
+    "dialog-polyfill": "^0.4.3",
     "object-query": "^0.1.4",
     "topojson": "^1.6.26"
   },

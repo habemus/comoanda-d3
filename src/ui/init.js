@@ -41,6 +41,16 @@ module.exports = function (app, options) {
   app.ui = {};
   
   /**
+   * Entity details dialog
+   */
+  app.ui.entityDetails = require('./entity-details')(app, {});
+  
+  /**
+   * Stats
+   */
+  app.ui.stats = require('./stats')(app, {});
+  
+  /**
    * The year brush that controls the year range filter
    */
   app.ui.yearBrush = require('./year-brush')(app, {
@@ -129,7 +139,8 @@ module.exports = function (app, options) {
     var activeOptions = app.ui.questions.getActiveOptions();
     var links = app.ui.persistentLinks.computeLinks(entities, activeOptions);
     
-    app.ui.persistentLinks.update(links);    
+    app.ui.persistentLinks.update(links);
+    app.ui.stats.update(entities);
   }
   app.services.questionLinkFilter.on('change', function () {
     app.ACTIVE_LINK_FILTER = 'link';
@@ -163,6 +174,7 @@ module.exports = function (app, options) {
     var links = app.ui.persistentLinks.computeLinks(entities, openOptions);
     
     app.ui.persistentLinks.update(links);
+    app.ui.stats.update(entities);
   }
   app.services.entityLinkFilter.on('change', function () {
     app.ACTIVE_LINK_FILTER = 'entity';

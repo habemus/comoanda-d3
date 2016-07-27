@@ -47,3 +47,15 @@ exports.arcTextTransform = function (options) {
         + (midAngle > Math.PI ? 'rotate(180)' : '');
   }
 }
+
+exports.renderBindings = function (wrapperElement, data) {
+  var boundElements = wrapperElement.querySelectorAll('[data-bind]');
+  
+  console.log(boundElements);
+  
+  Array.prototype.forEach.call(boundElements, function (el) {
+    var key = el.getAttribute('data-bind');
+    
+    el.innerHTML = data[key];
+  });
+};

@@ -3,6 +3,22 @@ body {
   background-color: #D9D9D9;
 }
 
+svg {
+  border: orange dashed 3px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#stats {
+  position: fixed;
+  width: 30%;
+  
+  top: 50px;
+  left: 50px;
+}
+
 /**
  * Year brush styles
  */
@@ -106,6 +122,9 @@ body {
 }
 .question-option text {
   fill: #A5A5A5;
+}
+.question-option.selected text {
+  fill: #0C0C0C;
 }
 .question-option:hover text,
 .question-option.active text {

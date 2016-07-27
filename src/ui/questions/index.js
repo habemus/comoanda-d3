@@ -66,6 +66,33 @@ module.exports = function (app, options) {
       }
     });
     
+    // merge layoutItems with the filter's data
+    layoutItems.forEach(function (item) {
+      switch (item._type) {
+        case 'closed-question':
+          break;
+        case 'open-question':
+          break;
+        case 'question-option':
+          // check fi the option is selected in the filter
+          var appliedFilter = app.services.questionLinkFilter
+            .get(item.question._id);
+          var isSelected;
+          
+          if (!appliedFilter) {
+            isSelected = false;
+          } else {
+            isSelected = appliedFilter.indexOf(item._id) !== -1;
+          }
+          
+          console.log(isSelected);
+          
+          item._isSelected = isSelected;
+          
+          break;
+      }
+    });
+    
     // save currentLayout
     uiQuestionLayout = layoutItems;
     
@@ -92,6 +119,13 @@ module.exports = function (app, options) {
       });
     
     // UPDATE
+    // update classes
+    questionArcContainer
+      .selectAll('g.question-arc')
+      .each(function (d) {
+        d3.select(this).classed('selected', d._isSelected);
+      });
+    
     // update existing arcs before running enter and exit
     // so that transitions do not interfere with one another
     questionArcContainer
@@ -164,6 +198,9 @@ module.exports = function (app, options) {
           arcClasses.push('open-question');
         } else if (d.type === 'question-option') {
           arcClasses.push('question-option');
+          if (d._isSelected) {
+            arcClasses.push('selected');
+          }
         }
         
         return arcClasses.join(' ');
@@ -182,7 +219,8 @@ module.exports = function (app, options) {
           clickedQuestion.isOpen = true;
           uiUpdate(questionsSourceData);
           
-          app.ui.persistentLinks.update();
+          // make links update their positions
+          app.ui.persistentLinks.updateLinkPositions();
           
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
@@ -196,7 +234,8 @@ module.exports = function (app, options) {
           clickedQuestion.isOpen = false;
           uiUpdate(questionsSourceData);
           
-          app.ui.persistentLinks.update();
+          // make links update their positions
+          app.ui.persistentLinks.updateLinkPositions();
           
         } else {
           // toggle the selected status of the filter
@@ -210,8 +249,12 @@ module.exports = function (app, options) {
           
           if (exists) {
             app.services.questionLinkFilter.arrayRemove(d.question._id, d._id);
+            
+            uiUpdate(questionsSourceData);
           } else {
             app.services.questionLinkFilter.arrayPush(d.question._id, d._id);
+            
+            uiUpdate(questionsSourceData);
           }
         }
       });
