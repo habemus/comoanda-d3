@@ -41,11 +41,6 @@ module.exports = function (app, options) {
   var uiQuestionLayout;
   
   /**
-   * Variable that stores the current filter
-   */
-  var uiFilter = new DataObj();
-  
-  /**
    * Updates the layout by processing a new set of questions
    */
   function uiUpdate(questionsSourceData) {
@@ -184,6 +179,9 @@ module.exports = function (app, options) {
             return q._id === d._id;
           });
           
+          // set filter to empty array
+          app.services.questionLinkFilter.set(d._id, []);
+          
           clickedQuestion.isOpen = true;
           uiUpdate(questionsSourceData);
           
@@ -196,7 +194,7 @@ module.exports = function (app, options) {
           });
           
           // unset filter
-          uiFilter.unset(d._id);
+          app.services.questionLinkFilter.unset(d._id);
           
           clickedQuestion.isOpen = false;
           uiUpdate(questionsSourceData);
@@ -206,7 +204,7 @@ module.exports = function (app, options) {
         } else {
           // toggle the selected status of the filter
           var exists;
-          var arr = uiFilter.get(d.question._id);
+          var arr = app.services.questionLinkFilter.get(d.question._id);
           if (!arr) {
             exists = false;
           } else {
@@ -214,9 +212,9 @@ module.exports = function (app, options) {
           }
           
           if (exists) {
-            uiFilter.arrayRemove(d.question._id, d._id);
+            app.services.questionLinkFilter.arrayRemove(d.question._id, d._id);
           } else {
-            uiFilter.arrayPush(d.question._id, d._id);
+            app.services.questionLinkFilter.arrayPush(d.question._id, d._id);
           }
         }
       });
@@ -394,9 +392,9 @@ module.exports = function (app, options) {
   }
   
   function uiGetActiveOptions() {
-    return Object.keys(uiFilter.data).reduce(function (acc, questionId) {
+    return Object.keys(app.services.questionLinkFilter.data).reduce(function (acc, questionId) {
       
-      var questionActiveOptions = uiFilter.get(questionId);
+      var questionActiveOptions = app.services.questionLinkFilter.get(questionId);
       
       return acc.concat(questionActiveOptions.map(function (optionId) {
         
@@ -422,7 +420,7 @@ module.exports = function (app, options) {
     getOpenQuestions: uiGetOpenQuestions,
     getActiveOptions: uiGetActiveOptions,
     updateActiveOptions: uiUpdateActiveOptions,
-    filter: uiFilter,
+    filter: app.services.questionLinkFilter,
     layout: uiQuestionLayout,
   };
 }

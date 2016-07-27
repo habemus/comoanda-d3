@@ -99,33 +99,77 @@ module.exports = function (app, options) {
     }
   }));
   
-  app.ui.links = require('./links')(app, {});
+  // app.ui.links = require('./links')(app, {});
   
   /**
   * Persistent links follow filter
   */
   app.ui.persistentLinks = require('./links')(app, {});
   
-  app.ui.questions.filter.on('change', function (changeData) {
+  
+  app.ACTIVE_LINK_FILTER = null;
+  
+  //////////
+  // QUESTION LINK filter
+  function uiApplyQuestionLinkFilter() {
     
-    var selectedStates = app.services.filter.get('estado');
+    var overallFilter = app.services.filter.data;
+    var linkFilter    = app.services.questionLinkFilter.data;
+    
+    var filter = Object.assign({}, overallFilter, linkFilter);
     
     var entities = app.services.entityDataStore
-      .query(app.ui.questions.filter.data)
-      .filter(function filterBySelectedStates(entity) {
-        return selectedStates.indexOf(entity.estado) !== -1;
-      });
+      .applyFilter(filter);
     
+    // links betweeb entities and activeOptions
     var activeOptions = app.ui.questions.getActiveOptions();
-    
     var links = app.ui.persistentLinks.computeLinks(entities, activeOptions);
     
+    app.ui.persistentLinks.update(links);    
+  }
+  app.services.questionLinkFilter.on('change', function () {
+    app.ACTIVE_LINK_FILTER = 'link';
+    
+    uiApplyQuestionLinkFilter();
+  });
+  
+  ///////////
+  // ENTITY LINK filter
+  function uiApplyEntityLinkFilter() {
+    var overallFilter = app.services.filter.data;
+    var linkFilter    = app.services.entityLinkFilter.data;
+    
+    var filter = Object.assign({}, overallFilter, linkFilter);
+    
+    var entities = app.services.entityDataStore
+      .applyFilter(filter);
+    
+    // links between entities and open options
+    var openQuestions = app.ui.questions.getOpenQuestions();
+    console.log(openQuestions);
+    var openOptions = openQuestions.reduce(function (result, question) {
+      
+      question.options.forEach(function (opt) {
+        result.push(Object.assign({ question: question }, opt));
+      });
+      
+      return result;
+      
+    }, []);
+    var links = app.ui.persistentLinks.computeLinks(entities, openOptions);
+    
     app.ui.persistentLinks.update(links);
+  }
+  app.services.entityLinkFilter.on('change', function () {
+    app.ACTIVE_LINK_FILTER = 'entity';
+    
+    uiApplyEntityLinkFilter();
   });
   
   
-  
-  function uiApplyFilters() {
+  ///////
+  // OVERALL filter
+  function uiOverallApplyFilters() {
 
     var filteredEntities = 
       app.services.entityDataStore.applyFilter(app.services.filter.data);
@@ -150,9 +194,24 @@ module.exports = function (app, options) {
     
     app.ui.years.update(arcYears);
     app.ui.entities.update(filteredEntities);
+    
+    app.ui.persistentLinks.updateLinkPositions();
+    
+    // apply link filter if any
+    if (app.ACTIVE_LINK_FILTER) {
+      switch (app.ACTIVE_LINK_FILTER) {
+        case 'link':
+          uiApplyQuestionLinkFilter();
+          break;
+        case 'entity':
+          uiApplyEntityLinkFilter();
+          break;
+      }
+    }
+    
   }
-  app.services.filter.on('change', uiApplyFilters);
+  app.services.filter.on('change', uiOverallApplyFilters);
   
-  uiApplyFilters();
+  uiOverallApplyFilters();
   
 };

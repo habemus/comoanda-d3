@@ -7,7 +7,10 @@ const complexQuestionNames = complexQuestions.map(function (q) {
   return q._id;
 });
 
-const simpleQuestions = data.simpleQuestions;
+const simpleQuestions = data.simpleQuestions.concat([{
+  // make _id filterable
+  _id: '_id',
+}]);
 /**
  * Array containing the simple question names
  */
@@ -16,7 +19,7 @@ const simpleQuestionNames = simpleQuestions.map(function (q) {
 });
 
 function _questionType(filterName) {
-  var isSimple = simpleQuestionNames.indexOf(filterName);
+  var isSimple = simpleQuestionNames.indexOf(filterName) !== -1;
   
   if (isSimple) {
     return 'simple';
@@ -39,14 +42,13 @@ EntityDataStore.prototype.applyFilter = function (filter) {
   
   var filterNames = Object.keys(filter);
   
-  console.log(filterNames);
-  
   var results = this.data.filter(function (item) {
     
     // loop through filter properties
     var itemMatches = filterNames.every(function (filterName) {
       
       var filterType  = _questionType(filterName);
+      
       // filterValue is always an array of possible values
       // to be checked against
       var filterValue = filter[filterName];
@@ -59,10 +61,17 @@ EntityDataStore.prototype.applyFilter = function (filter) {
         if (!itemValue) {
           return false;
         } else {
-          // check if itemValue contain ANY of the query's values
-          return itemValue.some(function (value) {
-            return filterValue.indexOf(value._id) !== -1;
-          });
+          
+          if (filterValue.length === 0) {
+            // if filter is set to [] (empty array)
+            // it means to select everything
+            return true;
+          } else {
+            // check if itemValue contain ANY of the query's values
+            return itemValue.some(function (value) {
+              return filterValue.indexOf(value._id) !== -1;
+            });
+          }
         }
       }
     });
@@ -73,36 +82,36 @@ EntityDataStore.prototype.applyFilter = function (filter) {
   return results;
 };
 
-EntityDataStore.prototype.query = function (query) {
-  var filtered = this.data.filter(function (item) {
+// EntityDataStore.prototype.query = function (query) {
+//   var filtered = this.data.filter(function (item) {
     
-    var res = Object.keys(query).every(function (filterName) {
+//     var res = Object.keys(query).every(function (filterName) {
       
-      var filterValue = query[filterName];
+//       var filterValue = query[filterName];
       
-      if (Array.isArray(filterValue)) {
+//       if (Array.isArray(filterValue)) {
         
-        var itemValues = item[filterName];
+//         var itemValues = item[filterName];
         
-        if (!itemValues) {
-          return false;
-        } else {
-          // check if itemValues contain ANY of the query's values
-          return itemValues.some(function (itemV) {
-            return filterValue.indexOf(itemV._id) !== -1;
-          });
-        }
-      } else {
-        // check if the item's value is equal to the query's value
-        return item[filterName]._id === query[filterName];
-      }
-    });
+//         if (!itemValues) {
+//           return false;
+//         } else {
+//           // check if itemValues contain ANY of the query's values
+//           return itemValues.some(function (itemV) {
+//             return filterValue.indexOf(itemV._id) !== -1;
+//           });
+//         }
+//       } else {
+//         // check if the item's value is equal to the query's value
+//         return item[filterName]._id === query[filterName];
+//       }
+//     });
     
-    return res;
+//     return res;
     
-  });
+//   });
   
-  return filtered;
-};
+//   return filtered;
+// };
 
 module.exports = EntityDataStore;

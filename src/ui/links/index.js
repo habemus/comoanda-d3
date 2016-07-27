@@ -185,6 +185,7 @@ module.exports = function (app, options) {
     // UPDATE
     linkLineContainer.selectAll('g.link-line')
       .select('path')
+      // .attr('d', drawLinkLine)
       .transition()
       .duration(400)
       .attrTween('d', function (d, i) {
@@ -261,6 +262,10 @@ module.exports = function (app, options) {
   
   return {
     update: update,
+    
+    updateLinkPositions: function () {
+      update(uiCurrentLinks);
+    },
     
     computeLinks: function (entities, questionOptions) {
       

@@ -74,31 +74,31 @@ module.exports = function (app, options) {
       .attr('class', 'year-arc')
       .attr('id', function (d) {
         return 'year-' + d.data.year;
-      })
-      .on('mouseenter', function (d) {
-        var yearEntities = entities.filter(function (entity) {
-          return parseInt(entity.ano, 10) === d.data.year;
-        });
-        
-        var links = yearEntities.map(function (entity) {
-          return {
-            from: {
-              type: 'year',
-              year: d.data.year
-            },
-            to: Object.assign({ type: 'entity' }, entity),
-          };
-        });
-        
-        app.ui.links.update(links);
-        
-        d3.select(this).classed('active', true)
-      })
-      .on('mouseout', function (d) {
-        app.ui.links.update([]);
-        
-        d3.select(this).classed('active', false);
       });
+      // .on('mouseenter', function (d) {
+      //   var yearEntities = entities.filter(function (entity) {
+      //     return parseInt(entity.ano, 10) === d.data.year;
+      //   });
+        
+      //   var links = yearEntities.map(function (entity) {
+      //     return {
+      //       from: {
+      //         type: 'year',
+      //         year: d.data.year
+      //       },
+      //       to: Object.assign({ type: 'entity' }, entity),
+      //     };
+      //   });
+        
+      //   app.ui.links.update(links);
+        
+      //   d3.select(this).classed('active', true)
+      // })
+      // .on('mouseout', function (d) {
+      //   app.ui.links.update([]);
+        
+      //   d3.select(this).classed('active', false);
+      // });
       
     yearEnter
       .append('path')

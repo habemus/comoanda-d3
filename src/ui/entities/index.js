@@ -143,6 +143,25 @@ module.exports = function (app, options) {
       .attr('id', function (d) {
         return 'entity-' + d.data._id;
       })
+      .on('click', function (d) {
+        
+        console.log('click')
+        
+        // toggle the selected status of the filter
+        var exists;
+        var arr = app.services.entityLinkFilter.get('_id');
+        if (!arr) {
+          exists = false;
+        } else {
+          exists = arr.indexOf(d.data._id) !== -1;
+        }
+        
+        if (exists) {
+          app.services.entityLinkFilter.arrayRemove('_id', d.data._id);
+        } else {
+          app.services.entityLinkFilter.arrayPush('_id', d.data._id);
+        }
+      })
       // .on('mouseenter', function (d) {
         
       //   var entity = d.data;
@@ -271,10 +290,14 @@ module.exports = function (app, options) {
         });
       }
       
-      return {
-        angle: (item.startAngle + item.endAngle) / 2,
-        radius: options.innerRadius
-      };
+      if (item) {
+        return {
+          angle: (item.startAngle + item.endAngle) / 2,
+          radius: options.innerRadius
+        };
+      } else {
+        return false;
+      }
     },
     
     activate: function (requestedItem) {
