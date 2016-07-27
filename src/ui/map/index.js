@@ -17,12 +17,28 @@ function getStateCode(stateName) {
 }
 
 module.exports = function (app, options) {
+  if (!options.centerX) {
+    throw new Error('centerX is required');
+  }
+  
+  if (!options.centerY) {
+    throw new Error('centerY is required');
+  }
+  
+  if (!options.innerRadius) {
+    throw new Error('innerRadius is required');
+  }
+  
+  if (!options.outerRadius) {
+    throw new Error('outerRadius is required');
+  }
+  
   /**
   * Generators
   */
   var projection = d3.geoMercator()
     // brazil
-    .center([-55, -10])
+    .center([0, 0])
     .scale(300);
     
   var geoPath = d3.geoPath()
@@ -34,9 +50,11 @@ module.exports = function (app, options) {
   var mapContainer = app.svg
     .append('g')
     .attr('id', 'map-container')
-    .attr('transform', function () {
-      return 'translate(-' + (options.windowXCenter - 300) + ', -' + (options.windowYCenter - 200) + ')';
-    });
+    // .attr('transform', function () {
+      
+      
+    //   return 'translate(-' + (options.windowXCenter - 300) + ', -' + (options.windowYCenter - 200) + ')';
+    // });
   
   /**
    * Variable that stores the current map filter
@@ -81,7 +99,22 @@ module.exports = function (app, options) {
         } else {
           mapFilter.arrayPush('estado', stateCode);
         }
-      })
+      });
+      
+    // once the map has been rendered, put it into the right
+    // place
+    var mapContainerEl = document.querySelector('#map-container');
+    var rect = mapContainerEl.getBoundingClientRect();
+    
+    mapContainer.attr('transform', function () {
+      var targetTop  = (2 * options.centerY) - rect.height - 50;
+      var targetLeft = 50;
+      
+      var dTop  = targetTop - rect.top;
+      var dLeft = targetLeft - rect.left;
+      
+      return 'translate(' + dLeft + ',' + dTop + ')';
+    });
   });
   
   return {

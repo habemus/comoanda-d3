@@ -52,7 +52,15 @@ module.exports = function (app, options) {
     
     yearArcs
       .select('text')
-      .style('font-size', 14)
+      .style('font-size', function (d) {
+        var angleSpan = d.endAngle - d.startAngle;
+        var circumference = twoPI * options.outerRadius;
+        
+        var size = (angleSpan / twoPI) * circumference * 1.2;
+        size = size > 14 ? 14 : size;
+        
+        return size + 'px';
+      })
       .style('text-anchor', function(d) {
         var midAngle = (d.startAngle + d.endAngle) / 2;
         return midAngle > Math.PI ? 'end' : null;
@@ -109,7 +117,15 @@ module.exports = function (app, options) {
       .text(function (d) {
         return d.data.year;
       })
-      .style('font-size', 14)
+      .style('font-size', function (d) {
+        var angleSpan = d.endAngle - d.startAngle;
+        var circumference = twoPI * options.outerRadius;
+        
+        var size = (angleSpan / twoPI) * circumference * 1.2;
+        size = size > 14 ? 14 : size;
+        
+        return size + 'px';
+      })
       .style('text-anchor', function(d) {
         var midAngle = (d.startAngle + d.endAngle) / 2;
         return midAngle > Math.PI ? 'end' : null;

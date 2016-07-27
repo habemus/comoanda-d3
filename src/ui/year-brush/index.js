@@ -10,6 +10,14 @@ module.exports = function (app, options) {
     throw new Error('centerY is required');
   }
   
+  if (!options.innerRadius) {
+    throw new Error('innerRadius is required');
+  }
+  
+  if (!options.outerRadius) {
+    throw new Error('outerRadius is required');
+  }
+  
   /**
    * Brush width varies according to the centerX
    */
@@ -24,7 +32,7 @@ module.exports = function (app, options) {
     .attr('transform', function () {
       
       var brushLeft = options.centerX - (BRUSH_WIDTH / 2);
-      var brushTop  = options.centerY * 1.5;
+      var brushTop  = options.centerY + options.outerRadius + 50;
       
       return 'translate(' + brushLeft + ',' + brushTop + ')';
     });

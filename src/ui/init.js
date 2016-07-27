@@ -46,13 +46,17 @@ module.exports = function (app, options) {
   app.ui.yearBrush = require('./year-brush')(app, {
     centerX: WINDOW_X_CENTER,
     centerY: WINDOW_Y_CENTER,
+    innerRadius: INNER_RADIUS,
+    outerRadius: OUTER_RADIUS,
   });
   
   
   // map
   app.ui.map = require('./map')(app, {
-    windowXCenter: WINDOW_X_CENTER,
-    windowYCenter: WINDOW_Y_CENTER,
+    centerX: WINDOW_X_CENTER,
+    centerY: WINDOW_Y_CENTER,
+    innerRadius: INNER_RADIUS,
+    outerRadius: OUTER_RADIUS,
   });
   
   // listen to map filter changes
