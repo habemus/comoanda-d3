@@ -5,8 +5,6 @@ const data = require('../data/data.json');
 var questions = data.questions;
 var entities  = data.entities;
 
-console.log(data);
-
 module.exports = function (app, options) {
   const OUTER_RADIUS = 250;
   const ARC_WIDTH    = 20;
@@ -42,6 +40,14 @@ module.exports = function (app, options) {
   
   app.ui = {};
   
+  /**
+   * The year brush that controls the year range filter
+   */
+  app.ui.yearBrush = require('./year-brush')(app, {
+    centerX: WINDOW_X_CENTER,
+    centerY: WINDOW_Y_CENTER,
+  });
+  
   
   // map
   app.ui.map = require('./map')(app, {
@@ -50,17 +56,17 @@ module.exports = function (app, options) {
   });
   
   // listen to map filter changes
-  app.ui.map.filter.on('change', function (changeData) {
-    console.log('changed map', app.ui.map.filter.get('states'));
+  // app.ui.map.filter.on('change', function (changeData) {
+  //   console.log('changed map', app.ui.map.filter.get('states'));
     
-    var selectedStates = app.ui.map.filter.get('states');
+  //   var selectedStates = app.ui.map.filter.get('states');
     
-    var filteredEntities = entities.filter(function (e) {
-      return selectedStates.indexOf(e.estado) !== -1;
-    });
+  //   var filteredEntities = entities.filter(function (e) {
+  //     return selectedStates.indexOf(e.estado) !== -1;
+  //   });
     
-    app.ui.entities.update(filteredEntities);
-  });
+  //   app.ui.entities.update(filteredEntities);
+  // });
   
   app.ui.questions = require('./questions')(app, {
     outerRadius: OUTER_RADIUS,
@@ -102,7 +108,7 @@ module.exports = function (app, options) {
   
   app.ui.questions.filter.on('change', function (changeData) {
     
-    var selectedStates = app.ui.map.filter.get('states');
+    var selectedStates = app.services.filter.get('estado');
     
     var entities = app.services.entityDataStore
       .query(app.ui.questions.filter.data)
@@ -116,4 +122,37 @@ module.exports = function (app, options) {
     
     app.ui.persistentLinks.update(links);
   });
+  
+  
+  
+  function uiApplyFilters() {
+
+    var filteredEntities = 
+      app.services.entityDataStore.applyFilter(app.services.filter.data);
+    
+    /**
+     * Years
+     */
+    var arcYears = filteredEntities.reduce(function (result, entity) {
+      
+      if (result.indexOf(entity.ano) === -1) {
+        result.push(entity.ano);
+      }
+      
+      return result;
+    }, [])
+    .map(function (year) {
+      return {
+        type: 'year',
+        year: year,
+      };
+    });
+    
+    app.ui.years.update(arcYears);
+    app.ui.entities.update(filteredEntities);
+  }
+  app.services.filter.on('change', uiApplyFilters);
+  
+  uiApplyFilters();
+  
 };

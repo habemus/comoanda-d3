@@ -4,7 +4,7 @@
 			"nome": "Cidadeapé - Associação pela Mobilidade a Pé em São Paulo",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -145,7 +145,7 @@
 			"nome": "WRI Brasil Cidades Sustentáveis",
 			"estado": "RS",
 			"cidade": "Porto Alegre (RS)",
-			"ano": "2005",
+			"ano": 2005,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -351,7 +351,7 @@
 			"nome": "Mobilize",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2011",
+			"ano": 2011,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -502,7 +502,7 @@
 			"nome": "Escola de Ativismo",
 			"estado": "",
 			"cidade": "",
-			"ano": "2011",
+			"ano": 2011,
 			"escala": [
 				{
 					"_id": "escala--nacional",
@@ -555,7 +555,7 @@
 			"nome": "Cidade Ativa",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -716,7 +716,7 @@
 			"nome": "Corrida Amiga",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--saude",
@@ -867,7 +867,7 @@
 			"nome": "JBMC Arquitetura & Urbanismo",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "1997",
+			"ano": 1997,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -1013,7 +1013,7 @@
 			"nome": "Zoom Urbanismo Arquitetura e Design",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -1164,7 +1164,7 @@
 			"nome": "GEPAF - EACH - USP",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2007",
+			"ano": 2007,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -1308,7 +1308,7 @@
 			"nome": "Núcleo de Pesquisas Epidemiológicas em Nutrição e Saúde, Faculdade de Saúde Pública, Universidade de São Paulo",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "1990",
+			"ano": 1990,
 			"area": [
 				{
 					"_id": "area--meio-ambiente",
@@ -1574,7 +1574,7 @@
 			"nome": "Caminha RIO",
 			"estado": "RJ",
 			"cidade": "Rio de Janeiro (RJ)",
-			"ano": "2016",
+			"ano": 2016,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -1675,7 +1675,7 @@
 			"nome": "Canal MOVA-SE",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -1786,7 +1786,7 @@
 			"nome": "Calçadas que andei",
 			"estado": "PE",
 			"cidade": "Recife (PE)",
-			"ano": "2015",
+			"ano": 2015,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -1905,7 +1905,7 @@
 			"nome": "Liberação das calçadas para o trânsito de pedestres",
 			"estado": "PB",
 			"cidade": "João Pessoa (PB)",
-			"ano": "2016",
+			"ano": 2016,
 			"area": [
 				{
 					"_id": "area--saude",
@@ -2024,7 +2024,7 @@
 			"nome": "É bom andar a pé",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -2128,7 +2128,7 @@
 			"nome": "Rua de Gente",
 			"estado": "BA",
 			"cidade": "Salvador (BA)",
-			"ano": "2012",
+			"ano": 2012,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -2319,7 +2319,7 @@
 			"nome": "MUDA práticas Ltda.",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -2455,7 +2455,7 @@
 			"nome": "Mapa Daqui",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -2552,7 +2552,7 @@
 			"nome": "Associação dos Ciclistas Urbanos de Belo Horizonte - BH em Ciclo",
 			"estado": "MG",
 			"cidade": "Belo Horizonte (MG)",
-			"ano": "2012",
+			"ano": 2012,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -2678,7 +2678,7 @@
 			"nome": "Prefeitura Municipal de |Teresina",
 			"estado": "PI",
 			"cidade": "Teresina (PI)",
-			"ano": "",
+			"ano": null,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -2707,7 +2707,7 @@
 			"nome": "SampaPé!",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2012",
+			"ano": 2012,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -2863,7 +2863,7 @@
 			"nome": "Secretaria de Estado de Mobilidade do Distrito Federal",
 			"estado": "DF",
 			"cidade": "Brasília (DF)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -3052,7 +3052,7 @@
 			"nome": "Caminhada Jane Jacobs Floripa",
 			"estado": "SC",
 			"cidade": "Florianópolis (SC)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -3166,7 +3166,7 @@
 			"nome": "Grupo de Trabalho Mobilidade Urbana da Rede Butantã",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -3327,7 +3327,7 @@
 			"nome": "Genos Consultoria Ambiental ",
 			"estado": "SP",
 			"cidade": "São Carlos (SP)",
-			"ano": "2012",
+			"ano": 2012,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -3558,7 +3558,7 @@
 			"nome": "Urb-i",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -3794,7 +3794,7 @@
 			"nome": "PASEOS A PIE",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -3894,7 +3894,7 @@
 			"nome": "A Pezito",
 			"estado": "RS",
 			"cidade": "Porto Alegre (RS)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--saude",
@@ -3995,7 +3995,7 @@
 			"nome": "Direitos Urbanos Fortaleza",
 			"estado": "CE",
 			"cidade": "Fortaleza (CE)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -4206,7 +4206,7 @@
 			"nome": "Bike Anjo",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -4362,7 +4362,7 @@
 			"nome": "SP Free Walking Tour",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2011",
+			"ano": 2011,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -4443,7 +4443,7 @@
 			"nome": "Vá de Bike",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2002",
+			"ano": 2002,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -4594,7 +4594,7 @@
 			"nome": "Bike Anjo - Niterói",
 			"estado": "RJ",
 			"cidade": "Niterói (RJ)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -4694,7 +4694,7 @@
 			"nome": "IVM - Instituto Cidade em Movimento",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2000",
+			"ano": 2000,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -4855,7 +4855,7 @@
 			"nome": "Coordenação de Mobilidade Urbana (CMOB / SETRAN)",
 			"estado": "PR",
 			"cidade": "Curitiba (PR)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -4996,7 +4996,7 @@
 			"nome": "MOB - Movimente e Ocupe seu Bairro ",
 			"estado": "DF",
 			"cidade": "Brasília (DF)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -5157,7 +5157,7 @@
 			"nome": "DESENHE SUA FAIXA",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -5263,7 +5263,7 @@
 			"nome": "Rede Vida no Trânsito - Florianópolis-SC",
 			"estado": "SC",
 			"cidade": "Florianópolis (SC)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--saude",
@@ -5379,7 +5379,7 @@
 			"nome": "MObfloripa",
 			"estado": "SC",
 			"cidade": "Florianópolis (SC)",
-			"ano": "2009",
+			"ano": 2009,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -5605,7 +5605,7 @@
 			"nome": "Vigliecca & Associados",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "1996",
+			"ano": 1996,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -5741,7 +5741,7 @@
 			"nome": "23 SUL ",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2006",
+			"ano": 2006,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -5907,7 +5907,7 @@
 			"nome": "goma oficina plataforma colaborativa",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2009",
+			"ano": 2009,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -6028,7 +6028,7 @@
 			"nome": "Comissão Técnica de Mobilidade a Pé e Acessibilidade da Associação Nacional de Transportes Públicos",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "1977",
+			"ano": 1977,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -6272,7 +6272,7 @@
 			"nome": "Pé de Igualdade",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -6543,7 +6543,7 @@
 			"nome": "Arquipélagos Urbanos",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -6664,7 +6664,7 @@
 			"nome": "Brasília para Pessoas e Jane's Walk Bsb",
 			"estado": "DF",
 			"cidade": "Brasília (DF)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--meio-ambiente",
@@ -6805,7 +6805,7 @@
 			"nome": "red OCARA",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -6991,7 +6991,7 @@
 			"nome": "Neourbix",
 			"estado": "PR",
 			"cidade": "Curitiba (PR)",
-			"ano": "2013",
+			"ano": 2013,
 			"remuneracao": [
 				{
 					"_id": "remuneracao--integral",
@@ -7123,7 +7123,7 @@
 			"nome": "Super-Ando",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -7242,7 +7242,7 @@
 			"nome": "Prefeitura Municipal de Governador Valadares",
 			"estado": "MG",
 			"cidade": "Governador Valadares (MG)",
-			"ano": "1938",
+			"ano": 1938,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -7346,7 +7346,7 @@
 			"nome": "EMDEC",
 			"estado": "SP",
 			"cidade": "Campinas (SP)",
-			"ano": "1972",
+			"ano": 1972,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -7507,7 +7507,7 @@
 			"nome": "Secretaria Municipal de Ordem Pública",
 			"estado": "MT",
 			"cidade": "Cuiabá (MT)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -7578,7 +7578,7 @@
 			"nome": "Bela Rua",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -7684,7 +7684,7 @@
 			"nome": "Fórum de Mobilidade Urbana da Região Metropolitana de Goiânia",
 			"estado": "GO",
 			"cidade": "Goiânia (GO)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -7778,7 +7778,7 @@
 			"nome": "Vila a 30",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -7889,7 +7889,7 @@
 			"nome": "Giro Inclusivo e Biomob",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -8040,7 +8040,7 @@
 			"nome": "Diverte Inverte",
 			"estado": "SC",
 			"cidade": "Joinville (SC)",
-			"ano": "2014",
+			"ano": 2014,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -8119,7 +8119,7 @@
 			"nome": "silviaenina.org",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2009",
+			"ano": 2009,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -8273,7 +8273,7 @@
 			"nome": "Caminhadas Urbanas",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -8316,7 +8316,7 @@
 			"nome": "Pedestre-se",
 			"estado": "ES",
 			"cidade": "Vitória (ES)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -8387,7 +8387,7 @@
 			"nome": "Sobreurbana",
 			"estado": "GO",
 			"cidade": "Goiânia (GO)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -8553,7 +8553,7 @@
 			"nome": "Caminhada das QUEBRADAS",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--educacao",
@@ -8674,7 +8674,7 @@
 			"nome": "Soluções para Cidades/ ABCP",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "1936",
+			"ano": 1936,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -8865,7 +8865,7 @@
 			"nome": "Milalá - A Liberdade de Ir e Vir",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -9016,7 +9016,7 @@
 			"nome": "PingPoint",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -9091,7 +9091,7 @@
 			"nome": "Parqueleta",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -9172,7 +9172,7 @@
 			"nome": "Desbravadores de Sampa",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2011",
+			"ano": 2011,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -9281,7 +9281,7 @@
 			"nome": "BHTRANS - Empresa de Transportes e Trânsito de belo Horizonte",
 			"estado": "MG",
 			"cidade": "Belo Horizonte (MG)",
-			"ano": "1991",
+			"ano": 1991,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -9437,7 +9437,7 @@
 			"nome": "Carona a Pé",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--educacao",
@@ -9553,7 +9553,7 @@
 			"nome": "Pedala Manaus",
 			"estado": "AM",
 			"cidade": "Manaus (AM)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -9699,7 +9699,7 @@
 			"nome": "Instituto de Políticas de Transporte e Desenvolvimento",
 			"estado": "RJ",
 			"cidade": "Rio de Janeiro (RJ)",
-			"ano": "2009",
+			"ano": 2009,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -9885,7 +9885,7 @@
 			"nome": "Calçada Livre",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -10009,7 +10009,7 @@
 			"nome": "The MIX Bazar",
 			"estado": "SP",
 			"cidade": "Campinas (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -10091,7 +10091,7 @@
 			"nome": "CalçadaSP",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -10220,7 +10220,7 @@
 			"nome": "Coletivo Rodas de Leitura",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--educacao",
@@ -10341,7 +10341,7 @@
 			"nome": "Jane's Walk",
 			"estado": "PE",
 			"cidade": "Recife (PE)",
-			"ano": "2006",
+			"ano": 2006,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -10472,7 +10472,7 @@
 			"nome": "TECTRAN - Grupo SYSTRA",
 			"estado": "MG",
 			"cidade": "Belo Horizonte (MG)",
-			"ano": "1990",
+			"ano": 1990,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -10673,7 +10673,7 @@
 			"nome": "Minha Garopaba - Rede Nossas Cidades",
 			"estado": "SC",
 			"cidade": "Garopaba (SC)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--direito",
@@ -10830,7 +10830,7 @@
 			"nome": "SECRETARIA MUNICIPAL DE TRÂNSITO, TRANSPORTES E MOBILIDADE - SMT",
 			"estado": "GO",
 			"cidade": "Goiânia (GO)",
-			"ano": "1988",
+			"ano": 1988,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -10999,7 +10999,7 @@
 			"nome": "Câmara Temática de Mobilidade a Pé do CMTT",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -11135,7 +11135,7 @@
 			"nome": "Vaga Viva - Instituto Energia Humana",
 			"estado": "PR",
 			"cidade": "Curitiba (PR)",
-			"ano": "2011",
+			"ano": 2011,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -11261,7 +11261,7 @@
 			"nome": "Ameciclo - Associação Metropolitana de Ciclistas do Grande Recife",
 			"estado": "PE",
 			"cidade": "Recife (PE)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -11457,7 +11457,7 @@
 			"nome": "[un]tourism",
 			"estado": "SP",
 			"cidade": "",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -11593,7 +11593,7 @@
 			"nome": "Associação de Ciclistas do Alto Iguaçu",
 			"estado": "PR",
 			"cidade": "Curitiba (PR)",
-			"ano": "2011",
+			"ano": 2011,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -11804,7 +11804,7 @@
 			"nome": "Instituto do Movimento Nacional pelo Direito ao transporte Público de Qualidade para Todos",
 			"estado": "DF",
 			"cidade": "Brasília (DF)",
-			"ano": "2003",
+			"ano": 2003,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -11975,7 +11975,7 @@
 			"nome": "Secretaria de Municipal de Mobilidade de Salvador",
 			"estado": "BA",
 			"cidade": "Salvador (BA)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -12087,7 +12087,7 @@
 			"nome": "Instituto A Cidade Precisa de Você",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -12288,7 +12288,7 @@
 			"nome": "apē estudos em mobilidade",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2012",
+			"ano": 2012,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -12469,7 +12469,7 @@
 			"nome": "Fatec Ipiranga",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2016",
+			"ano": 2016,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -12536,7 +12536,7 @@
 			"nome": "Coletivo Não Só o Gato",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2012",
+			"ano": 2012,
 			"escala": [
 				{
 					"_id": "escala--metropole",
@@ -12593,7 +12593,7 @@
 			"nome": "Instituto Mobilidade Verde",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2007",
+			"ano": 2007,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -12794,7 +12794,7 @@
 			"nome": "Basurama Brasil",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2001",
+			"ano": 2001,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -12950,7 +12950,7 @@
 			"nome": "Ciclomobilidade (Associação de Ciclistas Urbanos de Maceió)",
 			"estado": "AL",
 			"cidade": "Maceió (AL)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -13061,7 +13061,7 @@
 			"nome": "CIDADE AMBIENTE PROJETOS RESPONSÁVEIS LTDA",
 			"estado": "MS",
 			"cidade": "Campo Grande (MS)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -13197,7 +13197,7 @@
 			"nome": "Projeto A Pé",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2011",
+			"ano": 2011,
 			"escala": [
 				{
 					"_id": "escala--internacional",
@@ -13264,7 +13264,7 @@
 			"nome": "places for us",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -13414,7 +13414,7 @@
 			"nome": "Prefeitura Municipal São José dos Campos - ST - Scretaria de Transportes -Programa Calçada Segura",
 			"estado": "SP",
 			"cidade": "São José dos Campos (SP)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -13565,7 +13565,7 @@
 			"nome": "Via trolebus ",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2003",
+			"ano": 2003,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -13674,7 +13674,7 @@
 			"nome": "cidades sem fronteiras",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -13813,7 +13813,7 @@
 			"nome": "Outra Cidade",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -13979,7 +13979,7 @@
 			"nome": "Colab.re",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2013",
+			"ano": 2013,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -14095,7 +14095,7 @@
 			"nome": "COMISSÃO ESPECÍFICA PERMANENTE DE CALÇADAS - CEPC",
 			"estado": "RO",
 			"cidade": "Porto Velho (RO)",
-			"ano": "2011",
+			"ano": 2011,
 			"area": [
 				{
 					"_id": "area--politica-publica",
@@ -14184,7 +14184,7 @@
 			"nome": "Centro de Criação de Imagem Popular",
 			"estado": "RJ",
 			"cidade": "Rio de Janeiro (RJ)",
-			"ano": "1986",
+			"ano": 1986,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -14385,7 +14385,7 @@
 			"nome": "Blog Passeios Baratos em SP",
 			"estado": "SP",
 			"cidade": "",
-			"ano": "2015",
+			"ano": 2015,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -14509,7 +14509,7 @@
 			"nome": "Micrópolis",
 			"estado": "MG",
 			"cidade": "Belo Horizonte (MG)",
-			"ano": "2010",
+			"ano": 2010,
 			"area": [
 				{
 					"_id": "area--arquitetura",
@@ -14655,7 +14655,7 @@
 			"nome": "Scipopulis",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "2014",
+			"ano": 2014,
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -14774,7 +14774,7 @@
 			"nome": "Freewalk POA",
 			"estado": "RS",
 			"cidade": "Porto Alegre (RS)",
-			"ano": "2012",
+			"ano": 2012,
 			"area": [
 				{
 					"_id": "area--educacao",
@@ -14878,7 +14878,7 @@
 			"nome": "Greenpeace",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
-			"ano": "1971",
+			"ano": 1971,
 			"area": [
 				{
 					"_id": "area--comunicacao",
@@ -15533,6 +15533,24 @@
 				}
 			],
 			"_type": "question"
+		}
+	],
+	"simpleQuestions": [
+		{
+			"_id": "nome",
+			"_value": "Qual o nome da organização da qual faz parte?"
+		},
+		{
+			"_id": "estado",
+			"_value": "Estado:"
+		},
+		{
+			"_id": "cidade",
+			"_value": "Cidade:"
+		},
+		{
+			"_id": "ano",
+			"_value": "Quando sua organização surgiu?"
 		}
 	]
 }

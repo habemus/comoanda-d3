@@ -1,7 +1,7 @@
 const d3 = require('d3');
 
 const computeYearsLayout = require('./layout'); 
-const entities = require('../../data/entities');
+const entities = require('../../data/data.json').entities;
 
 module.exports = function (app, options) {
   
@@ -40,7 +40,31 @@ module.exports = function (app, options) {
     // bind data to DOM elements
     var yearArcs = arcContainer
       .selectAll('g.year-arc')
-      .data(layout);
+      .data(layout, function genYearId(d) {
+        return 'year-' + d.data.year;
+      });
+    
+    ///////////
+    // UPDATE
+    yearArcs
+      .select('path')
+      .attr('d', drawYearArc);
+    
+    yearArcs
+      .select('text')
+      .style('font-size', 14)
+      .style('text-anchor', function(d) {
+        var midAngle = (d.startAngle + d.endAngle) / 2;
+        return midAngle > Math.PI ? 'end' : null;
+      })
+      .attr('transform', function(d) {
+        
+        var midAngle = (d.startAngle + d.endAngle) / 2;
+        
+        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
+            + 'translate(' + (options.innerRadius + 26) + ')'
+            + (midAngle > Math.PI ? 'rotate(180)' : '');
+      });
     
     //////////
     // ENTER
@@ -98,6 +122,12 @@ module.exports = function (app, options) {
             + 'translate(' + (options.innerRadius + 26) + ')'
             + (midAngle > Math.PI ? 'rotate(180)' : '');
       });
+    
+    ///////////
+    // EXIT
+    var yearExit = yearArcs.exit();
+    
+    yearExit.remove();
   };
   
   return {

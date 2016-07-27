@@ -54,7 +54,7 @@ module.exports = function (app, options) {
         .selectAll('path')
         .attr('fill', function (d) {
           var stateCode = getStateCode(d.properties.name);
-          var active = mapFilter.get('states').indexOf(stateCode) !== -1;
+          var active = mapFilter.get('estado').indexOf(stateCode) !== -1;
           
           return active ? 'red' : 'transparent';
         });
@@ -65,7 +65,7 @@ module.exports = function (app, options) {
       .attr('d', geoPath)
       .attr('fill', function (d) {
         var stateCode = getStateCode(d.properties.name);
-        var active = mapFilter.get('states').indexOf(stateCode) !== -1;
+        var active = mapFilter.get('estado').indexOf(stateCode) !== -1;
         
         return active ? 'red' : 'transparent';
       })
@@ -74,12 +74,12 @@ module.exports = function (app, options) {
         var stateCode = getStateCode(d.properties.name);
           
         // toggle the selected status of the filter
-        var active = mapFilter.get('states').indexOf(stateCode) !== -1;
+        var active = mapFilter.get('estado').indexOf(stateCode) !== -1;
         
         if (active) {
-          mapFilter.arrayRemove('states', stateCode);
+          mapFilter.arrayRemove('estado', stateCode);
         } else {
-          mapFilter.arrayPush('states', stateCode);
+          mapFilter.arrayPush('estado', stateCode);
         }
       })
   });

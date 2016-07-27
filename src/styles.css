@@ -4,6 +4,31 @@ body {
 }
 
 /**
+ * Year brush styles
+ */
+#year-brush .overlay {
+  fill: red;
+}
+
+#year-brush .selection {
+  fill: green;
+}
+
+#year-brush .handle {
+  fill: skyblue;
+}
+
+#year-brush .handle--e {
+  stroke: magenta;
+  stroke-width: 2px;
+}
+
+#year-brush .handle--w {
+  stroke: navy;
+  stroke-width: 2px;
+}
+
+/**
  * Entity arc styles
  */
 .state-arc path {
@@ -28,7 +53,7 @@ body {
  * Year arc styles
  */
 .year-arc text {
-  opacity: 0;
+  /* opacity: 0; */
   alignment-baseline: middle;
 }
 .year-arc path {
