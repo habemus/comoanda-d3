@@ -3,6 +3,8 @@ const d3 = require('d3');
 const computeYearsLayout = require('./layout'); 
 const entities = require('../../data/data.json').entities;
 
+const aux = require('../auxiliary');
+
 module.exports = function (app, options) {
   
   var twoPI = (2 * Math.PI);
@@ -18,6 +20,18 @@ module.exports = function (app, options) {
   var drawYearArc = d3.arc()
     .innerRadius(options.innerRadius)
     .outerRadius(options.outerRadius);
+  
+  var yearTextFontSize = aux.arcTextFontSize({
+    max: 10,
+    min: 0,
+    radius: options.outerRadius,
+  });
+  
+  var yearTextAnchor = aux.arcTextAnchor({});
+  
+  var yearTextTransform = aux.arcTextTransform({
+    radius: options.innerRadius + 26,
+  });
   
   /**
    * Draw a group element that wraps all year-arcs
@@ -52,27 +66,9 @@ module.exports = function (app, options) {
     
     yearArcs
       .select('text')
-      .style('font-size', function (d) {
-        var angleSpan = d.endAngle - d.startAngle;
-        var circumference = twoPI * options.outerRadius;
-        
-        var size = (angleSpan / twoPI) * circumference * 1.2;
-        size = size > 14 ? 14 : size;
-        
-        return size + 'px';
-      })
-      .style('text-anchor', function(d) {
-        var midAngle = (d.startAngle + d.endAngle) / 2;
-        return midAngle > Math.PI ? 'end' : null;
-      })
-      .attr('transform', function(d) {
-        
-        var midAngle = (d.startAngle + d.endAngle) / 2;
-        
-        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
-            + 'translate(' + (options.innerRadius + 26) + ')'
-            + (midAngle > Math.PI ? 'rotate(180)' : '');
-      });
+      .style('font-size', yearTextFontSize)
+      .style('text-anchor', yearTextAnchor)
+      .attr('transform', yearTextTransform);
     
     //////////
     // ENTER
@@ -83,30 +79,6 @@ module.exports = function (app, options) {
       .attr('id', function (d) {
         return 'year-' + d.data.year;
       });
-      // .on('mouseenter', function (d) {
-      //   var yearEntities = entities.filter(function (entity) {
-      //     return parseInt(entity.ano, 10) === d.data.year;
-      //   });
-        
-      //   var links = yearEntities.map(function (entity) {
-      //     return {
-      //       from: {
-      //         type: 'year',
-      //         year: d.data.year
-      //       },
-      //       to: Object.assign({ type: 'entity' }, entity),
-      //     };
-      //   });
-        
-      //   app.ui.links.update(links);
-        
-      //   d3.select(this).classed('active', true)
-      // })
-      // .on('mouseout', function (d) {
-      //   app.ui.links.update([]);
-        
-      //   d3.select(this).classed('active', false);
-      // });
       
     yearEnter
       .append('path')
@@ -117,27 +89,9 @@ module.exports = function (app, options) {
       .text(function (d) {
         return d.data.year;
       })
-      .style('font-size', function (d) {
-        var angleSpan = d.endAngle - d.startAngle;
-        var circumference = twoPI * options.outerRadius;
-        
-        var size = (angleSpan / twoPI) * circumference * 1.2;
-        size = size > 14 ? 14 : size;
-        
-        return size + 'px';
-      })
-      .style('text-anchor', function(d) {
-        var midAngle = (d.startAngle + d.endAngle) / 2;
-        return midAngle > Math.PI ? 'end' : null;
-      })
-      .attr('transform', function(d) {
-        
-        var midAngle = (d.startAngle + d.endAngle) / 2;
-        
-        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
-            + 'translate(' + (options.innerRadius + 26) + ')'
-            + (midAngle > Math.PI ? 'rotate(180)' : '');
-      });
+      .style('font-size', yearTextFontSize)
+      .style('text-anchor', yearTextAnchor)
+      .attr('transform', yearTextTransform);
     
     ///////////
     // EXIT

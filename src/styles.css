@@ -36,8 +36,15 @@ body {
 }
 .state-arc text {
   alignment-baseline: middle;
+  user-select: none;
+}
+.state-arc text:hover {
+  cursor: pointer;
 }
 
+.entity-arc:hover {
+  cursor: pointer;
+}
 .entity-arc text {
   opacity: 0;
   alignment-baseline: middle;

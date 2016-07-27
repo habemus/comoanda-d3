@@ -3,6 +3,8 @@ const DataObj = require('data-obj');
 
 const computeQuestionsLayout = require('./layout');
 
+const aux = require('../auxiliary');
+
 module.exports = function (app, options) {
   
   var twoPI = (2 * Math.PI);
@@ -16,6 +18,14 @@ module.exports = function (app, options) {
   var drawQuestionArc = d3.arc()
     .innerRadius(options.innerRadius)
     .outerRadius(options.outerRadius);
+  
+  var questionTextFontSize = aux.arcTextFontSize({
+    radius: options.outerRadius,
+    min: 0,
+    max: 14
+  });
+  
+  var questionTextAnchor = aux.arcTextAnchor({});
   
   /**
   * Draw the full question arc
@@ -131,21 +141,8 @@ module.exports = function (app, options) {
               + (midAngle > Math.PI ? 'rotate(180)' : '');
         }
       })
-      .style('text-anchor', function(d) {
-        return d.midAngle > Math.PI ? 'end' : null;
-      })
-      .style('font-size', function (d) {
-        
-        // console.log((d.endAngle - d.startAngle));
-        
-        var angleSpan = d.endAngle - d.startAngle;
-        var circumference = twoPI * options.outerRadius;
-        
-        var size = (angleSpan / twoPI) * circumference * 1.2;
-        size = size > 14 ? 14 : size;
-        
-        return size + 'px';
-      });
+      .style('text-anchor', questionTextAnchor)
+      .style('font-size', questionTextFontSize);
     
     // ENTER
     // define ENTER behavior
@@ -247,21 +244,8 @@ module.exports = function (app, options) {
         return d.label || d._value;
       })
       // .style('alignment-baseline', 'middle')
-      .style('text-anchor', function(d) {
-        return d.midAngle > Math.PI ? 'end' : null;
-      })
-      .style('font-size', function (d) {
-        
-        // console.log((d.endAngle - d.startAngle));
-        
-        var angleSpan = d.endAngle - d.startAngle;
-        var circumference = twoPI * options.outerRadius;
-        
-        var size = (angleSpan / twoPI) * circumference * 1.2;
-        size = size > 14 ? 14 : size;
-        
-        return size + 'px';
-      })
+      .style('text-anchor', questionTextAnchor)
+      .style('font-size', questionTextFontSize)
       .style('opacity', 0)
       .attr('transform', function(d) {
         return 'rotate(' + (d.midAngle * 180 / Math.PI - 90) + ')'

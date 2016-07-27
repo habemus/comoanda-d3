@@ -57,7 +57,7 @@ module.exports = function (app, options) {
    */
   var yearBrush = d3.brushX()
     .extent([[0, 0], [BRUSH_WIDTH, 10]])
-    .on('end', function (e) {
+    .on('brush', function (e) {
       var brushSelection = d3.brushSelection(this);
       
       if (!brushSelection) {

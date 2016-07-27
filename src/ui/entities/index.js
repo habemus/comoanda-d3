@@ -2,6 +2,8 @@ const d3 = require('d3');
 
 const computeEntitiesLayout = require('./layout');
 
+const aux = require('../auxiliary');
+
 module.exports = function (app, options) {
   
   // SETUP
@@ -17,6 +19,18 @@ module.exports = function (app, options) {
   var drawEntityArc = d3.arc()
     .innerRadius(options.innerRadius)
     .outerRadius(options.outerRadius);
+  
+  var entityTextFontSize = aux.arcTextFontSize({
+    min: 0,
+    max: 14,
+    radius: options.outerRadius,
+  });
+  
+  var entityTextAnchor = aux.arcTextAnchor({});
+  
+  var entityTextTransform = aux.arcTextTransform({
+    radius: options.outerRadius + 26,
+  });
   
   /**
    * Draw the full entities arc
@@ -95,18 +109,9 @@ module.exports = function (app, options) {
       .attr('d', drawEntityArc);
     entityArcs
       .select('text')
-      .style('text-anchor', function(d) {
-        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
-        return midAngle > Math.PI ? 'end' : null;
-      })
-      .attr('transform', function(d) {
-        
-        var midAngle = ((d.startAngle + d.endAngle) / 2) - d.padAngle;
-        
-        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
-            + 'translate(' + (options.innerRadius + 26) + ')'
-            + (midAngle > Math.PI ? 'rotate(180)' : '');
-      })
+      .style('text-anchor', entityTextAnchor)
+      .style('font-size', entityTextFontSize)
+      .attr('transform', entityTextTransform)
     
     //////////
     // ENTER
@@ -134,6 +139,47 @@ module.exports = function (app, options) {
         return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
             + 'translate(' + (options.innerRadius + 26) + ')'
             + (midAngle > Math.PI ? 'rotate(180)' : '');
+      })
+      .on('click', function (d) {
+        
+        var estado = d.data.key;
+        
+        var filteredEntities = app.services.entityDataStore.applyFilter({
+          estado: [estado],
+        });
+        
+        var current = app.services.entityLinkFilter.get('_id');
+        
+        if (!d.active) {
+          /**
+           * Flag indicating the state toggle status is active
+           */
+          d.active = true;
+          
+          filteredEntities.forEach(function (entity) {
+            var _id = entity._id;
+            
+            app.services.entityLinkFilter.arrayPushUnique('_id', _id);
+          })
+          
+          // app.services.entityLinkFilter.arrayPushUnique(
+          //   '_id',
+          //   filteredEntities.map(function (entity) {
+          //     return entity._id;
+          //   })
+          // );
+        } else {
+          
+          d.active = false;
+          
+          filteredEntities.forEach(function (entity) {
+            var _id = entity._id;
+            
+            app.services.entityLinkFilter.arrayRemove('_id', _id);
+          });
+          
+          // app.services.entityLinkFilter.set('_id', []);
+        }
       });
     
     var entityEnter = entityArcs
@@ -142,25 +188,6 @@ module.exports = function (app, options) {
       .attr('class', 'entity-arc')
       .attr('id', function (d) {
         return 'entity-' + d.data._id;
-      })
-      .on('click', function (d) {
-        
-        console.log('click')
-        
-        // toggle the selected status of the filter
-        var exists;
-        var arr = app.services.entityLinkFilter.get('_id');
-        if (!arr) {
-          exists = false;
-        } else {
-          exists = arr.indexOf(d.data._id) !== -1;
-        }
-        
-        if (exists) {
-          app.services.entityLinkFilter.arrayRemove('_id', d.data._id);
-        } else {
-          app.services.entityLinkFilter.arrayPush('_id', d.data._id);
-        }
       })
       // .on('mouseenter', function (d) {
         
@@ -204,25 +231,34 @@ module.exports = function (app, options) {
     entityEnter
       .append('path')
       .attr('d', drawEntityArc)
-      .attr('fill', 'transparent');
+      .attr('fill', 'transparent')
+      .on('click', function (d) {
+        // toggle the selected status of the filter
+        var exists;
+        var arr = app.services.entityLinkFilter.get('_id');
+        if (!arr) {
+          exists = false;
+        } else {
+          exists = arr.indexOf(d.data._id) !== -1;
+        }
+        
+        if (exists) {
+          app.services.entityLinkFilter.arrayRemove('_id', d.data._id);
+        } else {
+          app.services.entityLinkFilter.arrayPush('_id', d.data._id);
+        }
+      });
     entityEnter
       .append('text')
       .text(function (d) {
-        return d.data.label;
+        return d.data.nome;
       })
-      .style('font-size', 8)
-      .style('text-anchor', function(d) {
-        var midAngle = (d.startAngle + d.endAngle) / 2;
-        return midAngle > Math.PI ? 'end' : null;
+      .on('click', function (d) {
+        console.log('clicked entity text ', d.data.nome)
       })
-      .attr('transform', function(d) {
-        
-        var midAngle = (d.startAngle + d.endAngle) / 2;
-        
-        return 'rotate(' + (midAngle * 180 / Math.PI - 90) + ')'
-            + 'translate(' + (options.innerRadius + 40) + ')'
-            + (midAngle > Math.PI ? 'rotate(180)' : '');
-      });
+      .style('font-size', entityTextFontSize)
+      .style('text-anchor', entityTextAnchor)
+      .attr('transform', entityTextTransform);
     
     ////////////
     // EXIT
