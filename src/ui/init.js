@@ -2,6 +2,7 @@ const d3 = require('d3');
 
 // load question source data
 const data = require('../data/data.json');
+window._data = data;
 var questions = data.questions;
 var entities  = data.entities;
 
@@ -144,6 +145,8 @@ module.exports = function (app, options) {
   }
   app.services.questionLinkFilter.on('change', function () {
     app.ACTIVE_LINK_FILTER = 'link';
+    
+    console.log(app.services.questionLinkFilter.data);
     
     uiApplyQuestionLinkFilter();
   });

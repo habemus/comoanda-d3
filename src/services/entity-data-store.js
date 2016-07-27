@@ -24,7 +24,7 @@ function _questionType(filterName) {
   if (isSimple) {
     return 'simple';
   } else {
-    var isComplex = complexQuestionNames.indexOf(filterName);
+    var isComplex = complexQuestionNames.indexOf(filterName) !== -1;
     
     if (isComplex) {
       return 'complex';
@@ -41,6 +41,8 @@ function EntityDataStore(entitiesData) {
 EntityDataStore.prototype.applyFilter = function (filter) {
   
   var filterNames = Object.keys(filter);
+  
+  console.log(filterNames);
   
   var results = this.data.filter(function (item) {
     

@@ -85,8 +85,6 @@ module.exports = function (app, options) {
             isSelected = appliedFilter.indexOf(item._id) !== -1;
           }
           
-          console.log(isSelected);
-          
           item._isSelected = isSelected;
           
           break;

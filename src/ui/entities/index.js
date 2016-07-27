@@ -4,6 +4,8 @@ const computeEntitiesLayout = require('./layout');
 
 const aux = require('../auxiliary');
 
+const MAX_NOME_CHAR_COUNT = 30;
+
 module.exports = function (app, options) {
   
   // SETUP
@@ -29,7 +31,7 @@ module.exports = function (app, options) {
   var entityTextAnchor = aux.arcTextAnchor({});
   
   var entityTextTransform = aux.arcTextTransform({
-    radius: options.outerRadius + 26,
+    radius: options.outerRadius + 23,
   });
   
   /**
@@ -213,7 +215,14 @@ module.exports = function (app, options) {
     entityEnter
       .append('text')
       .text(function (d) {
-        return d.data.nome;
+        
+        var nome = d.data.nome;
+        
+        if (nome.length > MAX_NOME_CHAR_COUNT) {
+          nome = nome.substr(0, MAX_NOME_CHAR_COUNT - 1 - 3) + '...';
+        }
+        
+        return nome;
       })
       .on('click', function (d) {
         console.log('clicked entity text ', d.data.nome)

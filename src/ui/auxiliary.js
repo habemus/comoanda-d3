@@ -51,8 +51,6 @@ exports.arcTextTransform = function (options) {
 exports.renderBindings = function (wrapperElement, data) {
   var boundElements = wrapperElement.querySelectorAll('[data-bind]');
   
-  console.log(boundElements);
-  
   Array.prototype.forEach.call(boundElements, function (el) {
     var key = el.getAttribute('data-bind');
     

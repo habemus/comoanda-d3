@@ -499,59 +499,6 @@
 			"_type": "entity"
 		},
 		{
-			"nome": "Escola de Ativismo",
-			"estado": "",
-			"cidade": "",
-			"ano": 2011,
-			"escala": [
-				{
-					"_id": "escala--nacional",
-					"_value": "Nacional",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
-			"financiamento": [
-				{
-					"_id": "financiamento--doacao-direta-filantropia",
-					"_value": "Doação direta (Investimento social/filantrópico)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				}
-			],
-			"fonte-de-informação": [
-				{
-					"_id": "fonte-de-informação--dados-municipais-abertos",
-					"_value": "Dados municipais abertos",
-					"_type": "question-option"
-				},
-				{
-					"_id": "fonte-de-informação--jornais-revistas-blogs",
-					"_value": "Jornais, Revistas, Sites, Blogs",
-					"_type": "question-option"
-				},
-				{
-					"_id": "fonte-de-informação--legislacao",
-					"_value": "Legislação",
-					"_type": "question-option"
-				}
-			],
-			"_id": "Escola-de-Ativismo",
-			"_type": "entity"
-		},
-		{
 			"nome": "Cidade Ativa",
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
@@ -1301,6 +1248,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "GEPAF-EACH-USP",
 			"_type": "entity"
 		},
@@ -1898,6 +1846,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "Calcadas-que-andei",
 			"_type": "entity"
 		},
@@ -2017,6 +1966,7 @@
 					"_type": "question-option"
 				}
 			],
+			"dificuldades": [],
 			"_id": "Liberacao-das-calcadas-para-o-transito-de-pedestres",
 			"_type": "entity"
 		},
@@ -2121,6 +2071,7 @@
 					"_type": "question-option"
 				}
 			],
+			"aspectos-da-mobilidade": [],
 			"_id": "E-bom-andar-a-pe",
 			"_type": "entity"
 		},
@@ -2545,6 +2496,8 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"remuneracao": [],
 			"_id": "Mapa-Daqui",
 			"_type": "entity"
 		},
@@ -2672,35 +2625,6 @@
 				}
 			],
 			"_id": "Associacao-dos-Ciclistas-Urbanos-de-Belo-Horizonte-BH-em-Ciclo",
-			"_type": "entity"
-		},
-		{
-			"nome": "Prefeitura Municipal de |Teresina",
-			"estado": "PI",
-			"cidade": "Teresina (PI)",
-			"ano": null,
-			"area": [
-				{
-					"_id": "area--arquitetura",
-					"_value": "Arquitetura e urbanismo",
-					"_type": "question-option"
-				}
-			],
-			"escala": [
-				{
-					"_id": "escala--cidade",
-					"_value": "Cidade",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
-			"_id": "Prefeitura-Municipal-de-orTeresina",
 			"_type": "entity"
 		},
 		{
@@ -3045,6 +2969,7 @@
 					"_type": "question-option"
 				}
 			],
+			"financiamento": [],
 			"_id": "Secretaria-de-Estado-de-Mobilidade-do-Distrito-Federal",
 			"_type": "entity"
 		},
@@ -3159,6 +3084,7 @@
 					"_type": "question-option"
 				}
 			],
+			"dificuldades": [],
 			"_id": "Caminhada-Jane-Jacobs-Floripa",
 			"_type": "entity"
 		},
@@ -3887,6 +3813,9 @@
 					"_type": "question-option"
 				}
 			],
+			"abordagem": [],
+			"area": [],
+			"aspectos-da-mobilidade": [],
 			"_id": "PASEOS-A-PIE",
 			"_type": "entity"
 		},
@@ -4436,6 +4365,11 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"financiamento": [],
+			"remuneracao": [],
+			"aspectos-da-mobilidade": [],
+			"dificuldades": [],
 			"_id": "SP-Free-Walking-Tour",
 			"_type": "entity"
 		},
@@ -4687,6 +4621,9 @@
 					"_type": "question-option"
 				}
 			],
+			"financiamento": [],
+			"dificuldades": [],
+			"fonte-de-informação": [],
 			"_id": "Bike-Anjo-Niteroi",
 			"_type": "entity"
 		},
@@ -6265,6 +6202,7 @@
 					"_type": "question-option"
 				}
 			],
+			"aspectos-da-mobilidade": [],
 			"_id": "Comissao-Tecnica-de-Mobilidade-a-Pe-e-Acessibilidade-da-Associacao-Nacional-de-Transportes-Publicos",
 			"_type": "entity"
 		},
@@ -7116,6 +7054,8 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"escala": [],
 			"_id": "Neourbix",
 			"_type": "entity"
 		},
@@ -7235,6 +7175,7 @@
 					"_type": "question-option"
 				}
 			],
+			"aspectos-da-mobilidade": [],
 			"_id": "Super-Ando",
 			"_type": "entity"
 		},
@@ -7339,6 +7280,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "Prefeitura-Municipal-de-Governador-Valadares",
 			"_type": "entity"
 		},
@@ -7771,6 +7713,7 @@
 					"_type": "question-option"
 				}
 			],
+			"remuneracao": [],
 			"_id": "Forum-de-Mobilidade-Urbana-da-Regiao-Metropolitana-de-Goiania",
 			"_type": "entity"
 		},
@@ -8112,6 +8055,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "Diverte-Inverte",
 			"_type": "entity"
 		},
@@ -8266,6 +8210,7 @@
 					"_type": "question-option"
 				}
 			],
+			"dificuldades": [],
 			"_id": "silviaeninaorg",
 			"_type": "entity"
 		},
@@ -8309,6 +8254,10 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"remuneracao": [],
+			"aspectos-da-mobilidade": [],
+			"dificuldades": [],
 			"_id": "Caminhadas-Urbanas",
 			"_type": "entity"
 		},
@@ -9084,6 +9033,9 @@
 					"_type": "question-option"
 				}
 			],
+			"remuneracao": [],
+			"dificuldades": [],
+			"fonte-de-informação": [],
 			"_id": "PingPoint",
 			"_type": "entity"
 		},
@@ -9274,6 +9226,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "Desbravadores-de-Sampa",
 			"_type": "entity"
 		},
@@ -10002,6 +9955,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "Calcada-Livre",
 			"_type": "entity"
 		},
@@ -10084,6 +10038,8 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"dificuldades": [],
 			"_id": "The-MIX-Bazar",
 			"_type": "entity"
 		},
@@ -10213,6 +10169,7 @@
 					"_type": "question-option"
 				}
 			],
+			"aspectos-da-mobilidade": [],
 			"_id": "CalcadaSP",
 			"_type": "entity"
 		},
@@ -10823,6 +10780,8 @@
 					"_type": "question-option"
 				}
 			],
+			"abordagem": [],
+			"financiamento": [],
 			"_id": "Minha-Garopaba-Rede-Nossas-Cidades",
 			"_type": "entity"
 		},
@@ -10992,6 +10951,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "SECRETARIA-MUNICIPAL-DE-TRANSITO-TRANSPORTES-E-MOBILIDADE-SMT",
 			"_type": "entity"
 		},
@@ -12080,6 +12040,8 @@
 					"_type": "question-option"
 				}
 			],
+			"abordagem": [],
+			"dificuldades": [],
 			"_id": "Secretaria-de-Municipal-de-Mobilidade-de-Salvador",
 			"_type": "entity"
 		},
@@ -12529,6 +12491,8 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"financiamento": [],
 			"_id": "Fatec-Ipiranga",
 			"_type": "entity"
 		},
@@ -12586,6 +12550,8 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"aspectos-da-mobilidade": [],
 			"_id": "Coletivo-Nao-So-o-Gato",
 			"_type": "entity"
 		},
@@ -13257,6 +13223,8 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"aspectos-da-mobilidade": [],
 			"_id": "Projeto-A-Pe",
 			"_type": "entity"
 		},
@@ -13407,6 +13375,9 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
+			"financiamento": [],
+			"dificuldades": [],
 			"_id": "places-for-us",
 			"_type": "entity"
 		},
@@ -13667,6 +13638,7 @@
 					"_type": "question-option"
 				}
 			],
+			"fonte-de-informação": [],
 			"_id": "Via-trolebus",
 			"_type": "entity"
 		},
@@ -13806,6 +13778,7 @@
 					"_type": "question-option"
 				}
 			],
+			"remuneracao": [],
 			"_id": "cidades-sem-fronteiras",
 			"_type": "entity"
 		},
@@ -14177,6 +14150,7 @@
 					"_type": "question-option"
 				}
 			],
+			"midia": [],
 			"_id": "COMISSAO-ESPECIFICA-PERMANENTE-DE-CALCADAS-CEPC",
 			"_type": "entity"
 		},
@@ -14502,6 +14476,7 @@
 					"_type": "question-option"
 				}
 			],
+			"aspectos-da-mobilidade": [],
 			"_id": "Blog-Passeios-Baratos-em-SP",
 			"_type": "entity"
 		},
@@ -14767,6 +14742,7 @@
 					"_type": "question-option"
 				}
 			],
+			"area": [],
 			"_id": "Scipopulis",
 			"_type": "entity"
 		},
@@ -14871,6 +14847,7 @@
 					"_type": "question-option"
 				}
 			],
+			"financiamento": [],
 			"_id": "Freewalk-POA",
 			"_type": "entity"
 		},
@@ -15101,6 +15078,11 @@
 					"_id": "abordagem--projetos",
 					"_value": "Projetos e Planos [projetos de arquitetura, desenho urbano, planos de mobilidade, diretores]",
 					"_type": "question-option"
+				},
+				{
+					"_id": "abordagem--other",
+					"_value": "Outros",
+					"_type": "question-option"
 				}
 			],
 			"_type": "question"
@@ -15148,6 +15130,11 @@
 				{
 					"_id": "area--saude",
 					"_value": "Saúde e qualidade de vida",
+					"_type": "question-option"
+				},
+				{
+					"_id": "area--other",
+					"_value": "Outros",
 					"_type": "question-option"
 				}
 			],
@@ -15264,6 +15251,11 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "financiamento--other",
+					"_value": "Outros",
 					"_type": "question-option"
 				}
 			],
