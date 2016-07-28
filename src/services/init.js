@@ -28,7 +28,7 @@ module.exports = function (app, options) {
   
   app.services.filter = new DataObj({
     estado: BRStateData.map(function (s) { return s.code; }),
-    ano: allYears,
+    ano: allYears || [],
   });
   
   /**
