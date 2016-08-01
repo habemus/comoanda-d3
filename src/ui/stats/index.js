@@ -19,7 +19,7 @@ module.exports = function (app, options) {
       var percentage = (filteredEntities.length / entities.length) * 100;
       
       var stats = {
-        percentage: percentage.toFixed(2),
+        percentage: percentage.toFixed(0),
         totalCount: entities.length,
         filteredCount: filteredEntities.length,
       };

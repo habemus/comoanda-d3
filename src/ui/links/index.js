@@ -239,8 +239,8 @@ module.exports = function (app, options) {
       .attr('d', drawLinkLine)
       .attr('fill', 'none')
       .attr('stroke', '#A9CE90')
-      .attr('stroke-width', 1)
-      .attr('opacity', 0.4);
+      .attr('stroke-width', 1);
+      // .attr('opacity', 0.4);
       
     //////
     // EXIT
@@ -269,6 +269,9 @@ module.exports = function (app, options) {
     
     computeLinks: function (entities, questionOptions) {
       
+      // console.log(entities);
+      // console.log(questionOptions);
+      
       // build links
       var links = entities.reduce(function (acc, entity) {
         
@@ -293,6 +296,14 @@ module.exports = function (app, options) {
           }
         }));
       }, []);
+      
+      // compute year links
+      entities.forEach(function (entity) {
+        links.push({
+          from: Object.assign({ type: 'entity' }, entity),
+          to: { type: 'year', year: entity.ano }
+        });
+      });
       
       return links;
     }

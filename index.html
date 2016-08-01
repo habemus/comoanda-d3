@@ -12,14 +12,17 @@
   <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
+  <script type="text/javascript">
+    
+  </script>
   <script src="dist/index.bundle.js"></script>
   
   <div id="stats">
     <h1><span data-bind="percentage"></span>%</h1>
-    <h2>
-      <span data-bind="filteredCount"></span> de <span data-bind="totalCount"></span> entidades
-    </h2>
-    <h3>atendem aos critérios selecionados</h3>
+    <h3>
+      <strong data-bind="filteredCount"></strong> das <strong data-bind="totalCount"></strong>
+    </h3>
+    <h3>organizações mapeadas<br>atendem a esses critérios de seleção</h3>
   </div>
   
   <dialog id="entity-details">

@@ -18,6 +18,7 @@ module.exports = function (app, options) {
   const WINDOW_Y_CENTER = window.innerHeight / 2;
 
   app.svg = d3.select('body').append('svg')
+    .attr('id', 'comoanda-viz')
     // .attr('width', GRAPH_HALF * 2)
     .attr('width', window.innerWidth)
     .attr('height', GRAPH_HALF * 2)
@@ -50,6 +51,7 @@ module.exports = function (app, options) {
    * Stats
    */
   app.ui.stats = require('./stats')(app, {});
+  app.ui.stats.update([]);
   
   /**
    * The year brush that controls the year range filter
@@ -131,6 +133,8 @@ module.exports = function (app, options) {
     var overallFilter = app.services.filter.data;
     var linkFilter    = app.services.questionLinkFilter.data;
     
+    console.log(linkFilter);
+    
     var filter = Object.assign({}, overallFilter, linkFilter);
     
     var entities = app.services.entityDataStore
@@ -138,6 +142,9 @@ module.exports = function (app, options) {
     
     // links betweeb entities and activeOptions
     var activeOptions = app.ui.questions.getActiveOptions();
+    
+    console.log('activeOptions', activeOptions);
+    
     var links = app.ui.persistentLinks.computeLinks(entities, activeOptions);
     
     app.ui.persistentLinks.update(links);
@@ -164,7 +171,6 @@ module.exports = function (app, options) {
     
     // links between entities and open options
     var openQuestions = app.ui.questions.getOpenQuestions();
-    console.log(openQuestions);
     var openOptions = openQuestions.reduce(function (result, question) {
       
       question.options.forEach(function (opt) {

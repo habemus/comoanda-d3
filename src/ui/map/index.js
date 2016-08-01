@@ -80,6 +80,7 @@ module.exports = function (app, options) {
     
     mapPaths.enter()
       .append('path')
+      .attr('class', 'active')
       .attr('d', geoPath)
       .attr('fill', function (d) {
         var stateCode = getStateCode(d.properties.name);
@@ -92,11 +93,16 @@ module.exports = function (app, options) {
         var stateCode = getStateCode(d.properties.name);
           
         // toggle the selected status of the filter
-        var active = mapFilter.get('estado').indexOf(stateCode) !== -1;
+        var isCurrentlyActive =
+          mapFilter.get('estado').indexOf(stateCode) !== -1;
         
-        if (active) {
+        if (isCurrentlyActive) {
+        
+          d3.select(this).classed('active', false);
           mapFilter.arrayRemove('estado', stateCode);
         } else {
+          
+          d3.select(this).classed('active', true);
           mapFilter.arrayPush('estado', stateCode);
         }
       });

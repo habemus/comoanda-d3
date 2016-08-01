@@ -211,14 +211,24 @@ module.exports = function (app, options) {
             return q._id === d._id;
           });
           
-          // set filter to empty array
-          app.services.questionLinkFilter.set(d._id, []);
-          
+          // IMPORTANT: first update layout
+          // and only after set the filter,
+          // so that options are found by link functions
           clickedQuestion.isOpen = true;
           uiUpdate(questionsSourceData);
           
-          // make links update their positions
-          app.ui.persistentLinks.updateLinkPositions();
+          setTimeout(function () {
+            // set filter to empty array
+            app.services.questionLinkFilter.set(
+              d._id,
+              clickedQuestion.options.map(function (opt) {
+                return opt._id;
+              })
+            );
+            
+            // make links update their positions
+            app.ui.persistentLinks.updateLinkPositions();
+          }, 0);
           
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
@@ -421,11 +431,16 @@ module.exports = function (app, options) {
       
       var questionActiveOptions = app.services.questionLinkFilter.get(questionId);
       
+      
+      
       return acc.concat(questionActiveOptions.map(function (optionId) {
         
         var option = uiQuestionLayout.find(function (item) {
           return item._id === optionId;
         });
+        
+        console.log('optionId', optionId);
+        console.log('opt', option);
         
         return Object.assign({
           question: {

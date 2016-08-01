@@ -21,7 +21,8 @@ module.exports = function (app, options) {
   /**
    * Brush width varies according to the centerX
    */
-  const BRUSH_WIDTH = options.centerX * 0.7;
+  const BRUSH_WIDTH  = options.centerX * 0.7;
+  const BRUSH_HEIGHT = 2;
   
   /**
    * Create a `g` node for the brush
@@ -56,7 +57,7 @@ module.exports = function (app, options) {
    * The d3.brush object
    */
   var yearBrush = d3.brushX()
-    .extent([[0, 0], [BRUSH_WIDTH, 10]])
+    .extent([[0, 0], [BRUSH_WIDTH, BRUSH_HEIGHT]])
     .on('brush', function (e) {
       var brushSelection = d3.brushSelection(this);
       
@@ -83,6 +84,14 @@ module.exports = function (app, options) {
    * Draw the brush using brushG as the element
    */
   brushG.call(yearBrush);
+  
+  /**
+   * Modify handle styels
+   */
+  // brushG.selectAll('.handle')
+  //   .each(function (d) )
+  //   .attr('height', 20)
+  //   .attr('width', 10);
   
   // make brush select initial value
   yearBrush.move(brushG, [

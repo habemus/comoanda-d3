@@ -3,7 +3,7 @@ body {
   background-color: #D9D9D9;
 }
 
-svg {
+#comoanda-viz {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -18,76 +18,96 @@ svg {
   left: 50px;
 }
 
+#stats h1 {
+  font-family: 'Terrorista Marighella', sans-serif;
+  color: #3c81bb;
+  font-size: 40px;
+  
+  margin: 0 0;
+}
+
+#stats h3 {
+  margin: 0 0;
+  font-weight: normal;
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+#stats h3 strong {
+  font-weight: bold;
+}
+
 /**
  * Year brush styles
  */
 #year-brush .overlay {
-  fill: red;
+  fill: #808080;
 }
 
 #year-brush .selection {
-  fill: green;
+  fill: #ED8744;
+  fill-opacity: 1;
+  stroke: none;
+  opacity: 1;
 }
 
 #year-brush .handle {
-  fill: skyblue;
+  fill: #f9f9f9;
+  stroke: #f9f9f9;
+  stroke-width: 5px;
 }
 
 #year-brush .handle--e {
-  stroke: magenta;
-  stroke-width: 2px;
 }
 
 #year-brush .handle--w {
-  stroke: navy;
-  stroke-width: 2px;
 }
 
 /**
  * Entity arc styles
  */
-.state-arc path {
+#comoanda-viz .state-arc path {
   fill: #8DBEE1;
 }
-.state-arc text {
+#comoanda-viz .state-arc text {
   alignment-baseline: middle;
   user-select: none;
 }
-.state-arc text:hover {
+#comoanda-viz .state-arc text:hover {
   cursor: pointer;
 }
 
-.entity-arc:hover {
+#comoanda-viz .entity-arc:hover {
   cursor: pointer;
 }
-.entity-arc text {
-  opacity: 0;
+#comoanda-viz .entity-arc text {
+  opacity: .5;
   alignment-baseline: middle;
 }
-.entity-arc.active text {
+#comoanda-viz .entity-arc.active text {
   opacity: 1;
 }
-.entity-arc.active path {
+#comoanda-viz .entity-arc.active path {
   fill: #417295;
 }
 
 /**
  * Year arc styles
  */
-.year-arc text {
+#comoanda-viz .year-arc text {
   /* opacity: 0; */
   alignment-baseline: middle;
 }
-.year-arc path {
+#comoanda-viz .year-arc path {
   fill: #C3C3C3;
 }
-.year-arc.show-label text {
+#comoanda-viz .year-arc.show-label text {
   opacity: 1;
 }
-/* .year-arc.active text {
+/* #comoanda-viz .year-arc.active text {
   opacity: 1;
 } */
-.year-arc.active path {
+#comoanda-viz .year-arc.active path {
   fill: #E57435;
 }
 
@@ -95,43 +115,62 @@ svg {
  * Question arc styles
  */
 /* question-arc is a class that is applied to all arcs in the questions */
-.question-arc {
+#comoanda-viz .question-arc {
   cursor: pointer;
 }
-.question-arc text {
+#comoanda-viz .question-arc text {
   alignment-baseline: middle;
 }
 
-.closed-question path {
+#comoanda-viz .closed-question path {
   fill: #C3C3C3;
 }
-.closed-question text {
+#comoanda-viz .closed-question text {
   fill: black;
 }
 
-.open-question path {
+#comoanda-viz .open-question path {
   fill: #C3C3C3;
 }
-.open-question text {
-  fill: #DF1E2D;
+#comoanda-viz .open-question text {
+  fill: #E9353A;
 }
 
-.question-option path {
-  fill: #F98F99;
+#comoanda-viz .question-option path {
+  fill: #FCA2A9;
 }
-.question-option text {
+#comoanda-viz .question-option text {
   fill: #A5A5A5;
 }
-.question-option.selected text {
+#comoanda-viz .question-option.selected text {
   fill: #0C0C0C;
 }
-.question-option:hover text,
-.question-option.active text {
+#comoanda-viz .question-option:hover text,
+#comoanda-viz .question-option.active text {
   fill: #0C0C0C;
 }
-.question-option:hover path {
-  fill: green;
+#comoanda-viz .question-option:hover path {
+  fill: #F76173;
 }
-.question-option.active path {
-  fill: #DF1E2D;
+#comoanda-viz .question-option.active path {
+  fill: #E9353A;
+}
+
+#map-container path {
+  opacity: 0.6;
+  fill: white;
+  
+  stroke: #e0e0e0;
+}
+
+#map-container path.active {
+  fill: #3c81bb;
+}
+
+
+/**
+ * Link lines
+ */
+#comoanda-viz .link-line path {
+  opacity: 0.2;
 }
