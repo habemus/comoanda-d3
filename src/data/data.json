@@ -19,39 +19,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -138,6 +109,33 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Cidadeape-Associacao-pela-Mobilidade-a-Pe-em-Sao-Paulo",
 			"_type": "entity"
 		},
@@ -195,13 +193,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -211,28 +202,6 @@
 				{
 					"_id": "financiamento--edital",
 					"_value": "Edital",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -344,6 +313,33 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				}
+			],
 			"_id": "WRI-Brasil-Cidades-Sustentaveis",
 			"_type": "entity"
 		},
@@ -366,39 +362,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--patrocinio",
 					"_value": "Patrocínio (investimento empresarial)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -495,6 +462,33 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Mobilize",
 			"_type": "entity"
 		},
@@ -522,13 +516,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -543,33 +530,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -656,6 +616,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Cidade-Ativa",
 			"_type": "entity"
 		},
@@ -688,13 +680,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -714,33 +699,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -807,6 +765,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Corrida-Amiga",
 			"_type": "entity"
 		},
@@ -839,39 +819,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -953,6 +904,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"_id": "JBMC-Arquitetura-and-Urbanismo",
 			"_type": "entity"
 		},
@@ -975,44 +933,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -1104,6 +1028,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Zoom-Urbanismo-Arquitetura-e-Design",
 			"_type": "entity"
 		},
@@ -1112,6 +1058,28 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2007,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -1129,13 +1097,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--bolsa-de-fomento",
@@ -1150,28 +1111,6 @@
 				{
 					"_id": "financiamento--edital",
 					"_value": "Edital",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -1311,23 +1250,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--bolsa-de-fomento",
@@ -1342,58 +1264,6 @@
 				{
 					"_id": "financiamento--edital",
 					"_value": "Edital",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -1515,6 +1385,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Nucleo-de-Pesquisas-Epidemiologicas-em-Nutricao-e-Saude-Faculdade-de-Saude-Publica-Universidade-de-Sao-Paulo",
 			"_type": "entity"
 		},
@@ -1542,29 +1444,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -1616,6 +1499,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Caminha-RIO",
 			"_type": "entity"
 		},
@@ -1638,10 +1528,25 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -1649,33 +1554,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -1735,6 +1613,23 @@
 			"estado": "PE",
 			"cidade": "Recife (PE)",
 			"ano": 2015,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -1742,24 +1637,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -1879,44 +1760,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -1946,6 +1793,18 @@
 				{
 					"_id": "abordagem--mobilizacao",
 					"_value": "Mobilização [ativismo, participação, engajamento e controle social]",
+					"_type": "question-option"
+				}
+			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				}
 			],
@@ -1994,10 +1853,15 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
 					"_type": "question-option"
 				}
 			],
@@ -2005,28 +1869,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -2119,13 +1961,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
@@ -2135,18 +1970,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -2263,6 +2086,7 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [],
 			"_id": "Rua-de-Gente",
 			"_type": "entity"
 		},
@@ -2290,18 +2114,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--edital",
@@ -2316,38 +2128,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -2399,6 +2179,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "MUDA-praticas-Ltda",
 			"_type": "entity"
 		},
@@ -2407,6 +2194,33 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2015,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -2428,18 +2242,6 @@
 				{
 					"_id": "financiamento--patrocinio",
 					"_value": "Patrocínio (investimento empresarial)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -2497,7 +2299,6 @@
 				}
 			],
 			"area": [],
-			"remuneracao": [],
 			"_id": "Mapa-Daqui",
 			"_type": "entity"
 		},
@@ -2513,22 +2314,52 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--cidade",
 					"_value": "Cidade",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
 					"_type": "question-option"
 				}
 			],
@@ -2541,18 +2372,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -2671,29 +2490,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -2706,6 +2506,53 @@
 				{
 					"_id": "aspectos-da-mobilidade--seguranca",
 					"_value": "Segurança [pessoal, viária e acidentalidade vertical]",
+					"_type": "question-option"
+				}
+			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -2812,57 +2659,20 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				}
 			],
@@ -2992,13 +2802,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
@@ -3008,23 +2811,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
 					"_type": "question-option"
 				}
 			],
@@ -3059,6 +2845,23 @@
 				{
 					"_id": "abordagem--mobilizacao",
 					"_value": "Mobilização [ativismo, participação, engajamento e controle social]",
+					"_type": "question-option"
+				}
+			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
 					"_type": "question-option"
 				}
 			],
@@ -3117,10 +2920,20 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
 					"_type": "question-option"
 				}
 			],
@@ -3133,18 +2946,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -3293,39 +3094,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -3477,6 +3249,7 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [],
 			"_id": "Genos-Consultoria-Ambiental",
 			"_type": "entity"
 		},
@@ -3524,54 +3297,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -3713,6 +3442,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Urb-i",
 			"_type": "entity"
 		},
@@ -3721,6 +3462,33 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2015,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -3728,49 +3496,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -3813,9 +3542,9 @@
 					"_type": "question-option"
 				}
 			],
+			"aspectos-da-mobilidade": [],
 			"abordagem": [],
 			"area": [],
-			"aspectos-da-mobilidade": [],
 			"_id": "PASEOS-A-PIE",
 			"_type": "entity"
 		},
@@ -3838,29 +3567,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -3917,6 +3627,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "A-Pezito",
 			"_type": "entity"
 		},
@@ -3964,44 +3681,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
 					"_value": "Doação direta (membros associados)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -4128,6 +3811,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Direitos-Urbanos-Fortaleza",
 			"_type": "entity"
 		},
@@ -4170,18 +3875,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--patrocinio",
@@ -4199,20 +3892,35 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -4292,6 +4000,23 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2011,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -4301,33 +4026,6 @@
 				{
 					"_id": "escala--internacional",
 					"_value": "Internacional",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -4365,11 +4063,10 @@
 					"_type": "question-option"
 				}
 			],
-			"area": [],
-			"financiamento": [],
-			"remuneracao": [],
 			"aspectos-da-mobilidade": [],
+			"area": [],
 			"dificuldades": [],
+			"financiamento": [],
 			"_id": "SP-Free-Walking-Tour",
 			"_type": "entity"
 		},
@@ -4392,18 +4089,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--patrocinio",
@@ -4421,30 +4106,35 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--site",
-					"_value": "Site",
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -4568,25 +4258,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				}
-			],
 			"aspectos-da-mobilidade": [
 				{
 					"_id": "aspectos-da-mobilidade--bicicleta",
@@ -4621,8 +4292,9 @@
 					"_type": "question-option"
 				}
 			],
-			"financiamento": [],
 			"dificuldades": [],
+			"financiamento": [],
+			"finalidade-das-parcerias": [],
 			"fonte-de-informação": [],
 			"_id": "Bike-Anjo-Niteroi",
 			"_type": "entity"
@@ -4646,49 +4318,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
 					"_value": "Doação direta (Investimento social/filantrópico)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -4785,6 +4418,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"_id": "IVM-Instituto-Cidade-em-Movimento",
 			"_type": "entity"
 		},
@@ -4827,34 +4477,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -4926,6 +4552,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Coordenacao-de-Mobilidade-Urbana-CMOB-SETRAN",
 			"_type": "entity"
 		},
@@ -4958,39 +4606,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -5087,6 +4706,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "MOB-Movimente-e-Ocupe-seu-Bairro",
 			"_type": "entity"
 		},
@@ -5109,10 +4745,15 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
 					"_type": "question-option"
 				}
 			],
@@ -5120,23 +4761,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -5215,13 +4839,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--patrocinio",
@@ -5231,23 +4848,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -5309,6 +4909,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Rede-Vida-no-Transito-Florianopolis-SC",
 			"_type": "entity"
 		},
@@ -5346,13 +4978,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--convenio",
@@ -5377,48 +5002,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -5535,6 +5118,48 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "MObfloripa",
 			"_type": "entity"
 		},
@@ -5562,49 +5187,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -5671,6 +5257,7 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [],
 			"_id": "Vigliecca-and-Associados",
 			"_type": "entity"
 		},
@@ -5718,34 +5305,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -5837,6 +5400,7 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [],
 			"_id": "23-SUL",
 			"_type": "entity"
 		},
@@ -5869,13 +5433,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
@@ -5885,23 +5442,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -5958,6 +5498,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"_id": "goma-oficina-plataforma-colaborativa",
 			"_type": "entity"
 		},
@@ -5977,23 +5524,6 @@
 				{
 					"_id": "escala--nacional",
 					"_value": "Nacional",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
 					"_type": "question-option"
 				}
 			],
@@ -6034,40 +5564,55 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--revista",
-					"_value": "Revista",
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--site",
-					"_value": "Site",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -6285,15 +5830,70 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -6311,33 +5911,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
 					"_type": "question-option"
 				}
 			],
@@ -6501,13 +6074,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -6527,23 +6093,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -6595,6 +6144,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Arquipelagos-Urbanos",
 			"_type": "entity"
 		},
@@ -6637,24 +6198,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
 					"_value": "Doação direta (membros associados)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -6736,6 +6283,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Brasilia-para-Pessoas-e-Janes-Walk-Bsb",
 			"_type": "entity"
 		},
@@ -6788,44 +6352,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -6922,6 +6452,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "red-OCARA",
 			"_type": "entity"
 		},
@@ -6930,39 +6482,10 @@
 			"estado": "PR",
 			"cidade": "Curitiba (PR)",
 			"ano": 2013,
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -7054,6 +6577,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"area": [],
 			"escala": [],
 			"_id": "Neourbix",
@@ -7093,13 +6623,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
@@ -7107,20 +6630,25 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -7191,29 +6719,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -7280,6 +6789,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"area": [],
 			"_id": "Prefeitura-Municipal-de-Governador-Valadares",
 			"_type": "entity"
@@ -7313,13 +6829,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--convenio",
@@ -7329,28 +6838,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -7442,6 +6929,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"_id": "EMDEC",
 			"_type": "entity"
 		},
@@ -7464,24 +6968,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
 					"_type": "question-option"
 				}
 			],
@@ -7513,6 +7003,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Secretaria-Municipal-de-Ordem-Publica",
 			"_type": "entity"
 		},
@@ -7535,39 +7032,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -7619,6 +7087,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Bela-Rua",
 			"_type": "entity"
 		},
@@ -7641,32 +7126,62 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"financiamento": [
 				{
 					"_id": "financiamento--edital",
 					"_value": "Edital",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
 					"_type": "question-option"
 				}
 			],
@@ -7713,7 +7228,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [],
 			"_id": "Forum-de-Mobilidade-Urbana-da-Regiao-Metropolitana-de-Goiania",
 			"_type": "entity"
 		},
@@ -7736,10 +7250,15 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
 					"_type": "question-option"
 				}
 			],
@@ -7747,13 +7266,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -7845,17 +7357,37 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--nacional",
 					"_value": "Nacional",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
 					"_type": "question-option"
 				}
 			],
@@ -7873,38 +7405,6 @@
 				{
 					"_id": "financiamento--patrocinio",
 					"_value": "Patrocínio (investimento empresarial)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -7984,6 +7484,23 @@
 			"estado": "SC",
 			"cidade": "Joinville (SC)",
 			"ano": 2014,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -7996,24 +7513,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -8086,6 +7589,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -8123,44 +7643,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -8226,17 +7712,37 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				}
+			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
 					"_type": "question-option"
 				}
 			],
@@ -8254,9 +7760,8 @@
 					"_type": "question-option"
 				}
 			],
-			"area": [],
-			"remuneracao": [],
 			"aspectos-da-mobilidade": [],
+			"area": [],
 			"dificuldades": [],
 			"_id": "Caminhadas-Urbanas",
 			"_type": "entity"
@@ -8280,24 +7785,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -8329,6 +7820,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Pedestre-se",
 			"_type": "entity"
 		},
@@ -8351,10 +7849,35 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -8382,48 +7905,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -8522,13 +8003,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--patrocinio",
@@ -8538,13 +8012,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -8616,6 +8083,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Caminhada-das-QUEBRADAS",
 			"_type": "entity"
 		},
@@ -8663,18 +8142,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
@@ -8682,35 +8149,35 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--revista",
-					"_value": "Revista",
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--site",
-					"_value": "Site",
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -8849,13 +8316,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
@@ -8863,20 +8323,30 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--site",
-					"_value": "Site",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -9007,18 +8477,6 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				}
-			],
 			"aspectos-da-mobilidade": [
 				{
 					"_id": "aspectos-da-mobilidade--infraestrutura",
@@ -9033,8 +8491,8 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [],
 			"dificuldades": [],
+			"finalidade-das-parcerias": [],
 			"fonte-de-informação": [],
 			"_id": "PingPoint",
 			"_type": "entity"
@@ -9058,10 +8516,20 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
 					"_type": "question-option"
 				}
 			],
@@ -9069,13 +8537,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -9125,6 +8586,23 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2011,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -9132,39 +8610,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
 					"_value": "Doação direta (membros associados)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -9249,49 +8698,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -9383,6 +8793,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "BHTRANS-Empresa-de-Transportes-e-Transito-de-belo-Horizonte",
 			"_type": "entity"
 		},
@@ -9410,34 +8852,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -9499,6 +8917,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Carona-a-Pe",
 			"_type": "entity"
 		},
@@ -9541,44 +8966,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -9645,6 +9036,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Pedala-Manaus",
 			"_type": "entity"
 		},
@@ -9682,13 +9095,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -9698,33 +9104,6 @@
 				{
 					"_id": "financiamento--edital",
 					"_value": "Edital",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -9809,6 +9188,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"fonte-de-informação": [
 				{
 					"_id": "fonte-de-informação--coleta-propria",
@@ -9839,6 +9250,18 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2013,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -9846,24 +9269,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -9964,27 +9373,37 @@
 			"estado": "SP",
 			"cidade": "Campinas (SP)",
 			"ano": 2013,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
 					"_value": "Bairro / comunidade",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
 					"_type": "question-option"
 				}
 			],
@@ -9997,18 +9416,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -10062,54 +9469,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -10169,6 +9532,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"aspectos-da-mobilidade": [],
 			"_id": "CalcadaSP",
 			"_type": "entity"
@@ -10197,13 +9582,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -10218,23 +9596,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -10291,6 +9652,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Coletivo-Rodas-de-Leitura",
 			"_type": "entity"
 		},
@@ -10318,44 +9686,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -10422,6 +9756,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Janes-Walk",
 			"_type": "entity"
 		},
@@ -10464,13 +9810,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--edital",
@@ -10485,28 +9824,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -10623,6 +9940,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				}
+			],
 			"_id": "TECTRAN-Grupo-SYSTRA",
 			"_type": "entity"
 		},
@@ -10665,22 +9994,40 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -10790,6 +10137,33 @@
 			"estado": "GO",
 			"cidade": "Goiânia (GO)",
 			"ano": 1988,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--cidade",
@@ -10797,64 +10171,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -10974,10 +10294,25 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -10985,13 +10320,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -11115,24 +10443,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -11214,6 +10528,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Vaga-Viva-Instituto-Energia-Humana",
 			"_type": "entity"
 		},
@@ -11246,13 +10577,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
@@ -11272,28 +10596,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -11410,6 +10712,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Ameciclo-Associacao-Metropolitana-de-Ciclistas-do-Grande-Recife",
 			"_type": "entity"
 		},
@@ -11440,6 +10774,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -11447,29 +10793,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -11588,13 +10915,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--edital",
@@ -11602,30 +10922,45 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--site",
-					"_value": "Site",
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -11799,49 +11134,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
 					"_value": "Doação direta (membros associados)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -11928,6 +11224,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Instituto-do-Movimento-Nacional-pelo-Direito-ao-transporte-Publico-de-Qualidade-para-Todos",
 			"_type": "entity"
 		},
@@ -11965,39 +11273,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -12042,6 +11321,7 @@
 			],
 			"abordagem": [],
 			"dificuldades": [],
+			"finalidade-das-parcerias": [],
 			"_id": "Secretaria-de-Municipal-de-Mobilidade-de-Salvador",
 			"_type": "entity"
 		},
@@ -12109,18 +11389,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -12150,18 +11418,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -12243,6 +11499,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Instituto-A-Cidade-Precisa-de-Voce",
 			"_type": "entity"
 		},
@@ -12285,10 +11553,35 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -12301,33 +11594,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -12432,24 +11698,27 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2016,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
 					"_value": "Bairro / comunidade",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -12501,6 +11770,23 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2012,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--metropole",
@@ -12508,24 +11794,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -12550,8 +11822,8 @@
 					"_type": "question-option"
 				}
 			],
-			"area": [],
 			"aspectos-da-mobilidade": [],
+			"area": [],
 			"_id": "Coletivo-Nao-So-o-Gato",
 			"_type": "entity"
 		},
@@ -12614,18 +11886,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-filantropia",
@@ -12635,18 +11895,6 @@
 				{
 					"_id": "financiamento--patrocinio",
 					"_value": "Patrocínio (investimento empresarial)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
 					"_type": "question-option"
 				}
 			],
@@ -12753,6 +12001,18 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Instituto-Mobilidade-Verde",
 			"_type": "entity"
 		},
@@ -12795,18 +12055,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
@@ -12821,33 +12069,6 @@
 				{
 					"_id": "financiamento--voluntario",
 					"_value": "Trabalho voluntário",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -12909,6 +12130,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Basurama-Brasil",
 			"_type": "entity"
 		},
@@ -12941,13 +12169,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--edital",
@@ -12957,18 +12178,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -13020,6 +12229,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Ciclomobilidade-Associacao-de-Ciclistas-Urbanos-de-Maceio",
 			"_type": "entity"
 		},
@@ -13052,13 +12268,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
@@ -13068,23 +12277,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -13156,6 +12348,7 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [],
 			"_id": "CIDADE-AMBIENTE-PROJETOS-RESPONSAVEIS-LTDA",
 			"_type": "entity"
 		},
@@ -13164,6 +12357,38 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2011,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--internacional",
@@ -13171,34 +12396,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -13223,8 +12424,8 @@
 					"_type": "question-option"
 				}
 			],
-			"area": [],
 			"aspectos-da-mobilidade": [],
+			"area": [],
 			"_id": "Projeto-A-Pe",
 			"_type": "entity"
 		},
@@ -13233,6 +12434,33 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2015,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -13262,45 +12490,6 @@
 				{
 					"_id": "escala--nacional",
 					"_value": "Nacional",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -13376,8 +12565,8 @@
 				}
 			],
 			"area": [],
-			"financiamento": [],
 			"dificuldades": [],
+			"financiamento": [],
 			"_id": "places-for-us",
 			"_type": "entity"
 		},
@@ -13410,34 +12599,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -13529,6 +12694,23 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Prefeitura-Municipal-Sao-Jose-dos-Campos-ST-Scretaria-de-Transportes-Programa-Calcada-Segura",
 			"_type": "entity"
 		},
@@ -13551,10 +12733,20 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -13562,38 +12754,6 @@
 				{
 					"_id": "financiamento--nenhuma",
 					"_value": "Nenhuma fonte de financiamento",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -13691,37 +12851,27 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"financiamento": [
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -13778,7 +12928,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [],
 			"_id": "cidades-sem-fronteiras",
 			"_type": "entity"
 		},
@@ -13811,15 +12960,30 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
 					"_type": "question-option"
 				}
 			],
@@ -13827,28 +12991,6 @@
 				{
 					"_id": "financiamento--patrocinio",
 					"_value": "Patrocínio (investimento empresarial)",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -13967,13 +13109,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--patrocinio",
@@ -13983,48 +13118,6 @@
 				{
 					"_id": "financiamento--venda-de-produtos",
 					"_value": "Venda de produtos",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -14061,6 +13154,13 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Colabre",
 			"_type": "entity"
 		},
@@ -14083,17 +13183,37 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--orcamento-publico",
 					"_value": "Orçamento Público",
+					"_type": "question-option"
+				}
+			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				}
 			],
@@ -14150,7 +13270,6 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [],
 			"_id": "COMISSAO-ESPECIFICA-PERMANENTE-DE-CALCADAS-CEPC",
 			"_type": "entity"
 		},
@@ -14198,69 +13317,10 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--edital",
 					"_value": "Edital",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
 					"_type": "question-option"
 				}
 			],
@@ -14352,6 +13412,38 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"_id": "Centro-de-Criacao-de-Imagem-Popular",
 			"_type": "entity"
 		},
@@ -14394,10 +13486,20 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
 					"_type": "question-option"
 				}
 			],
@@ -14405,38 +13507,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
 					"_type": "question-option"
 				}
 			],
@@ -14509,10 +13579,20 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
 					"_type": "question-option"
 				}
 			],
@@ -14530,23 +13610,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
 					"_type": "question-option"
 				}
 			],
@@ -14631,22 +13694,32 @@
 			"estado": "SP",
 			"cidade": "São Paulo (SP)",
 			"ano": 2014,
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--cidade",
 					"_value": "Cidade",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				},
-				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
 					"_type": "question-option"
 				}
 			],
@@ -14664,38 +13737,6 @@
 				{
 					"_id": "financiamento--prestacao-de-servico",
 					"_value": "Prestação de serviço",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
 					"_type": "question-option"
 				}
 			],
@@ -14758,6 +13799,28 @@
 					"_type": "question-option"
 				}
 			],
+			"finalidade-das-parcerias": [
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
+					"_type": "question-option"
+				},
+				{
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
+					"_type": "question-option"
+				}
+			],
 			"escala": [
 				{
 					"_id": "escala--bairro",
@@ -14767,20 +13830,6 @@
 				{
 					"_id": "escala--cidade",
 					"_value": "Cidade",
-					"_type": "question-option"
-				}
-			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
-			"midia": [
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
 					"_type": "question-option"
 				}
 			],
@@ -14905,13 +13954,6 @@
 					"_type": "question-option"
 				}
 			],
-			"remuneracao": [
-				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
-					"_type": "question-option"
-				}
-			],
 			"financiamento": [
 				{
 					"_id": "financiamento--doacao-direta-membros",
@@ -14924,45 +13966,30 @@
 					"_type": "question-option"
 				}
 			],
-			"midia": [
+			"finalidade-das-parcerias": [
 				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
 					"_type": "question-option"
 				},
 				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				}
 			],
@@ -15039,6 +14066,64 @@
 		}
 	],
 	"questions": [
+		{
+			"_id": "aspectos-da-mobilidade",
+			"label": "Aspectos da mobilidade",
+			"_value": "Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?",
+			"options": [
+				{
+					"_id": "aspectos-da-mobilidade--arquitetura-da-edificacao",
+					"_value": "Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--bicicleta",
+					"_value": "Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--economia",
+					"_value": "Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--infraestrutura",
+					"_value": "Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--meio-ambiente",
+					"_value": "Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--microacessibilidade",
+					"_value": "Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--planejamento-urbano",
+					"_value": "Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--saude-e-qualidade-de-vida",
+					"_value": "Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--seguranca",
+					"_value": "Segurança [pessoal, viária e acidentalidade vertical]",
+					"_type": "question-option"
+				},
+				{
+					"_id": "aspectos-da-mobilidade--tecnologia-e-inovacao",
+					"_value": "Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]",
+					"_type": "question-option"
+				}
+			],
+			"_type": "question"
+		},
 		{
 			"_id": "abordagem",
 			"label": "Abordagem",
@@ -15141,43 +14226,63 @@
 			"_type": "question"
 		},
 		{
-			"_id": "escala",
-			"label": "Escala de atuação",
-			"_value": "Para qual(is) escala(s) as ações da sua organização estão direcionadas?",
+			"_id": "dificuldades",
+			"label": "Principais dificuldades",
+			"_value": "Quais são as principais dificuldades que sua organização encontra para trabalhar com o tema da mobilidade a pé?",
 			"options": [
 				{
-					"_id": "escala--bairro",
-					"_value": "Bairro / comunidade",
+					"_id": "dificuldades--acesso-a-info",
+					"_value": "Acesso a informações",
 					"_type": "question-option"
 				},
 				{
-					"_id": "escala--cidade",
-					"_value": "Cidade",
+					"_id": "dificuldades--apoio-politico",
+					"_value": "Apoio político",
 					"_type": "question-option"
 				},
 				{
-					"_id": "escala--metropole",
-					"_value": "Regiões Metropolitanas (várias cidades)",
+					"_id": "dificuldades--financiamento",
+					"_value": "Ausência / escassez de recursos / financiamento",
 					"_type": "question-option"
 				},
 				{
-					"_id": "escala--estado",
-					"_value": "Estado",
+					"_id": "dificuldades--burocracia",
+					"_value": "Burocracia / meios legais de atuar",
 					"_type": "question-option"
 				},
 				{
-					"_id": "escala--regional",
-					"_value": "Vários Estados / Regional",
+					"_id": "dificuldades--capacitacao",
+					"_value": "Capacitação da equipe",
 					"_type": "question-option"
 				},
 				{
-					"_id": "escala--nacional",
-					"_value": "Nacional",
+					"_id": "dificuldades--escassez-de-parcerias",
+					"_value": "Escassez de parcerias",
 					"_type": "question-option"
 				},
 				{
-					"_id": "escala--internacional",
-					"_value": "Internacional",
+					"_id": "dificuldades--escassez-de-voluntarios",
+					"_value": "Escassez de voluntários",
+					"_type": "question-option"
+				},
+				{
+					"_id": "dificuldades--falta-de-colaboradores",
+					"_value": "Falta de colaboradores",
+					"_type": "question-option"
+				},
+				{
+					"_id": "dificuldades--falta-de-conhecimento",
+					"_value": "Falta de conhecimento / clareza sobre o tema",
+					"_type": "question-option"
+				},
+				{
+					"_id": "dificuldades--falta-de-planejamento-estrategico",
+					"_value": "Falta de planejamento estratégico",
+					"_type": "question-option"
+				},
+				{
+					"_id": "dificuldades--interesse-das-liderancas-da-org",
+					"_value": "Interesse das lideranças da organização",
 					"_type": "question-option"
 				}
 			],
@@ -15262,217 +14367,57 @@
 			"_type": "question"
 		},
 		{
-			"_id": "remuneracao",
-			"label": "Remuneração dos membros",
-			"_value": "Os membros da organização são:",
+			"_id": "finalidade-das-parcerias",
+			"_value": "Finalidade das parcerias",
 			"options": [
 				{
-					"_id": "remuneracao--integral",
-					"_value": "Remunerados integralmente",
+					"_id": "finalidade-das-parcerias--apoio-financeiro",
+					"_value": "Apoio financeiro",
 					"_type": "question-option"
 				},
 				{
-					"_id": "remuneracao--parcial",
-					"_value": "Remunerados parcialmente",
+					"_id": "finalidade-das-parcerias--apoio-institucional",
+					"_value": "Apoio institucional",
 					"_type": "question-option"
 				},
 				{
-					"_id": "remuneracao--nao-remunerados",
-					"_value": "Não remunerados",
-					"_type": "question-option"
-				}
-			],
-			"_type": "question"
-		},
-		{
-			"_id": "midia",
-			"label": "Ferramentas de comunicação",
-			"_value": "Quais são as ferramentas utilizadas regularmente por sua organização para fins de divulgação e comunicação?",
-			"options": [
-				{
-					"_id": "midia--assessoria-de-imprensa",
-					"_value": "Assessoria de Imprensa",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--congressos-e-seminarios",
-					"_value": "Congressos e Seminários",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--email",
-					"_value": "E-mail / mailing / newsletter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--facebook",
-					"_value": "Facebook",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--linkedin",
-					"_value": "LinkedIn",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--jornal",
-					"_value": "Jornal",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--publicacao-cientifica",
-					"_value": "Publicação científica",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--radio",
-					"_value": "Rádio",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--revista",
-					"_value": "Revista",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--site",
-					"_value": "Site",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--tv",
-					"_value": "TV",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--twitter",
-					"_value": "Twitter",
-					"_type": "question-option"
-				},
-				{
-					"_id": "midia--youtube",
-					"_value": "YouTube",
-					"_type": "question-option"
-				}
-			],
-			"_type": "question"
-		},
-		{
-			"_id": "aspectos-da-mobilidade",
-			"label": "Aspectos da mobilidade",
-			"_value": "Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?",
-			"options": [
-				{
-					"_id": "aspectos-da-mobilidade--arquitetura-da-edificacao",
-					"_value": "Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--bicicleta",
-					"_value": "Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--economia",
-					"_value": "Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--infraestrutura",
-					"_value": "Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--meio-ambiente",
-					"_value": "Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--microacessibilidade",
-					"_value": "Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--planejamento-urbano",
-					"_value": "Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--saude-e-qualidade-de-vida",
-					"_value": "Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--seguranca",
-					"_value": "Segurança [pessoal, viária e acidentalidade vertical]",
-					"_type": "question-option"
-				},
-				{
-					"_id": "aspectos-da-mobilidade--tecnologia-e-inovacao",
-					"_value": "Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]",
-					"_type": "question-option"
-				}
-			],
-			"_type": "question"
-		},
-		{
-			"_id": "dificuldades",
-			"label": "Principais dificuldades",
-			"_value": "Quais são as principais dificuldades que sua organização encontra para trabalhar com o tema da mobilidade a pé?",
-			"options": [
-				{
-					"_id": "dificuldades--acesso-a-info",
-					"_value": "Acesso a informações",
-					"_type": "question-option"
-				},
-				{
-					"_id": "dificuldades--apoio-politico",
+					"_id": "finalidade-das-parcerias--apoio-politico",
 					"_value": "Apoio político",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--financiamento",
-					"_value": "Ausência / escassez de recursos / financiamento",
+					"_id": "finalidade-das-parcerias--pesquisas",
+					"_value": "Parceria para pesquisas",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--burocracia",
-					"_value": "Burocracia / meios legais de atuar",
+					"_id": "finalidade-das-parcerias--acoes",
+					"_value": "Parceria para ações",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--capacitacao",
-					"_value": "Capacitação da equipe",
+					"_id": "finalidade-das-parcerias--aprendizagem-capacitacao",
+					"_value": "Parceria para aprendizagem, capacitação ou treinamento",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--escassez-de-parcerias",
-					"_value": "Escassez de parcerias",
+					"_id": "finalidade-das-parcerias--campanhas",
+					"_value": "Parceria para campanhas",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--escassez-de-voluntarios",
-					"_value": "Escassez de voluntários",
+					"_id": "finalidade-das-parcerias--mobilizacao",
+					"_value": "Parceria para mobilização e sensibilização",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--falta-de-colaboradores",
-					"_value": "Falta de colaboradores",
+					"_id": "finalidade-das-parcerias--nao-temos-parceria",
+					"_value": "Não possuímos ações em parceria",
 					"_type": "question-option"
 				},
 				{
-					"_id": "dificuldades--falta-de-conhecimento",
-					"_value": "Falta de conhecimento / clareza sobre o tema",
-					"_type": "question-option"
-				},
-				{
-					"_id": "dificuldades--falta-de-planejamento-estrategico",
-					"_value": "Falta de planejamento estratégico",
-					"_type": "question-option"
-				},
-				{
-					"_id": "dificuldades--interesse-das-liderancas-da-org",
-					"_value": "Interesse das lideranças da organização",
+					"_id": "finalidade-das-parcerias--outros",
+					"_value": "Other",
 					"_type": "question-option"
 				}
 			],
@@ -15521,6 +14466,49 @@
 				{
 					"_id": "fonte-de-informação--trab-academicos",
 					"_value": "Trabalhos acadêmicos",
+					"_type": "question-option"
+				}
+			],
+			"_type": "question"
+		},
+		{
+			"_id": "escala",
+			"label": "Escala de atuação",
+			"_value": "Para qual(is) escala(s) as ações da sua organização estão direcionadas?",
+			"options": [
+				{
+					"_id": "escala--bairro",
+					"_value": "Bairro / comunidade",
+					"_type": "question-option"
+				},
+				{
+					"_id": "escala--cidade",
+					"_value": "Cidade",
+					"_type": "question-option"
+				},
+				{
+					"_id": "escala--metropole",
+					"_value": "Regiões Metropolitanas (várias cidades)",
+					"_type": "question-option"
+				},
+				{
+					"_id": "escala--estado",
+					"_value": "Estado",
+					"_type": "question-option"
+				},
+				{
+					"_id": "escala--regional",
+					"_value": "Vários Estados / Regional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "escala--nacional",
+					"_value": "Nacional",
+					"_type": "question-option"
+				},
+				{
+					"_id": "escala--internacional",
+					"_value": "Internacional",
 					"_type": "question-option"
 				}
 			],
