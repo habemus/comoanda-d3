@@ -1,6 +1,8 @@
 body {
   font-family: 'News Cycle', sans-serif;
   background-color: #D9D9D9;
+  
+  margin: 0 0;
 }
 
 #comoanda-viz {
@@ -54,13 +56,17 @@ body {
 #year-brush .handle {
   fill: #f9f9f9;
   stroke: #f9f9f9;
-  stroke-width: 5px;
+  /* stroke-width: 5px; */
 }
 
 #year-brush .handle--e {
 }
 
 #year-brush .handle--w {
+}
+
+#year-brush .brush-label {
+  fill: black;
 }
 
 /**
@@ -166,11 +172,150 @@ body {
 #map-container path.active {
   fill: #3c81bb;
 }
-
-
 /**
  * Link lines
  */
 #comoanda-viz .link-line path {
   opacity: 0.2;
+}
+
+
+
+
+/**
+ * 
+ * INTRO STYLES
+ *
+ */
+#intro-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  
+  opacity: 1;
+  transition: opacity 1s ease;
+  background-color: #A2B5B6;
+  
+  z-index: 1;
+}
+
+#intro-overlay.fade-away {
+  opacity: 0;
+}
+
+#intro-container {
+  position: fixed;
+  height: 40vh;
+  width: 18vw;
+  
+  top: 50%;
+  left: 5vw;
+  
+  transform: translateY(-50%);
+  
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+  
+  z-index: 2;
+}
+
+#intro-container .intro-control {
+  position: absolute;
+  top: 50%;
+  
+  height: 20px;
+  
+  transition: opacity 1s;
+  
+  opacity: 0;
+}
+#intro-container .intro-control.active {
+  opacity: 1;
+  cursor: pointer;
+}
+#intro-container .intro-control.previous {
+  left: 0;
+  transform: translate(-100%, -50%) rotate(180deg);
+}
+#intro-container .intro-control.next {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+#intro-text-container {
+  
+  height: 100%;
+  width: 100%;
+  
+  /**
+   * Let only overflow-y hidden in order not to hide controls
+   */
+  overflow-y: hidden;
+}
+
+#intro-text-scroller {
+  transition: transform ease 2s;
+}
+
+#intro-text-scroller p {
+  padding: 20px 20px;
+  margin: 0 0;
+  transition: opacity ease 2s;
+  opacity: 0.3;
+}
+
+#intro-text-scroller p.current {
+  opacity: 1;
+}
+
+
+/**
+ * Foot animation
+ */
+#intro-image-container {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  
+  display: flex;
+  
+  transition: transform 1s ease, opacity 1.5s ease;
+  opacity: 1;
+  
+  transform: translate(-10%, -50%);
+}
+
+#intro-image-container.fade-away {
+  opacity: 0;
+  transform: translate(-50%, 100%) scaleX(0.1);
+}
+
+#intro-image-container > img {
+  position: relative;
+  display: block;
+  margin-right: -150px;
+  
+  transition: opacity .5s ease;
+  
+  opacity: 0;
+}
+
+#intro-image-container > img.active {
+  opacity: 1;
+}
+
+#intro-image-container > .floor {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 2px;
+  width: 300px;
+  background-color: black;
+  
+  transition: width 2s ease;
+}
+
+#intro-image-container > .floor.walkable {
+  width: 100%;
 }

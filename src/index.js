@@ -26,6 +26,11 @@ window.addEventListener('DOMContentLoaded', function () {
      * Initialize the ui
      */
     require('./ui/init')(app, options);
+    
+    /**
+     * Initialize intro
+     */
+    require('./ui/intro')(app, options);
   })
   
 });

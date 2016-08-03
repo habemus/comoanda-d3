@@ -18,11 +18,22 @@ module.exports = function (app, options) {
     throw new Error('outerRadius is required');
   }
   
+  if (!options.entities) {
+    throw new Error('entities is required');
+  }
+  
   /**
    * Brush width varies according to the centerX
    */
-  const BRUSH_WIDTH  = options.centerX * 0.7;
+  const BRUSH_WIDTH  = options.centerX * 0.2;
   const BRUSH_HEIGHT = 2;
+  
+  const brushExtent = d3.extent(options.entities, function (d) {
+    return parseInt(d['Quando sua organização surgiu?'], 10);
+  });
+  
+  const BRUSH_MINIMUM = brushExtent[0];
+  const BRUSH_MAXIMUM = brushExtent[1];
   
   /**
    * Create a `g` node for the brush
@@ -38,13 +49,51 @@ module.exports = function (app, options) {
       return 'translate(' + brushLeft + ',' + brushTop + ')';
     });
   
+  // LABELS
+  // absolute start label
+  brushG.append('text')
+    .attr('id', 'brush-minimum-label')
+    .attr('class', 'brush-label')
+    .attr('dx', -10)
+    .attr('dy', 5)
+    .attr('text-anchor', 'end')
+    .attr('font-size', 12)
+    .text(BRUSH_MINIMUM);
+  
+  // absolute end label
+  brushG.append('text')
+    .attr('id', 'brush-minimum-label')
+    .attr('class', 'brush-label')
+    .attr('dx', BRUSH_WIDTH + 10)
+    .attr('dy', 5)
+    .attr('text-anchor', 'start')
+    .attr('font-size', 12)
+    .text(BRUSH_MAXIMUM);
+  
+  // brush start label
+  var brushStartLabel = brushG.append('text')
+    .attr('id', 'brush-start-label')
+    .attr('class', 'brush-label')
+    .attr('dy', -10)
+    .attr('text-anchor', 'end')
+    .attr('font-size', 10);
+  
+  // brush end label
+  var brushEndLabel = brushG.append('text')
+    .attr('id', 'brush-end-label')
+    .attr('class', 'brush-label')
+    .attr('dy', -10)
+    .attr('text-anchor', 'start')
+    .attr('font-size', 10);
+  
+  
   /**
    * All years that are selectable.
    * They are the initial value of the filter.
    */
   var years = d3.range(
-    app.services.filter.data.yearRange[0],
-    app.services.filter.data.yearRange[1] + 1
+    BRUSH_MINIMUM,
+    BRUSH_MAXIMUM + 1
   );
   
   /**
@@ -59,6 +108,7 @@ module.exports = function (app, options) {
    */
   var yearBrush = d3.brushX()
     .extent([[0, 0], [BRUSH_WIDTH, BRUSH_HEIGHT]])
+    .handleSize(10)
     .on('brush', function (e) {
       var brushSelection = d3.brushSelection(this);
       
@@ -70,24 +120,54 @@ module.exports = function (app, options) {
         return yearBrushScale(v);
       });
       
+      brushStartLabel
+        .attr('dx', brushSelection[0])
+        .text(yearInterval[0]);
+      brushEndLabel
+        .attr('dx', brushSelection[1])
+        .text(yearInterval[1]);
+      
+      
       app.services.filter.set('yearRange', [
         yearInterval[0],
         yearInterval[1]
       ]);
+    })
+    .on('end', function (e) {
+      var brushSelection = d3.brushSelection(this);
+      
+      if (!brushSelection) {
+        
+        // get the current yearRange
+        var currentYearRange = app.services.filter.get('yearRange');
+        var start = currentYearRange[0];
+        var end   = currentYearRange[1];
+        
+        if (end === BRUSH_MAXIMUM) {
+          yearBrush.move(brushG, [
+            yearBrushScale.invertExtent(start - 1)[0],
+            yearBrushScale.invertExtent(end)[1],
+          ]);
+        } else {
+          // by default move the end handle +1
+          yearBrush.move(brushG, [
+            yearBrushScale.invertExtent(start)[0],
+            yearBrushScale.invertExtent(end + 1)[1],
+          ]);
+        }
+        
+        return;
+      }
+      
+      var yearInterval = brushSelection.map(function (v) {
+        return yearBrushScale(v);
+      });
     });
-  
+    
   /**
    * Draw the brush using brushG as the element
    */
   brushG.call(yearBrush);
-  
-  /**
-   * Modify handle styels
-   */
-  // brushG.selectAll('.handle')
-  //   .each(function (d) )
-  //   .attr('height', 20)
-  //   .attr('width', 10);
   
   // make brush select initial value
   yearBrush.move(brushG, [
@@ -96,6 +176,14 @@ module.exports = function (app, options) {
   ]);
   
   return {
-    
+    moveBrush: function (yearRange) {
+      
+      var brushRange = [
+        yearBrushScale.invertExtent(yearRange[0])[0],
+        yearBrushScale.invertExtent(yearRange[1])[1],
+      ];
+      
+      yearBrush.move(brushG, brushRange);
+    },
   }
 };

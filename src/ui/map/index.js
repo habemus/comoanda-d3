@@ -125,5 +125,13 @@ module.exports = function (app, options) {
   
   return {
     filter: mapFilter,
+    
+    show: function () {
+      mapContainer.style('opacity', 1);
+    },
+    
+    hide: function () {
+      mapContainer.style('opacity', 0);
+    },
   }
 };

@@ -28,5 +28,13 @@ module.exports = function (app, options) {
       
       renderStats(stats);
     },
+    
+    hide: function () {
+      statsEl.setAttribute('hidden', 'true');
+    },
+    
+    show: function () {
+      statsEl.removeAttribute('hidden');
+    }
   }
 };

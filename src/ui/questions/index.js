@@ -49,11 +49,15 @@ module.exports = function (app, options) {
    * Variable that stores the current layout data
    */
   var uiQuestionLayout;
+  var uiQuestionsData;
   
   /**
    * Updates the layout by processing a new set of questions
    */
   function uiUpdate(questionsSourceData) {
+    
+    // set the questions data variable
+    uiQuestionsData = questionsSourceData;
     
     var layoutItems = computeQuestionsLayout(questionsSourceData, {
       startAngle: questionsStartAngle,
@@ -206,29 +210,32 @@ module.exports = function (app, options) {
       .on('click', function (d, i) {
         
         if (d.type === 'closed-question') {
-          // toggle the clicked question's `isOpen` value
-          var clickedQuestion = questionsSourceData.find(function (q) {
-            return q._id === d._id;
-          });
           
-          // IMPORTANT: first update layout
-          // and only after set the filter,
-          // so that options are found by link functions
-          clickedQuestion.isOpen = true;
-          uiUpdate(questionsSourceData);
+          uiOpenQuestion(d._id);
           
-          setTimeout(function () {
-            // set filter to empty array
-            app.services.questionLinkFilter.set(
-              d._id,
-              clickedQuestion.options.map(function (opt) {
-                return opt._id;
-              })
-            );
+          // // toggle the clicked question's `isOpen` value
+          // var clickedQuestion = questionsSourceData.find(function (q) {
+          //   return q._id === d._id;
+          // });
+          
+          // // IMPORTANT: first update layout
+          // // and only after set the filter,
+          // // so that options are found by link functions
+          // clickedQuestion.isOpen = true;
+          // uiUpdate(questionsSourceData);
+          
+          // setTimeout(function () {
+          //   // set filter to empty array
+          //   app.services.questionLinkFilter.set(
+          //     d._id,
+          //     clickedQuestion.options.map(function (opt) {
+          //       return opt._id;
+          //     })
+          //   );
             
-            // make links update their positions
-            app.ui.persistentLinks.updateLinkPositions();
-          }, 0);
+          //   // make links update their positions
+          //   app.ui.persistentLinks.updateLinkPositions();
+          // }, 0);
           
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
@@ -292,7 +299,13 @@ module.exports = function (app, options) {
     // enter text behavior
     arcEnter.append('text')
       .text(function (d) {
-        return d._label || d._value;
+        
+        // remove data within square brackets
+        var text = d._label || d._value;
+        
+        text = text.replace(/\s*\[.+\]$/, '');
+        
+        return text;
       })
       // .style('alignment-baseline', 'middle')
       .style('text-anchor', questionTextAnchor)
@@ -447,6 +460,31 @@ module.exports = function (app, options) {
     }, []);
   }
   
+  function uiOpenQuestion(questionId) {
+    var question = uiQuestionsData.find(function (q) {
+      return q._id === questionId;
+    });
+    
+    // IMPORTANT: first update layout
+    // and only after set the filter,
+    // so that options are found by link functions
+    question.isOpen = true;
+    uiUpdate(uiQuestionsData);
+    
+    setTimeout(function () {
+      // set filter to empty array
+      app.services.questionLinkFilter.set(
+        questionId,
+        question.options.map(function (opt) {
+          return opt._id;
+        })
+      );
+      
+      // make links update their positions
+      app.ui.persistentLinks.updateLinkPositions();
+    }, 0);
+  }
+  
   /**
    * The API to deal with the questions arc
    */
@@ -458,5 +496,6 @@ module.exports = function (app, options) {
     updateActiveOptions: uiUpdateActiveOptions,
     filter: app.services.questionLinkFilter,
     layout: uiQuestionLayout,
+    openQuestion: uiOpenQuestion
   };
 }

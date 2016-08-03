@@ -35,8 +35,8 @@ EntityDataStore.prototype.applyFilter = function (filter) {
       var isIn = filterFn.fn(filterValue, item, filterProperty);
       
       if (isIn === false) {
-        console.log(item['Estado:']);
-        console.log('is out', item);
+        // console.log(item['Estado:']);
+        // console.log('is out', item);
       }
       
       return isIn;

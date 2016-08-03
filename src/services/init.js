@@ -23,10 +23,6 @@ module.exports = function (app, options) {
     }),
   });
   
-  console.log(d3.extent(options.entities, function (d) {
-      return parseInt(d['Quando sua organização surgiu?'], 10);
-    }))
-  
   /**
    * Filters to be applied to links via the questions criteria
    */

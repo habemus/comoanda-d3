@@ -59,6 +59,7 @@ module.exports = function (app, options) {
     centerY: WINDOW_Y_CENTER,
     innerRadius: INNER_RADIUS,
     outerRadius: OUTER_RADIUS,
+    entities: options.entities,
   });
   
   
@@ -68,6 +69,7 @@ module.exports = function (app, options) {
     centerY: WINDOW_Y_CENTER,
     innerRadius: INNER_RADIUS,
     outerRadius: OUTER_RADIUS,
+    // entities: options.entities,
   });
   
   
