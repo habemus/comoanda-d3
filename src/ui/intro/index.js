@@ -28,6 +28,7 @@ module.exports = function (app, options) {
   elements.controls = document.querySelectorAll('.intro-control');
   elements.previous = document.querySelector('.previous');
   elements.next     = document.querySelector('.next');
+  elements.skip     = document.querySelector('.intro-skip');
   
   // render bindings
   aux.renderBindings(elements.container, {
@@ -40,6 +41,9 @@ module.exports = function (app, options) {
   });
   elements.next.addEventListener('click', function () {
     app.intro.gotoNext();
+  });
+  elements.skip.addEventListener('click', function () {
+    app.intro.close();
   });
   
   // keyboard arrows
@@ -174,8 +178,14 @@ module.exports = function (app, options) {
   };
   
   app.intro.close = function () {
-    elements.overlay.remove();
-    elements.container.remove();
+    elements.overlay.style.display = 'none';
+    elements.container.style.display = 'none';
+    elements.imageContainer.style.display = 'none';
+    
+    app.ui.stats.show();
+    app.ui.map.show();
+    
+    app.ui.yearBrush.moveBrush([1936, 2016]);
   };
   
   /**

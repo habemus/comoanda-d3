@@ -116,9 +116,16 @@ module.exports = function (app, options) {
         return;
       }
       
+      var currentYearInterval = app.services.filter.get('yearRange');
       var yearInterval = brushSelection.map(function (v) {
         return yearBrushScale(v);
       });
+      
+      if (yearInterval[0] === currentYearInterval[0] && yearInterval[1] === currentYearInterval[1]) {
+        console.log('repeated');
+        
+        return;
+      }
       
       brushStartLabel
         .attr('dx', brushSelection[0])

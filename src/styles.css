@@ -242,6 +242,14 @@ body {
   transform: translate(100%, -50%);
 }
 
+#intro-container .intro-skip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  
+  color: #bcbcbc;
+}
+
 #intro-text-container {
   
   height: 100%;
