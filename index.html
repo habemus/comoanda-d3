@@ -27,12 +27,34 @@
   </div>
   
   <dialog id="entity-details">
-    <h1 data-bind="Qual o nome da organização da qual faz parte?"></h1>
-    I'm a dialog!
+    <header>
+      <h1 data-bind="Qual o nome da organização da qual faz parte?"></h1>
+    </header>
+    <section>
+      <header>
+        <h3>Localização da sede:</h3> <span data-bind="Cidade:"></span> | <span data-bind="Estado:"></span>
+        <p data-bind="Mobilidade a pé é o foco principal da sua organização?"></p>
+
+      </header>
+      <h3>O que move a organização</h3>
+      <p data-bind="O que move sua organização?"></p>
+      
+      <h3>Aspectos da mobilidade a pé</h3>
+      <p data-bind="Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?"></p>
+    </section>
+    
     <form method="dialog">
-      <input type="submit" value="Fechar">
+      <footer>
+        <span data-bind="Facebook da organização:"></span>
+        <span data-bind="Site da organização:"></span>
+        
+        <button type="submit">fechar</button>
+      </footer>
     </form>
   </dialog>
+  
+  <a id="timeline-link" href="/marcos-da-mobilidade">+ linha do tempo</a>
+  <a id="know-more-link" href="/pesquisa">saiba mais</a>
   
   <!-- intro -->
   
@@ -41,7 +63,7 @@
   </div>
   
   <div id="intro-image-container">
-    <img class="active" src="src/resources/img/ilustracoes-home-0.svg">
+    <img src="src/resources/img/ilustracoes-home-0.svg">
     <img src="src/resources/img/ilustracoes-home-1.svg">
     <img src="src/resources/img/ilustracoes-home-2.svg">
     <img src="src/resources/img/ilustracoes-home-3.svg">

@@ -40,6 +40,14 @@ module.exports = function computeEntitiesLayout(entities, options) {
       .endAngle(stateArc.endAngle - stateArc.padAngle)
       .value(function (d) {
         return 1;
+      })
+      .sort(function (e1, e2) {
+        var name1 = e1['Qual o nome da organização da qual faz parte?'];
+        var name2 = e2['Qual o nome da organização da qual faz parte?'];
+        
+        // return descending results, as it will be rendered on
+        // the left side of the circular chart
+        return name1 < name2 ? 1 : -1;
       });
     var stateEntityArcs = entityPieGen(stateArc.data.values);
     

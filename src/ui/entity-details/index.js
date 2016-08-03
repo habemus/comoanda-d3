@@ -22,7 +22,33 @@ module.exports = function (app, options) {
   });
   
   function renderEntityData(entity) {
-    aux.renderBindings(dialog, entity);
+    aux.renderBindings(dialog, entity, {
+      'Facebook da organização:': function (el, value, key) {
+        if (value) {
+          el.innerHTML = '<a target="_blank" href="' + value + '">facebook</a>';
+        } else {
+          el.innerHTML = '';
+        }
+      },
+      'Site da organização:': function (el, value, key) {
+        if (value) {
+          el.innerHTML = '<a target="_blank" href="' + value + '">visitar site</a>';
+        } else {
+          el.innerHTML = '';
+        }
+      },
+      'Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?': function (el, value, key) {
+        
+        // remove the question part from the answers
+        value = value.map(function (v) {
+          var vsplit = v.split('--');
+          
+          return vsplit[1];
+        });
+        
+        el.innerHTML = value.join(', ');
+      }
+    });
   }
   
 

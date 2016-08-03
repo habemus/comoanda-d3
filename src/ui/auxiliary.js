@@ -48,12 +48,22 @@ exports.arcTextTransform = function (options) {
   }
 }
 
-exports.renderBindings = function (wrapperElement, data) {
+exports.renderBindings = function (wrapperElement, data, bindFns) {
   var boundElements = wrapperElement.querySelectorAll('[data-bind]');
+  var bindFns = bindFns || {};
   
   Array.prototype.forEach.call(boundElements, function (el) {
     var key = el.getAttribute('data-bind');
     
-    el.innerHTML = data[key];
+    var value = data[key];
+    
+    if (bindFns[key]) {
+      bindFns[key](el, value, key);
+    } else {
+      // use default binding fn
+      value = Array.isArray(value) ? value.join(', ') : value;
+      el.innerHTML = value;
+    }
+    
   });
 };

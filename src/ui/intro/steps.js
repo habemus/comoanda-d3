@@ -33,6 +33,13 @@ module.exports = function (app, options) {
             return e._id;
           })
         );
+        
+        
+        // show only first illustration
+        elements.imageContainer.querySelector('img')
+          .classList.add('active');
+        elements.imageContainer.querySelector('.floor')
+          .classList.add('active');
       },
       leave: function () {
         
