@@ -292,7 +292,7 @@ module.exports = function (app, options) {
     // enter text behavior
     arcEnter.append('text')
       .text(function (d) {
-        return d.label || d._value;
+        return d._label || d._value;
       })
       // .style('alignment-baseline', 'middle')
       .style('text-anchor', questionTextAnchor)
@@ -407,7 +407,6 @@ module.exports = function (app, options) {
     var item;
     
     if (requestedItem.type === 'question-option') {
-      
       item = uiQuestionLayout.find(function (arc) {
         return (arc.type === 'question-option' &&
                 arc._id === requestedItem._id);
@@ -438,9 +437,6 @@ module.exports = function (app, options) {
         var option = uiQuestionLayout.find(function (item) {
           return item._id === optionId;
         });
-        
-        console.log('optionId', optionId);
-        console.log('opt', option);
         
         return Object.assign({
           question: {

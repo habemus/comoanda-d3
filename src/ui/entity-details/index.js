@@ -1,11 +1,13 @@
 const d3 = require('d3');
 const dialogPolyfill = require('dialog-polyfill');
 
-const entities = require('../../data/data.json').entities;
-
 const aux = require('../auxiliary');
 
 module.exports = function (app, options) {
+  
+  if (!options.entities) {
+    throw new Error('entities is required');
+  }
   
   var dialog = document.querySelector('#entity-details');
   
@@ -27,7 +29,7 @@ module.exports = function (app, options) {
   return {
     show: function (entityId) {
       
-      var entity = entities.find(function (e) {
+      var entity = options.entities.find(function (e) {
         return e._id === entityId;
       });
       

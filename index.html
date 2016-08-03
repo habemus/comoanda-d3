@@ -13,7 +13,8 @@
 </head>
 <body>
   <script type="text/javascript">
-    
+    window.STATES_GEO_JSON_URL = '/src/data/br-states-simplified.json';
+
   </script>
   <script src="dist/index.bundle.js"></script>
   
@@ -26,7 +27,7 @@
   </div>
   
   <dialog id="entity-details">
-    <h1 data-bind="nome"></h1>
+    <h1 data-bind="Qual o nome da organização da qual faz parte?"></h1>
     I'm a dialog!
     <form method="dialog">
       <input type="submit" value="Fechar">

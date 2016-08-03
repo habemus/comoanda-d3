@@ -1,0 +1,161 @@
+[
+	{
+		"label": "Formalização",
+		"question": "Como vocês estão formalizados?",
+		"options": [
+			"Organização Social (OS)",
+			"Movimento Social",
+			"Coletivo",
+			"Empresa",
+			"Associação",
+			"Em processo de formalização",
+			"Fundação",
+			"Não formalizado",
+			"Organização da Sociedade Civil de Interesse Público (OSCIP)",
+			"Instituto",
+			"Comissão",
+			"Outros",
+			"Orgão Público",
+			"Rede",
+			"Universidade / grupo de pesquisa"
+		]
+	},
+	{
+		"label": "Foco",
+		"question": "Mobilidade a pé é o foco principal da sua organização?",
+		"options": [
+			"Não, mas uma das principais iniciativas da organização trata do tema",
+			"Sim",
+			"Não, a mobilidade a pé é apenas um dos temas abordados, mas aparece sempre em um contexto mais amplo"
+		]
+	},
+	{
+		"label": "Aspectos da mobilidade",
+		"question": "Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?",
+		"options": [
+			"Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]",
+			"Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]",
+			"Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]",
+			"Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]",
+			"Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]",
+			"Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]",
+			"Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]",
+			"Segurança [pessoal, viária e acidentalidade vertical]",
+			"Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]",
+			"Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]",
+			"Outros",
+			"Bicicleta [incentivo ao uso da bicicleta em geral]"
+		]
+	},
+	{
+		"label": "Abordagem",
+		"question": "Qual a abordagem da sua organização sobre o tema da mobilidade a pé?",
+		"options": [
+			"Comunicação e Informação [produção e compartilhamento: sites, blogs, grupos de discussão virtual]",
+			"Educação e Cultura [disseminação, capacitação, intervenção artística, sensibilização]",
+			"Intervenção física no espaço [obra civil, intervenções temporárias, artísticas]",
+			"Legislação e Políticas Públicas [produção e revisão de leis, planos e programas relacionados à mobilidade a pé]",
+			"Mobilização [ativismo, participação, engajamento e controle social]",
+			"Pesquisa [diagnóstico, caracterização, indicadores]",
+			"Projetos e Planos [projetos de arquitetura, desenho urbano, planos de mobilidade, diretores]",
+			"Outros"
+		]
+	},
+	{
+		"label": "Área de atuação",
+		"question": "Qual é a área de atuação da sua organização?",
+		"options": [
+			"Arquitetura e urbanismo",
+			"Saúde e qualidade de vida",
+			"Comunicação",
+			"Políticas públicas",
+			"Educação",
+			"Outros",
+			"Direito",
+			"Engenharia ",
+			"Meio ambiente"
+		]
+	},
+	{
+		"label": "Dificuldades",
+		"question": "Quais são as principais dificuldades que sua organização encontra para trabalhar com o tema da mobilidade a pé?",
+		"options": [
+			"Ausência / escassez de recursos / financiamento",
+			"Acesso a informações",
+			"Capacitação da equipe",
+			"Outros",
+			"Burocracia / meios legais de atuar",
+			"Falta de colaboradores",
+			"Escassez de parcerias",
+			"Apoio político",
+			"Falta de planejamento estratégico",
+			"Escassez de voluntários",
+			"Interesse das lideranças da organização",
+			"Falta de conhecimento / clareza sobre o tema"
+		]
+	},
+	{
+		"label": "Fontes de recurso",
+		"question": "Quais são as fontes de recurso da sua organização?",
+		"options": [
+			"Doação direta (Investimento social/filantrópico)",
+			"Prestação de serviço",
+			"Trabalho voluntário",
+			"Doação direta (membros associados)",
+			"Edital",
+			"Nenhuma fonte de financiamento",
+			"Financiamento coletivo (crowdfunding)",
+			"Patrocínio (investimento empresarial)",
+			"Venda de produtos",
+			"Outros",
+			"Leis de incentivo (ex. Lei de incentivo ao esporte)",
+			"Orçamento Público",
+			"Bolsa de fomento",
+			"Convênio (poder público)"
+		]
+	},
+	{
+		"label": "Finalidade das parcerias",
+		"question": "A sua organização atua ou atuou nos últimos doze meses em parceria? Qual a finalidade?",
+		"options": [
+			"Apoio financeiro",
+			"Apoio institucional",
+			"Parceria para pesquisas",
+			"Parceria para ações",
+			"Parceria para aprendizagem, capacitação ou treinamento",
+			"Parceria para campanhas",
+			"Parceria para mobilização e sensibilização",
+			"Não possuímos ações em parceria",
+			"Apoio político",
+			"Outros"
+		]
+	},
+	{
+		"label": "Fontes de informação",
+		"question": "Quais as fontes de informação que sua organização utiliza com mais frequência?",
+		"options": [
+			"Coleto meus próprios dados em campo",
+			"Dados municipais abertos",
+			"Pesquisa Origem e Destino",
+			"Mídias Sociais (Facebook, Twitter, Medium)",
+			"Jornais, Revistas, Sites, Blogs",
+			"Trabalhos acadêmicos",
+			"IBGE",
+			"Legislação",
+			"Outros"
+		]
+	},
+	{
+		"label": "Escala de atuação",
+		"question": "Para qual(is) escala(s) as ações da sua organização estão direcionadas?",
+		"options": [
+			"Bairro / comunidade",
+			"Cidade",
+			"Nacional",
+			"Vários Estados / Regional",
+			"Estado",
+			"Internacional",
+			"Regiões Metropolitanas (várias cidades)"
+		]
+	}
+]

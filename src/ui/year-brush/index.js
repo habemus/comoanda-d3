@@ -42,9 +42,10 @@ module.exports = function (app, options) {
    * All years that are selectable.
    * They are the initial value of the filter.
    */
-  var years = app.services.filter.data.ano.concat([]);
-  
-  years.sort(d3.ascending);
+  var years = d3.range(
+    app.services.filter.data.yearRange[0],
+    app.services.filter.data.yearRange[1] + 1
+  );
   
   /**
    * Scale that converts brush positions to years
@@ -69,15 +70,10 @@ module.exports = function (app, options) {
         return yearBrushScale(v);
       });
       
-      // Convert the year interval into an array containing all
-      // years in the interval.
-      // That will make it simpler for the filter to be applied
-      var selectedYears = d3.range(
+      app.services.filter.set('yearRange', [
         yearInterval[0],
-        yearInterval[yearInterval.length - 1] + 1
-      );
-      
-      app.services.filter.set('ano', selectedYears);
+        yearInterval[1]
+      ]);
     });
   
   /**

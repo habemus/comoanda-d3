@@ -8,6 +8,7 @@ module.exports = function (app, options) {
    * to the corresponding ui component
    */
   function computeItemPosition(item) {
+    
     switch (item.type) {
       case 'question-option':
         return app.ui.questions.computeItemPosition(item);
@@ -33,7 +34,7 @@ module.exports = function (app, options) {
     return positions;
   }
   
-  function computeactiveItems(links) {
+  function computeActiveItems(links) {
     
     var activeItems = links.reduce(function (acc, link) {
       
@@ -104,20 +105,21 @@ module.exports = function (app, options) {
      * Array of nodes that have at least one link attached
      * to them
      */
-    var activeItems = computeactiveItems(links);
+    var activeItems = computeActiveItems(links);
     
-    var activeEntities = activeItems.filter(function (item) {
-      return item._type === 'entity';
+    var activeEntities  = activeItems.filter(function (item) {
+      return item.type === 'entity';
     });
-    var activeYears    = activeItems.filter(function (item) {
-      return item._type === 'year';
+    var activeYears     = activeItems.filter(function (item) {
+      return item.type === 'year';
     });
-    var activeOptions  = activeItems.filter(function (item) {
-      return item._type === 'question-option';
+    var activeOptions   = activeItems.filter(function (item) {
+      return item.type === 'question-option';
     });
     
     app.ui.entities.updateActiveEntities(activeEntities);
     app.ui.questions.updateActiveOptions(activeOptions);
+    app.ui.years.updateActiveYears(activeYears);
     
     /**
      * Calculate the line layouts
@@ -269,9 +271,6 @@ module.exports = function (app, options) {
     
     computeLinks: function (entities, questionOptions) {
       
-      // console.log(entities);
-      // console.log(questionOptions);
-      
       // build links
       var links = entities.reduce(function (acc, entity) {
         
@@ -285,7 +284,7 @@ module.exports = function (app, options) {
           }
           
           return entityValue.some(function (v) {
-            return v._id === option._id;
+            return v === option._id;
           });
         });
         
@@ -295,15 +294,21 @@ module.exports = function (app, options) {
             to: Object.assign({ type: 'entity' }, entity),
           }
         }));
+        
       }, []);
       
-      // compute year links
+      // year links
       entities.forEach(function (entity) {
         links.push({
           from: Object.assign({ type: 'entity' }, entity),
-          to: { type: 'year', year: entity.ano }
-        });
-      });
+          to: Object.assign({
+            type: 'year',
+            // give an id to the year
+            _id: 'year--' + entity['Quando sua organização surgiu?'],
+            year: entity['Quando sua organização surgiu?']
+          })
+        })
+      })
       
       return links;
     }

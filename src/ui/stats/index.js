@@ -1,11 +1,13 @@
 const d3 = require('d3');
 const dialogPolyfill = require('dialog-polyfill');
 
-const entities = require('../../data/data.json').entities;
-
 const aux = require('../auxiliary');
 
 module.exports = function (app, options) {
+  
+  if (!options.entities) {
+    throw new Error('entities is required');
+  }
   
   var statsEl = document.querySelector('#stats');
   
@@ -16,11 +18,11 @@ module.exports = function (app, options) {
   return {
     update: function (filteredEntities) {
       
-      var percentage = (filteredEntities.length / entities.length) * 100;
+      var percentage = (filteredEntities.length / options.entities.length) * 100;
       
       var stats = {
         percentage: percentage.toFixed(0),
-        totalCount: entities.length,
+        totalCount: options.entities.length,
         filteredCount: filteredEntities.length,
       };
       

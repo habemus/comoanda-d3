@@ -1,81 +1,69 @@
-const data = require('../data/data.json');
-
-const entities         = data.entities;
-
-const complexQuestions = data.questions;
-const complexQuestionNames = complexQuestions.map(function (q) {
-  return q._id;
-});
-
-const simpleQuestions = data.simpleQuestions.concat([{
-  // make _id filterable
-  _id: '_id',
-}]);
-/**
- * Array containing the simple question names
- */
-const simpleQuestionNames = simpleQuestions.map(function (q) {
-  return q._id;
-});
-
-function _questionType(filterName) {
-  var isSimple = simpleQuestionNames.indexOf(filterName) !== -1;
+function EntityDataStore(entities, filterFns) {
   
-  if (isSimple) {
-    return 'simple';
-  } else {
-    var isComplex = complexQuestionNames.indexOf(filterName) !== -1;
-    
-    if (isComplex) {
-      return 'complex';
-    } else {
-      return 'other';
-    }
+  if (!entities) {
+    throw new Error('entities is required');
   }
-}
-
-function EntityDataStore(entitiesData) {
-  this.data = entitiesData;
+  
+  this.filterFns = filterFns;
+  this.entities  = entities;
 }
 
 EntityDataStore.prototype.applyFilter = function (filter) {
   
-  var filterNames = Object.keys(filter);
+  var self = this;
+ 
+  var filterProperties = Object.keys(filter);
   
-  console.log(filterNames);
-  
-  var results = this.data.filter(function (item) {
+  var results = self.entities.filter(function (item) {
     
     // loop through filter properties
-    var itemMatches = filterNames.every(function (filterName) {
+    var itemMatches = filterProperties.every(function (filterProperty) {
       
-      var filterType  = _questionType(filterName);
+      var filterFn = self.filterFns.find(function (f) {
+        return f.properties.indexOf(filterProperty) !== -1;
+      });
+      
+      if (!filterFn) {
+        console.warn('unsupported filter property ', filterProperty);
+        return false;
+      }
       
       // filterValue is always an array of possible values
       // to be checked against
-      var filterValue = filter[filterName];
-      var itemValue   = item[filterName];
+      var filterValue = filter[filterProperty];
       
-      if (filterType === 'simple') {
-        return filterValue.indexOf(itemValue) !== -1;
-      } else if (filterType === 'complex') {
-        
-        if (!itemValue) {
-          return false;
-        } else {
-          
-          if (filterValue.length === 0) {
-            // if filter is set to [] (empty array)
-            // it means to select everything
-            return true;
-          } else {
-            // check if itemValue contain ANY of the query's values
-            return itemValue.some(function (value) {
-              return filterValue.indexOf(value._id) !== -1;
-            });
-          }
-        }
+      var isIn = filterFn.fn(filterValue, item, filterProperty);
+      
+      if (isIn === false) {
+        console.log(item['Estado:']);
+        console.log('is out', item);
       }
+      
+      return isIn;
+      
+      
+      // var filterType  = self.getFilterType(filterProperty);
+      
+      // // filterValue is always an array of possible values
+      // // to be checked against
+      // var filterValue = filter[filterProperty];
+      // var itemValue   = item[filterProperty];
+      
+      // if (filterType === 'basic') {
+      //   return filterValue.indexOf(itemValue) !== -1;
+      // } else if (filterType === 'complex') {
+        
+      //   if (!itemValue) {
+      //     return false;
+      //   } else {
+      //     // check if itemValue contain ANY of the query's values
+      //     return itemValue.some(function (value) {
+      //       return filterValue.indexOf(value) !== -1;
+      //     });
+      //   }
+      // } else {
+      //   console.warn('unssoported filter type ', filterType);
+      // }
     });
     
     return itemMatches;
@@ -83,37 +71,5 @@ EntityDataStore.prototype.applyFilter = function (filter) {
   
   return results;
 };
-
-// EntityDataStore.prototype.query = function (query) {
-//   var filtered = this.data.filter(function (item) {
-    
-//     var res = Object.keys(query).every(function (filterName) {
-      
-//       var filterValue = query[filterName];
-      
-//       if (Array.isArray(filterValue)) {
-        
-//         var itemValues = item[filterName];
-        
-//         if (!itemValues) {
-//           return false;
-//         } else {
-//           // check if itemValues contain ANY of the query's values
-//           return itemValues.some(function (itemV) {
-//             return filterValue.indexOf(itemV._id) !== -1;
-//           });
-//         }
-//       } else {
-//         // check if the item's value is equal to the query's value
-//         return item[filterName]._id === query[filterName];
-//       }
-//     });
-    
-//     return res;
-    
-//   });
-  
-//   return filtered;
-// };
 
 module.exports = EntityDataStore;

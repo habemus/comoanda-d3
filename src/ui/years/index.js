@@ -1,7 +1,6 @@
 const d3 = require('d3');
 
 const computeYearsLayout = require('./layout'); 
-const entities = require('../../data/data.json').entities;
 
 const aux = require('../auxiliary');
 
@@ -116,6 +115,21 @@ module.exports = function (app, options) {
           radius: options.innerRadius,
         };
       }
+    },
+    updateActiveYears: function (activeYears, activeClassName) {
+      activeClassName = activeClassName || 'active';
+    
+      arcContainer.selectAll('g.year-arc').each(function (d) {
+        var isActive = activeYears.some(function (year) {
+          return parseInt(d.data.year, 10) === parseInt(year.year, 10);
+        });
+        
+        if (isActive) {
+          d3.select(this).classed(activeClassName, true);
+        } else {
+          d3.select(this).classed(activeClassName, false);
+        }
+      });
     },
     activate: function (requestedItem) {
       arcContainer

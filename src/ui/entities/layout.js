@@ -18,7 +18,7 @@ module.exports = function computeEntitiesLayout(entities, options) {
   
   // we must first group entities by state and sort them by city
   var states = d3.nest()
-    .key(function (d) { return d.estado; })
+    .key(function (d) { return d['Estado:']; })
     .entries(entities)
   
   // generate the state arcs

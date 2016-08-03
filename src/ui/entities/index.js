@@ -23,8 +23,8 @@ module.exports = function (app, options) {
     .outerRadius(options.outerRadius);
   
   var entityTextFontSize = aux.arcTextFontSize({
-    min: 0,
-    max: 14,
+    min: 7,
+    max: 12,
     radius: options.outerRadius,
   });
   
@@ -147,10 +147,10 @@ module.exports = function (app, options) {
         var estado = d.data.key;
         
         var filteredEntities = app.services.entityDataStore.applyFilter({
-          estado: [estado],
+          'Estado:': [estado],
         });
         
-        var current = app.services.entityLinkFilter.get('_id');
+        var current = app.services.entityLinkFilter.get('_id') || [];
         
         if (!d.active) {
           /**
@@ -158,29 +158,27 @@ module.exports = function (app, options) {
            */
           d.active = true;
           
-          filteredEntities.forEach(function (entity) {
-            var _id = entity._id;
-            
-            app.services.entityLinkFilter.arrayPushUnique('_id', _id);
-          })
-          
-          // app.services.entityLinkFilter.arrayPushUnique(
-          //   '_id',
-          //   filteredEntities.map(function (entity) {
-          //     return entity._id;
-          //   })
-          // );
+          app.services.entityLinkFilter.set(
+            '_id',
+            current.concat(filteredEntities.map(function (entity) {
+              return entity._id;
+            }))
+          );
         } else {
           
           d.active = false;
           
-          filteredEntities.forEach(function (entity) {
-            var _id = entity._id;
-            
-            app.services.entityLinkFilter.arrayRemove('_id', _id);
-          });
-          
-          // app.services.entityLinkFilter.set('_id', []);
+          app.services.entityLinkFilter.set(
+            '_id',
+            current.filter(function (_id) {
+              // pass only entities not in the filteredEntities array
+              var shouldExit = filteredEntities.some(function (e) {
+                return e._id === _id;
+              });
+              
+              return !shouldExit;
+            })
+          );
         }
       });
     
@@ -216,7 +214,7 @@ module.exports = function (app, options) {
       .append('text')
       .text(function (d) {
         
-        var nome = d.data.nome;
+        var nome = d.data['Qual o nome da organização da qual faz parte?'];
         
         if (nome.length > MAX_NOME_CHAR_COUNT) {
           nome = nome.substr(0, MAX_NOME_CHAR_COUNT - 1 - 3) + '...';
@@ -268,6 +266,11 @@ module.exports = function (app, options) {
     
     // wait for animation to end before removing the arc group element
     stateExit
+      .remove();
+    
+    // entity exit
+    entityExit = entityArcs.exit();
+    entityExit
       .remove();
   }
   

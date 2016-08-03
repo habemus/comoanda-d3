@@ -61,7 +61,7 @@ module.exports = function (app, options) {
    */
   var mapFilter = app.services.filter;
   
-  d3.json('/src/data/br-states-simplified.json', function (err, geoData) {
+  d3.json(window.STATES_GEO_JSON_URL, function (err, geoData) {
     var states = topojson.feature(geoData, geoData.objects.states);
     
     var mapPaths = mapContainer.selectAll('path')
@@ -72,7 +72,7 @@ module.exports = function (app, options) {
         .selectAll('path')
         .attr('fill', function (d) {
           var stateCode = getStateCode(d.properties.name);
-          var active = mapFilter.get('estado').indexOf(stateCode) !== -1;
+          var active = mapFilter.get('Estado:').indexOf(stateCode) !== -1;
           
           return active ? 'red' : 'transparent';
         });
@@ -84,7 +84,7 @@ module.exports = function (app, options) {
       .attr('d', geoPath)
       .attr('fill', function (d) {
         var stateCode = getStateCode(d.properties.name);
-        var active = mapFilter.get('estado').indexOf(stateCode) !== -1;
+        var active = mapFilter.get('Estado:').indexOf(stateCode) !== -1;
         
         return active ? 'red' : 'transparent';
       })
@@ -94,16 +94,16 @@ module.exports = function (app, options) {
           
         // toggle the selected status of the filter
         var isCurrentlyActive =
-          mapFilter.get('estado').indexOf(stateCode) !== -1;
+          mapFilter.get('Estado:').indexOf(stateCode) !== -1;
         
         if (isCurrentlyActive) {
         
           d3.select(this).classed('active', false);
-          mapFilter.arrayRemove('estado', stateCode);
+          mapFilter.arrayRemove('Estado:', stateCode);
         } else {
           
           d3.select(this).classed('active', true);
-          mapFilter.arrayPush('estado', stateCode);
+          mapFilter.arrayPush('Estado:', stateCode);
         }
       });
       

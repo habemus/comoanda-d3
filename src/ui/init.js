@@ -1,11 +1,5 @@
 const d3 = require('d3');
 
-// load question source data
-const data = require('../data/data.json');
-window._data = data;
-var questions = data.questions;
-var entities  = data.entities;
-
 module.exports = function (app, options) {
   const OUTER_RADIUS = 250;
   const ARC_WIDTH    = 20;
@@ -45,13 +39,17 @@ module.exports = function (app, options) {
   /**
    * Entity details dialog
    */
-  app.ui.entityDetails = require('./entity-details')(app, {});
+  app.ui.entityDetails = require('./entity-details')(app, {
+    entities: options.entities,
+  });
   
   /**
-   * Stats
-   */
-  app.ui.stats = require('./stats')(app, {});
-  app.ui.stats.update([]);
+  * Stats
+  */
+  app.ui.stats = require('./stats')(app, {
+    entities: options.entities,
+  });
+  // app.ui.stats.update([]);
   
   /**
    * The year brush that controls the year range filter
@@ -72,6 +70,7 @@ module.exports = function (app, options) {
     outerRadius: OUTER_RADIUS,
   });
   
+  
   // listen to map filter changes
   // app.ui.map.filter.on('change', function (changeData) {
   //   console.log('changed map', app.ui.map.filter.get('states'));
@@ -91,7 +90,7 @@ module.exports = function (app, options) {
     innerRadius: INNER_RADIUS,
     maxTextWidth: MAX_TEXT_WIDTH
   });
-  app.ui.questions.update(questions);
+  app.ui.questions.update(options.displayQuestions);
   
   app.ui.entities = require('./entities')(app, {
     outerRadius: OUTER_RADIUS,
@@ -99,7 +98,7 @@ module.exports = function (app, options) {
     innerRadius: INNER_RADIUS,
     maxTextWidth: MAX_TEXT_WIDTH
   });
-  app.ui.entities.update(entities);
+  app.ui.entities.update(options.entities);
   
   app.ui.years = require('./years')(app, {
     outerRadius: OUTER_RADIUS,
@@ -107,16 +106,6 @@ module.exports = function (app, options) {
     innerRadius: INNER_RADIUS,
     maxTextWidth: MAX_TEXT_WIDTH
   });
-  // generate years data
-  var years = d3.range(1930, 2016 + 1);
-  // years.sort(d3.descending);
-  app.ui.years.update(years.map(function (y) {
-    return {
-      year: y
-    }
-  }));
-  
-  // app.ui.links = require('./links')(app, {});
   
   /**
   * Persistent links follow filter
@@ -133,8 +122,6 @@ module.exports = function (app, options) {
     var overallFilter = app.services.filter.data;
     var linkFilter    = app.services.questionLinkFilter.data;
     
-    console.log(linkFilter);
-    
     var filter = Object.assign({}, overallFilter, linkFilter);
     
     var entities = app.services.entityDataStore
@@ -143,20 +130,21 @@ module.exports = function (app, options) {
     // links betweeb entities and activeOptions
     var activeOptions = app.ui.questions.getActiveOptions();
     
-    console.log('activeOptions', activeOptions);
-    
     var links = app.ui.persistentLinks.computeLinks(entities, activeOptions);
     
-    app.ui.persistentLinks.update(links);
     app.ui.stats.update(entities);
+    app.ui.persistentLinks.update(links);
   }
   app.services.questionLinkFilter.on('change', function () {
     app.ACTIVE_LINK_FILTER = 'link';
     
-    console.log(app.services.questionLinkFilter.data);
+    // clear the other filter SILENTLY
+    app.services.entityLinkFilter.data = {};
     
     uiApplyQuestionLinkFilter();
   });
+  // QUESTION LINK filter
+  //////////
   
   ///////////
   // ENTITY LINK filter
@@ -171,6 +159,7 @@ module.exports = function (app, options) {
     
     // links between entities and open options
     var openQuestions = app.ui.questions.getOpenQuestions();
+    
     var openOptions = openQuestions.reduce(function (result, question) {
       
       question.options.forEach(function (opt) {
@@ -182,15 +171,19 @@ module.exports = function (app, options) {
     }, []);
     var links = app.ui.persistentLinks.computeLinks(entities, openOptions);
     
-    app.ui.persistentLinks.update(links);
     app.ui.stats.update(entities);
+    app.ui.persistentLinks.update(links);
   }
   app.services.entityLinkFilter.on('change', function () {
     app.ACTIVE_LINK_FILTER = 'entity';
     
+    // clear the other filter SILENTLY
+    app.services.questionLinkFilter.data = {};
+    
     uiApplyEntityLinkFilter();
   });
-  
+  // ENTITY LINK filter
+  ///////////
   
   ///////
   // OVERALL filter
@@ -202,10 +195,12 @@ module.exports = function (app, options) {
     /**
      * Years
      */
-    var arcYears = filteredEntities.reduce(function (result, entity) {
+    var filteredYears = filteredEntities.reduce(function (result, entity) {
       
-      if (result.indexOf(entity.ano) === -1) {
-        result.push(entity.ano);
+      var year = parseInt(entity['Quando sua organização surgiu?'], 10);
+      
+      if (result.indexOf(year) === -1) {
+        result.push(year);
       }
       
       return result;
@@ -217,7 +212,7 @@ module.exports = function (app, options) {
       };
     });
     
-    app.ui.years.update(arcYears);
+    app.ui.years.update(filteredYears);
     app.ui.entities.update(filteredEntities);
     
     app.ui.persistentLinks.updateLinkPositions();
@@ -236,6 +231,8 @@ module.exports = function (app, options) {
     
   }
   app.services.filter.on('change', uiOverallApplyFilters);
+  // OVERALL filter
+  ///////
   
   uiOverallApplyFilters();
   
