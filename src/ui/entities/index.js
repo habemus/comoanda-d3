@@ -310,6 +310,16 @@ module.exports = function (app, options) {
       }
     },
     
+    hideText: function () {
+      stateArcContainer.classed('hide-text', true);
+      entityArcContainer.classed('hide-text', true);
+    },
+    
+    showText: function () {
+      stateArcContainer.classed('hide-text', false);
+      entityArcContainer.classed('hide-text', false);
+    },
+    
     activate: function (requestedItem) {
       entityArcContainer
         .select('#entity-' + requestedItem._id)

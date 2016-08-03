@@ -29,6 +29,10 @@ module.exports = function (app, options) {
   elements.previous = document.querySelector('.previous');
   elements.next     = document.querySelector('.next');
   elements.skip     = document.querySelector('.intro-skip');
+  elements.menu     = document.querySelector('.menu');
+  
+  // remove the 'is-visible' class from the menu at bootstrap
+  elements.menu.classList.toggle('is-visible', false);
   
   // render bindings
   aux.renderBindings(elements.container, {
@@ -97,9 +101,6 @@ module.exports = function (app, options) {
       Bluebird.resolve() : Bluebird.resolve(currStep.leave());
     
     return promise.then(function () {
-      return destStep.enter();
-    })
-    .then(function () {
       
       /**
        * Transition text
@@ -127,7 +128,11 @@ module.exports = function (app, options) {
       var translateY = -1 * (destTop - (viewportHeight - destHeight) /2);
       elements.textScroller.style.transform = 
         'translateY(' + translateY + 'px)';
-        
+    })
+    .then(function () {
+      return destStep.enter();
+    })
+    .then(function () {
       app.intro.currentStep = step;
       
       // terminate transition
@@ -135,6 +140,7 @@ module.exports = function (app, options) {
       
       // re-enable controls
       app.intro.toggleControls(true);
+      
     });
   };
   
@@ -184,6 +190,9 @@ module.exports = function (app, options) {
     
     app.ui.stats.show();
     app.ui.map.show();
+    
+    app.ui.questions.showText();
+    app.ui.entities.showText();
     
     app.ui.yearBrush.moveBrush([1936, 2016]);
   };

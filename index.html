@@ -12,11 +12,33 @@
   <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
+  <!-- standalone version only -->
   <script type="text/javascript">
     window.STATES_GEO_JSON_URL = '/src/data/br-states-simplified.json';
+    window.TYPEFORM_DATA_JSON_URL = '/src/data/typeform-data.json';
 
   </script>
+  <style type="text/css" media="all">
+    .menu {
+      position: fixed;
+      z-index: 3;
+      font-size: 36px;
+      top: 10px;
+      right: 10px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    
+    .menu.is-visible {
+      opacity: 1;
+    }
+  </style>
   <script src="dist/index.bundle.js"></script>
+  <!-- this will be replaced by the menu in the wordpress-based website -->
+  <div class="menu is-visible">
+    COMO ANDA
+  </div>
+  <!-- standalone version only -->
   
   <div id="stats">
     <h1><span data-bind="percentage"></span>%</h1>
@@ -126,10 +148,7 @@
         </p>
         <!-- 11 -->
         <p>
-          navegue e entenda mais sobre o cenário da mobilidade a pé
-        </p>
-        <!-- 12 -->
-        <p>
+          navegue e entenda mais sobre o cenário da mobilidade a pé<br>
           venha caminhar com a gente!
         </p>
       </div>

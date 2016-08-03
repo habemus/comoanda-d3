@@ -3,6 +3,7 @@ body {
   background-color: #D9D9D9;
   
   margin: 0 0;
+  color: black;
 }
 
 h1, h2, h3 {
@@ -54,7 +55,7 @@ h1, h2, h3 {
   
   color: grey;
   font-size: 14px;
-  font-family: "Terrorista Marighella", sans-serif;
+  font-family: "Terrorista", sans-serif;
   
   padding-top: 20px;
   padding-bottom: 20px;
@@ -132,14 +133,21 @@ h1, h2, h3 {
   position: fixed;
   width: 20%;
   
+  opacity: 1;
+  transition: opacity 1s ease;
+  
   top: 50px;
   left: 50px;
 }
+#stats.hidden {
+  opacity: 0;
+}
 
 #stats h1 {
-  font-family: 'Terrorista Marighella', sans-serif;
+  font-family: 'Terrorista', sans-serif;
   color: #3c81bb;
   font-size: 40px;
+  line-height: 1em;
   
   margin: 0 0;
 }
@@ -186,7 +194,7 @@ h1, h2, h3 {
 }
 
 /**
- * Entity arc styles
+ * Entity and state arc styles
  */
 #comoanda-viz .state-arc path {
   fill: #8DBEE1;
@@ -211,6 +219,19 @@ h1, h2, h3 {
 }
 #comoanda-viz .entity-arc.active path {
   fill: #417295;
+}
+
+/**
+ * Text hide and show
+ */
+#state-arc-container text,
+#entity-arc-container text {
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+#state-arc-container.hide-text text,
+#entity-arc-container.hide-text text {
+  opacity: 0 !important;
 }
 
 /**
@@ -280,6 +301,24 @@ h1, h2, h3 {
   fill: #E9353A;
 }
 
+#question-arc-container text {
+  transition: opacity .5s ease;
+  opacity: 1;
+}
+#question-arc-container.hide-text text {
+  opacity: 0 !important;
+}
+
+/**
+ * Map styles
+ */
+#map-container {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+#map-container.hidden {
+  opacity: 0;
+}
 #map-container path {
   opacity: 0.6;
   fill: white;
@@ -311,7 +350,7 @@ h1, h2, h3 {
   width: 100vw;
   
   opacity: 1;
-  transition: opacity 1s ease;
+  transition: opacity 2s ease;
   background-color: #A2B5B6;
   
   z-index: 2;
@@ -332,7 +371,7 @@ h1, h2, h3 {
   transform: translateY(-50%);
   
   opacity: 1;
-  background-color: rgba(255, 255, 255, 0.4);
+  /* background-color: rgba(255, 255, 255, 0.4); */
   
   z-index: 2;
 }
@@ -377,6 +416,10 @@ h1, h2, h3 {
    * Let only overflow-y hidden in order not to hide controls
    */
   overflow-y: hidden;
+  background-color: transparent;
+}
+#intro-text-container.opaque {
+  background-color: #D9D9D9;
 }
 
 #intro-text-scroller {
@@ -384,7 +427,7 @@ h1, h2, h3 {
 }
 
 #intro-text-scroller p {
-  padding: 20px 20px;
+  padding: 5px 20px;
   margin: 0 0;
   transition: opacity ease 2s;
   opacity: 0.3;
@@ -406,7 +449,7 @@ h1, h2, h3 {
   
   display: flex;
   
-  transition: transform 1s ease, opacity 1.5s ease;
+  transition: transform 2s ease, opacity 2s ease;
   opacity: 1;
   
   transform: translate(-10%, -50%);
@@ -414,7 +457,7 @@ h1, h2, h3 {
 
 #intro-image-container.fade-away {
   opacity: 0;
-  transform: translate(-50%, 100%) scaleX(0.1);
+  transform: translate(-50%, 120%) scaleX(0.1);
 }
 
 #intro-image-container > img {

@@ -127,11 +127,11 @@ module.exports = function (app, options) {
     filter: mapFilter,
     
     show: function () {
-      mapContainer.style('opacity', 1);
+      mapContainer.classed('hidden', false);
     },
     
     hide: function () {
-      mapContainer.style('opacity', 0);
+      mapContainer.classed('hidden', true);
     },
   }
 };

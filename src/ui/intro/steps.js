@@ -23,6 +23,10 @@ module.exports = function (app, options) {
         app.ui.stats.hide();
         app.ui.map.hide();
         
+        // hide text
+        app.ui.entities.hideText();
+        app.ui.questions.hideText();
+        
         // reset the controls
         app.ui.yearBrush.moveBrush([1936, 1937]);
         
@@ -60,7 +64,7 @@ module.exports = function (app, options) {
         
         elements.imageContainer.querySelector('.floor').classList.add('walkable');
         
-        return wait(2000);
+        return wait(3000);
       },
     },
     {
@@ -74,7 +78,7 @@ module.exports = function (app, options) {
         
         elements.imageContainer.classList.add('fade-away');
         
-        return wait(1000);
+        return wait(3000);
       },
     },
     {
@@ -92,26 +96,31 @@ module.exports = function (app, options) {
     {
       name: '2013',
       enter: function () {
-        var timePerYear = 5000 / (2013 - 1936);
         
-        var startYear = 1937;
-        var endYear   = 2013;
-        
-        var current = startYear;
-        
-        while (current < endYear) {
-          
-          setTimeout(
-            app.ui.yearBrush.moveBrush.bind(
-              app.ui.yearBrush,
-              [1936, current]
-            ),
-            (current - startYear) * timePerYear
-          );
-          
-          current += 1;
-        }
-        
+        return wait(7000)
+          .then(function () {
+            var timePerYear = 5000 / (2013 - 1936);
+            
+            var startYear = 1937;
+            var endYear   = 2013;
+            
+            var current = startYear;
+            
+            while (current < endYear) {
+              
+              setTimeout(
+                app.ui.yearBrush.moveBrush.bind(
+                  app.ui.yearBrush,
+                  [1936, current]
+                ),
+                (current - startYear) * timePerYear
+              );
+              
+              current += 1;
+            }
+            
+            return wait(5000);
+          });
       },
       leave: function () {
         
@@ -120,27 +129,34 @@ module.exports = function (app, options) {
     {
       name: 'falta-de-visao-integrada',
       enter: function () {
-        var startYear = 2013;
-        var endYear   = 2016;
         
-        var timePerYear = 2000 / (endYear - startYear);
-        
-        var current = startYear;
-        
-        while (current < endYear) {
-          
-          console.log((current - startYear) * timePerYear);
-          
-          setTimeout(
-            app.ui.yearBrush.moveBrush.bind(
-              app.ui.yearBrush,
-              [1936, current]
-            ),
-            (current - startYear) * timePerYear
-          );
-          
-          current += 1;
-        }
+        return wait(5000)
+          .then(function () {
+            
+            var startYear = 2013;
+            var endYear   = 2016;
+            
+            var timePerYear = 2000 / (endYear - startYear);
+            
+            var current = startYear;
+            
+            while (current < endYear) {
+              
+              console.log((current - startYear) * timePerYear);
+              
+              setTimeout(
+                app.ui.yearBrush.moveBrush.bind(
+                  app.ui.yearBrush,
+                  [1936, current]
+                ),
+                (current - startYear) * timePerYear
+              );
+              
+              current += 1;
+            }
+            
+            return wait(1000);
+          })
       },
       leave: function () {
         
@@ -150,19 +166,10 @@ module.exports = function (app, options) {
       name: 'surge-o-comoanda',
       enter: function () {
         
-        return wait(0)
+        return wait(4000)
           .then(function () {
+            elements.menu.classList.toggle('is-visible', true);
             
-            app.ui.questions.openQuestion(
-              'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?');
-            
-            return wait(2000);
-          })
-          .then(function () {
-            
-            app.ui.questions.openQuestion(
-              'Qual é a área de atuação da sua organização?');
-              
             return wait(500);
           });
       },
@@ -171,29 +178,20 @@ module.exports = function (app, options) {
       }
     },
     {
-      name: 'o-que-e-o-comoanda',
+      name: 'quem-sao-e-como-atuam',
       enter: function () {
-        return wait(0)
+        
+        elements.textContainer.classList.toggle('opaque', true);
+        
+        return wait(7000)
           .then(function () {
-            app.services.questionLinkFilter.set(
-              'Qual é a área de atuação da sua organização?',
-              [
-                'Qual é a área de atuação da sua organização?--Arquitetura e urbanismo',
-                'Qual é a área de atuação da sua organização?--Comunicação',
-                'Qual é a área de atuação da sua organização?--Políticas públicas'
-              ]
-            );
-            
-            return wait(2000);
+            app.ui.entities.showText();
+            return wait(3000);
           })
           .then(function () {
-            app.services.questionLinkFilter.set(
-              'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?',
-              [
-                'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?--Educação e Cultura [disseminação, capacitação, intervenção artística, sensibilização]',
-                'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?--Legislação e Políticas Públicas [produção e revisão de leis, planos e programas relacionados à mobilidade a pé]'
-              ]
-            );
+            app.ui.questions.showText();
+            
+            return wait(1000);
           })
           
       },
@@ -202,40 +200,71 @@ module.exports = function (app, options) {
       },
     },
     {
-      name: '130',
+      name: 'x-orgs-em-y-estados-do-brasil',
       enter: function () {
         
-        // show stats and map
-        app.ui.stats.show();
-        app.ui.map.show();
+        return wait(3000)
+          .then(function () {
+            app.ui.map.show();
+            
+            return wait(1000);
+          });
+      },
+      leave: function () {},
+    },
+    {
+      name: 'descubra-a-situacao-das-organizacoes',
+      enter: function () {
         
-        // select all entities and use 'byEntity' criteria for link filter
-        app.services.entityLinkFilter.set(
-          '_id',
-          options.entities.map(function (e) {
-            return e._id;
+        return wait(8000)
+          .then(function () {
+            // open criteria
+            app.ui.questions.openQuestion(
+              'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?');
+            
+            return wait(2000)
           })
-        );
+          .then(function () {
+            
+            app.ui.questions.openQuestion(
+              'Qual é a área de atuação da sua organização?');
+            
+            return wait(3000);
+          })
+          .then(function () {
+            // select only 'Cidade Ativa'
+            app.services.entityLinkFilter.set('_id', [
+              'Cidade Ativa'.replace(/\W+/g, '-').toLowerCase(),
+            ]);
+            return wait(2000);
+          })
+          .then(function () {
+            app.services.entityLinkFilter.set('_id', [
+              'Cidade Ativa'.replace(/\W+/g, '-').toLowerCase(),
+              'Corrida Amiga'.replace(/\W+/g, '-').toLowerCase(),
+            ]);
+            
+            return wait(5000);
+          });
       },
       leave: function () {},
     },
     {
       name: '',
-      enter: function () {},
+      enter: function () {
+        
+        return wait(2000)
+          .then(function () {
+            app.ui.stats.show();
+            
+            return wait(3000);
+          });
+        
+      },
       leave: function () {},
     },
     {
-      name: '',
-      enter: function () {},
-      leave: function () {},
-    },
-    {
-      name: '',
-      enter: function () {},
-      leave: function () {},
-    },
-    {
-      name: '',
+      name: 'end',
       enter: function () {},
       leave: function () {},
     },

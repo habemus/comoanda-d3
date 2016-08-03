@@ -496,6 +496,12 @@ module.exports = function (app, options) {
     updateActiveOptions: uiUpdateActiveOptions,
     filter: app.services.questionLinkFilter,
     layout: uiQuestionLayout,
-    openQuestion: uiOpenQuestion
+    openQuestion: uiOpenQuestion,
+    hideText: function () {
+      questionArcContainer.classed('hide-text', true);
+    },
+    showText: function () {
+      questionArcContainer.classed('hide-text', false);
+    }
   };
 }

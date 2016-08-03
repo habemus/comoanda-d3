@@ -30,11 +30,11 @@ module.exports = function (app, options) {
     },
     
     hide: function () {
-      statsEl.setAttribute('hidden', 'true');
+      statsEl.classList.toggle('hidden', true);
     },
     
     show: function () {
-      statsEl.removeAttribute('hidden');
+      statsEl.classList.toggle('hidden', false);
     }
   }
 };

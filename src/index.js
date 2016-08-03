@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var options = {};
   
   // load data
-  d3.json('/src/data/typeform-data.json', function (err, rawData) {
+  d3.json(window.TYPEFORM_DATA_JSON_URL, function (err, rawData) {
     
     // parse the data
     options.displayQuestions = questionsParser(displayQuestions).parse();
