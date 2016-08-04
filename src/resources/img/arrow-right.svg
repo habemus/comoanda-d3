@@ -1,41 +1,20 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="306px" height="306px" viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;" xml:space="preserve">
+	 width="306px" height="306px" viewBox="0 0 306 306" enable-background="new 0 0 306 306" xml:space="preserve">
 <g>
-	<g id="chevron-right">
-		<polygon points="94.35,0 58.65,35.7 175.95,153 58.65,270.3 94.35,306 247.35,153 		"/>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="66.562" width="174.891" height="306.848"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<path clip-path="url(#SVGID_2_)" fill="#606060" d="M241.453,153.424c0,5.514-2.074,10.996-6.279,15.202L103.238,300.568
+			c-8.39,8.367-21.993,8.367-30.39,0c-8.382-8.396-8.382-22.021,0-30.403l116.733-116.741L72.849,36.669
+			c-8.382-8.382-8.382-21.979,0-30.375c8.396-8.396,22.014-8.396,30.39,0L235.174,138.25
+			C239.379,142.428,241.453,147.926,241.453,153.424"/>
 	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
 </g>
 </svg>

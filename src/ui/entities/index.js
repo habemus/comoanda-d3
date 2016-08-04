@@ -113,6 +113,15 @@ module.exports = function (app, options) {
       .select('text')
       .style('text-anchor', entityTextAnchor)
       .style('font-size', entityTextFontSize)
+      // .style('font-size', function (d) {
+        
+      //   var v = entityTextFontSize(d);
+        
+      //   console.log('update font size', v);
+        
+      //   return v;
+      // })
+
       .attr('transform', entityTextTransform)
     
     //////////

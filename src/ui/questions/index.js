@@ -213,30 +213,6 @@ module.exports = function (app, options) {
           
           uiOpenQuestion(d._id);
           
-          // // toggle the clicked question's `isOpen` value
-          // var clickedQuestion = questionsSourceData.find(function (q) {
-          //   return q._id === d._id;
-          // });
-          
-          // // IMPORTANT: first update layout
-          // // and only after set the filter,
-          // // so that options are found by link functions
-          // clickedQuestion.isOpen = true;
-          // uiUpdate(questionsSourceData);
-          
-          // setTimeout(function () {
-          //   // set filter to empty array
-          //   app.services.questionLinkFilter.set(
-          //     d._id,
-          //     clickedQuestion.options.map(function (opt) {
-          //       return opt._id;
-          //     })
-          //   );
-            
-          //   // make links update their positions
-          //   app.ui.persistentLinks.updateLinkPositions();
-          // }, 0);
-          
         } else if (d.type === 'open-question') {
           // toggle the clicked question's `isOpen` value
           var clickedQuestion = questionsSourceData.find(function (q) {

@@ -34,9 +34,23 @@ module.exports = function (app, options) {
   // remove the 'is-visible' class from the menu at bootstrap
   elements.menu.classList.toggle('is-visible', false);
   
+  // get a list of different states
+  var states = options.entities.reduce(function (acc, entity) {
+    
+    var state = entity['Estado:'];
+    
+    if (acc.indexOf(state) === -1) {
+      acc.push(state);
+    }
+    
+    return acc;
+    
+  }, []);
+  
   // render bindings
   aux.renderBindings(elements.container, {
-    totalCount: options.entities.length
+    totalCount: options.entities.length,
+    totalStateCount: states.length,
   });
   
   // event listeners

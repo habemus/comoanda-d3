@@ -77,6 +77,44 @@ module.exports = function (app, options) {
       .attr('class', 'year-arc')
       .attr('id', function (d) {
         return 'year-' + d.data.year;
+      })
+      .on('click', function (d) {
+        
+        var year = d.data.year;
+        
+        var filteredEntities = app.services.entityDataStore.applyFilter({
+          'Quando sua organização surgiu?': [year],
+        });
+        var current = app.services.entityLinkFilter.get('_id') || [];
+        
+        if (!d.active) {
+          /**
+           * Flag indicating the year toggle status is active
+           */
+          d.active = true;
+          
+          app.services.entityLinkFilter.set(
+            '_id',
+            current.concat(filteredEntities.map(function (entity) {
+              return entity._id;
+            }))
+          );
+        } else {
+          
+          d.active = false;
+          
+          app.services.entityLinkFilter.set(
+            '_id',
+            current.filter(function (_id) {
+              // pass only entities not in the filteredEntities array
+              var shouldExit = filteredEntities.some(function (e) {
+                return e._id === _id;
+              });
+              
+              return !shouldExit;
+            })
+          );
+        }
       });
       
     yearEnter

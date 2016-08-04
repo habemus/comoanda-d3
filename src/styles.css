@@ -1,6 +1,6 @@
 body {
   font-family: 'News Cycle', sans-serif;
-  background-color: #D9D9D9;
+  background-color: #E0E0E0;
   
   margin: 0 0;
   color: black;
@@ -18,10 +18,31 @@ h1, h2, h3 {
 #timeline-link {
   position: fixed;
   z-index: 1;
-  bottom: 20px;
-  left: 70%;
-  
-  color: grey;
+  bottom: 16px;
+  left: 67%;
+  line-height: 14px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #808080;
+  transition: color ease 0.3s;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+#timeline-link img {
+  display: block;
+  padding-right: 10px;
+}
+
+#timeline-link div {
+  margin-top: -3px;
+}
+
+#timeline-link:hover {
+  color: #000000;
 }
 
 #know-more-link {
@@ -51,12 +72,9 @@ h1, h2, h3 {
 }
 
 #entity-details > header {
-  border-bottom: 2px grey solid;
-  
+  border-bottom: 2px #e0e0e0 solid;
   color: grey;
-  font-size: 14px;
   font-family: "Terrorista", sans-serif;
-  
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -68,8 +86,19 @@ h1, h2, h3 {
   overflow: auto;
 }
 
+/* #entity-details header h1 {
+  font-size: 2em;
+  letter-spacing: 0.02em;
+  line-height: 1.2em;
+} */
+
 #entity-details section h3 {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#entity-details section h3 span{
+  font-weight: normal;
 }
 
 #entity-details section p {
@@ -77,8 +106,8 @@ h1, h2, h3 {
 }
 
 #entity-details footer {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   
   display: flex;
   flex-direction: row;
@@ -86,8 +115,7 @@ h1, h2, h3 {
   align-items: center;
 }
 
-#entity-details a, 
-#entity-details button {
+#entity-details a {
   cursor: pointer;
   font-family: 'News Cycle', sans-serif;
   height: 50px;
@@ -110,10 +138,32 @@ h1, h2, h3 {
   margin-right: 10px;
 }
 
-#entity-details a:hover,
-#entity-details button:hover {
+#entity-details a:hover {
   background-color: #497C32;
   color: white;
+}
+
+#entity-details form {
+  margin: 0;
+}
+
+#entity-details button {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    border: none;
+    background: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+}
+
+#entity-details + .backdrop {
+  background-color: rgba(0,0,0,0.75);
+}
+ 
+#entity-details::backdrop {
+  background-color: rgba(0,0,0,0.75);
 }
 
 /**
@@ -179,7 +229,7 @@ h1, h2, h3 {
 
 #year-brush .handle {
   fill: #f9f9f9;
-  stroke: #f9f9f9;
+  stroke: #b5b5b5;
   /* stroke-width: 5px; */
 }
 
@@ -191,6 +241,7 @@ h1, h2, h3 {
 
 #year-brush .brush-label {
   fill: black;
+  background-color: red;
 }
 
 /**
@@ -333,7 +384,7 @@ h1, h2, h3 {
  * Link lines
  */
 #comoanda-viz .link-line path {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 
@@ -350,7 +401,7 @@ h1, h2, h3 {
   width: 100vw;
   
   opacity: 1;
-  transition: opacity 2s ease;
+  transition: opacity 3s ease;
   background-color: #A2B5B6;
   
   z-index: 2;
@@ -363,10 +414,13 @@ h1, h2, h3 {
 #intro-container {
   position: fixed;
   height: 40vh;
+  min-height: 100px;
+  max-height: 250px;
   width: 18vw;
+  min-width: 210px;
   
   top: 50%;
-  left: 5vw;
+  left: 3vw;
   
   transform: translateY(-50%);
   
@@ -401,10 +455,14 @@ h1, h2, h3 {
 
 #intro-container .intro-skip {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 104%;
+  right: 3vh;
+  text-decoration: none;
   
-  color: #bcbcbc;
+  /* color: #bcbcbc; */
+  color: #8C8C8C;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 #intro-text-container {
@@ -419,7 +477,7 @@ h1, h2, h3 {
   background-color: transparent;
 }
 #intro-text-container.opaque {
-  background-color: #D9D9D9;
+  background-color: #E0E0E0; /* same color of bg-color of body */
 }
 
 #intro-text-scroller {
@@ -427,10 +485,17 @@ h1, h2, h3 {
 }
 
 #intro-text-scroller p {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: right;
   padding: 5px 20px;
   margin: 0 0;
-  transition: opacity ease 2s;
-  opacity: 0.3;
+  transition: opacity ease 3s;
+  opacity: 0.05;
+}
+
+#intro-text-scroller p strong{
+  font-weight: bold;
 }
 
 #intro-text-scroller p.current {
@@ -465,7 +530,7 @@ h1, h2, h3 {
   display: block;
   margin-right: -150px;
   
-  transition: opacity .5s ease;
+  transition: opacity 1s ease;
   
   opacity: 0;
 }
@@ -483,7 +548,7 @@ h1, h2, h3 {
   background-color: black;
   
   opacity: 0;
-  transition: width 2s ease, opacity 2s ease;
+  transition: width 6s ease, opacity 3s ease;
 }
 
 #intro-image-container > .floor.active {

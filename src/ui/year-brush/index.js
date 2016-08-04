@@ -25,7 +25,7 @@ module.exports = function (app, options) {
   /**
    * Brush width varies according to the centerX
    */
-  const BRUSH_WIDTH  = options.centerX * 0.2;
+  const BRUSH_WIDTH  = options.centerX * 0.5;
   const BRUSH_HEIGHT = 2;
   
   const brushExtent = d3.extent(options.entities, function (d) {
@@ -44,7 +44,8 @@ module.exports = function (app, options) {
     .attr('transform', function () {
       
       var brushLeft = options.centerX - (BRUSH_WIDTH / 2);
-      var brushTop  = options.centerY + options.outerRadius + 50;
+      // var brushTop  = options.centerY + options.outerRadius + 72;
+      var brushTop = options.centerY * 2 - 30; 
       
       return 'translate(' + brushLeft + ',' + brushTop + ')';
     });
@@ -70,22 +71,21 @@ module.exports = function (app, options) {
     .attr('font-size', 12)
     .text(BRUSH_MAXIMUM);
   
-  // brush start label
+  // relative brush start label
   var brushStartLabel = brushG.append('text')
     .attr('id', 'brush-start-label')
     .attr('class', 'brush-label')
-    .attr('dy', -10)
-    .attr('text-anchor', 'end')
+    .attr('dy', 24)
+    .attr('text-anchor', 'middle')
     .attr('font-size', 10);
   
-  // brush end label
+  // relative brush end label
   var brushEndLabel = brushG.append('text')
     .attr('id', 'brush-end-label')
     .attr('class', 'brush-label')
-    .attr('dy', -10)
-    .attr('text-anchor', 'start')
+    .attr('dy', 24)
+    .attr('text-anchor', 'middle')
     .attr('font-size', 10);
-  
   
   /**
    * All years that are selectable.
@@ -108,7 +108,7 @@ module.exports = function (app, options) {
    */
   var yearBrush = d3.brushX()
     .extent([[0, 0], [BRUSH_WIDTH, BRUSH_HEIGHT]])
-    .handleSize(10)
+    .handleSize(15)
     .on('brush', function (e) {
       var brushSelection = d3.brushSelection(this);
       

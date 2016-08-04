@@ -113,8 +113,8 @@ module.exports = function (app, options) {
     var rect = mapContainerEl.getBoundingClientRect();
     
     mapContainer.attr('transform', function () {
-      var targetTop  = (2 * options.centerY) - rect.height - 50;
-      var targetLeft = 50;
+      var targetTop  = (2 * options.centerY) - rect.height - 10;
+      var targetLeft = 20;
       
       var dTop  = targetTop - rect.top;
       var dLeft = targetLeft - rect.left;

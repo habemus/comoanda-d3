@@ -6,7 +6,7 @@ const questionsParser    = require('./lib/questions-parser');
 
 window.addEventListener('DOMContentLoaded', function () {
   
-  var app     = {};
+  var app     = window.app = {};
   var options = {};
   
   // load data

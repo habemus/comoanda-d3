@@ -50,8 +50,8 @@ module.exports = function (app, options) {
         var illustrations = elements.imageContainer.querySelectorAll('img');
         
         _each(illustrations, function (illus, index) {
-          var enterIn = index * 300;
-          var leaveIn = (index + 1) * 400;
+          var enterIn = index * 500;
+          var leaveIn = enterIn + 700;
           
           setTimeout(function () {
             illus.classList.add('active');
@@ -166,7 +166,7 @@ module.exports = function (app, options) {
       name: 'surge-o-comoanda',
       enter: function () {
         
-        return wait(4000)
+        return wait(3000)
           .then(function () {
             elements.menu.classList.toggle('is-visible', true);
             
@@ -232,6 +232,28 @@ module.exports = function (app, options) {
             return wait(3000);
           })
           .then(function () {
+            // deselect one by one all options for
+            // 'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?'
+            
+            var question = 'Qual a abordagem da sua organização sobre o tema da mobilidade a pé?';
+            
+            var current = app.services.questionLinkFilter.get(question);
+            
+            // invert order of removal
+            current = current.concat([]);
+            current.reverse();
+            
+            current.forEach(function (opt, index) {
+              
+              setTimeout(function () {
+                app.services.questionLinkFilter.arrayRemove(question, opt);
+              }, index * 500);
+              
+            });
+            
+            return wait(current.length * 500);
+          })
+          .then(function () {
             // select only 'Cidade Ativa'
             app.services.entityLinkFilter.set('_id', [
               'Cidade Ativa'.replace(/\W+/g, '-').toLowerCase(),
@@ -245,15 +267,7 @@ module.exports = function (app, options) {
             ]);
             
             return wait(5000);
-          });
-      },
-      leave: function () {},
-    },
-    {
-      name: '',
-      enter: function () {
-        
-        return wait(2000)
+          })
           .then(function () {
             app.ui.stats.show();
             
