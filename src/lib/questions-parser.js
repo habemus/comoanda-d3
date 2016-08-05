@@ -46,7 +46,6 @@ module.exports = function (sourceQuestions) {
         var v1 = (typeof opt1 === 'string') ? opt1 : opt1._value;
         var v2 = (typeof opt2 === 'string') ? opt2 : opt2._value;
         
-        
         if (v1 === 'Outros') {
           return 1;
         }

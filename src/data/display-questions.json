@@ -8,10 +8,18 @@
 			"Coletivo",
 			"Empresa",
 			"Associação",
-			"Em processo de formalização",
+			{
+			  "label": "Em processo",
+			  "option": "Em processo de formalização",
+			  "tooltip": "Em processo de formalização"
+			},
 			"Fundação",
 			"Não formalizado",
-			"Organização da Sociedade Civil de Interesse Público (OSCIP)",
+			{
+			  "label": "OSCIP",
+			  "option": "Organização da Sociedade Civil de Interesse Público (OSCIP)",
+			  "tooltip": "Organização da Sociedade Civil de Interesse Público"
+			},
 			"Instituto",
 			"Comissão",
 			"Outros",
@@ -213,7 +221,11 @@
 			"Vários Estados / Regional",
 			"Estado",
 			"Internacional",
-			"Regiões Metropolitanas (várias cidades)"
+			{
+			  "label": "Regiões Metropolitanas",
+			  "option": "Regiões Metropolitanas (várias cidades)",
+			  "tooltip": "várias cidades"
+			}
 		]
 	}
 ]
