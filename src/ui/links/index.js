@@ -271,31 +271,60 @@ module.exports = function (app, options) {
     
     computeLinks: function (entities, questionOptions) {
       
-      // build links
-      var links = entities.reduce(function (acc, entity) {
-        
+      
+      var links = [];
+      
+      entities.forEach(function (entity) {
         // get the entity links among
         // the questionOptions
-        entityActiveOptions = questionOptions.filter(function (option) {
+        questionOptions.forEach(function (option) {
           var entityValue = entity[option.question._id];
           
           if (!entityValue) {
-            return false;
+            return;
           }
           
-          return entityValue.some(function (v) {
+          var shouldDrawLink = entityValue.some(function (v) {
             return v === option._id;
           });
-        });
-        
-        return acc.concat(entityActiveOptions.map(function (option) {
-          return {
-            from: Object.assign({ type: 'question-option' }, option),
-            to: Object.assign({ type: 'entity' }, entity),
+          
+          if (shouldDrawLink) {
+            links.push({
+              from: Object.assign({ type: 'question-option' }, option),
+              to: Object.assign({ type: 'entity' }, entity),
+            });
+          } else {
+            return;
           }
-        }));
+          
+        });
+      })
+      
+      // // build links
+      // var links = entities.reduce(function (acc, entity) {
         
-      }, []);
+      //   // get the entity links among
+      //   // the questionOptions
+      //   entityActiveOptions = questionOptions.filter(function (option) {
+      //     var entityValue = entity[option.question._id];
+          
+      //     if (!entityValue) {
+      //       return false;
+      //     }
+          
+      //     return entityValue.some(function (v) {
+      //       return v === option._id;
+      //     });
+      //   });
+        
+      //   return acc.concat(entityActiveOptions.map(function (option) {
+      //     return {
+      //       from: Object.assign({ type: 'question-option' }, option),
+      //       to: Object.assign({ type: 'entity' }, entity),
+      //     }
+      //   }));
+        
+      // }, []);
       
       // year links
       entities.forEach(function (entity) {

@@ -251,7 +251,7 @@ module.exports = function (app, options) {
               
             });
             
-            return wait(current.length * 500);
+            return wait(current.length * 500 + 2000);
           })
           .then(function () {
             // select only 'Cidade Ativa'
