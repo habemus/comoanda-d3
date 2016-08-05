@@ -24,27 +24,85 @@
 		"label": "Foco",
 		"question": "Mobilidade a pé é o foco principal da sua organização?",
 		"options": [
-			"Não, mas uma das principais iniciativas da organização trata do tema",
-			"Sim",
-			"Não, a mobilidade a pé é apenas um dos temas abordados, mas aparece sempre em um contexto mais amplo"
+		  {
+		    "label": "Sim",
+		    "option": "Sim"
+		  },
+		  {
+		    "label": "Não",
+		    "option": "Não, mas uma das principais iniciativas da organização trata do tema",
+		    "tooltip": "Não, mas uma das principais iniciativas da organização trata do tema"
+		  },
+		  {
+		    "label": "Não",
+		    "option": "Não, a mobilidade a pé é apenas um dos temas abordados, mas aparece sempre em um contexto mais amplo",
+		    "tooltip": "Não, a mobilidade a pé é apenas um dos temas abordados, mas aparece sempre em um contexto mais amplo"
+		  }
 		]
 	},
 	{
 		"label": "Aspectos da mobilidade",
 		"question": "Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?",
 		"options": [
-			"Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]",
-			"Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]",
-			"Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]",
-			"Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]",
-			"Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]",
-			"Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]",
-			"Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]",
-			"Segurança [pessoal, viária e acidentalidade vertical]",
-			"Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]",
-			"Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]",
-			"Outros",
-			"Bicicleta [incentivo ao uso da bicicleta em geral]"
+		  {
+		    "label": "Infraestrutura local",
+		    "option": "Infraestrutura local [calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano]",
+		    "tooltip": "calçadas, cruzamentos, escadarias, passarelas, passagens subterrâneas, travessias, sinalização, mobiliário urbano"
+		  },
+		  {
+		    "label": "Planejamento e desenho urbano",
+		    "option": "Planejamento e desenho urbano [uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade]",
+		    "tooltip": "uso e ocupação do solo, infraestrutura de transporte, planejamento na escala do bairro/cidade"
+		  },
+		  {
+		    "label": "Saúde e Qualidade de Vida",
+		    "option": "Saúde e Qualidade de Vida [sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão]",
+		    "tooltip": "sedentarismo e doenças relacionadas, como obesidade, diabetes; problemas respiratórios; estresse e depressão"
+		  },
+		  {
+		    "label": "Meio ambiente e sustentabilidade",
+		    "option": "Meio ambiente e sustentabilidade [mudanças climáticas, energia, emissão de gases, poluição, economia sustentável]",
+		    "tooltip": "mudanças climáticas, energia, emissão de gases, poluição, economia sustentável"
+		  },
+		  {
+		    "label": "Bicicleta (convívio)",
+		    "option": "Bicicleta [convívio entre mobilidade cicloviária e mobilidade a pé]",
+		    "tooltip": "convívio entre mobilidade cicloviária e mobilidade a pé"
+		  },
+		  {
+		    "label": "Economia",
+		    "option": "Economia [impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local]",
+		    "tooltip": "impactos da mobilidade na economia; geração de emprego; análise de trade-off; fomento ao comércio local"
+		  },
+		  {
+		    "label": "Microacessibilidade ao Transporte Público Coletivo",
+		    "option": "Microacessibilidade ao Transporte Público Coletivo [conectividade, intermodalidade]",
+		    "tooltip": "conectividade, intermodalidade"
+		  },
+		  {
+		    "label": "Segurança",
+		    "option": "Segurança [pessoal, viária e acidentalidade vertical]",
+		    "tooltip": "pessoal, viária e acidentalidade vertical"
+		  },
+		  {
+		    "label": "Tecnologia e Inovação",
+		    "option": "Tecnologia e Inovação [aplicativos, rede e plataforma online, base de dados]",
+		    "tooltip": "aplicativos, rede e plataforma online, base de dados"
+		  },
+		  {
+		    "label": "Arquitetura da edificação",
+		    "option": "Arquitetura da edificação [interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé]",
+		    "tooltip": "interface entre espaço público e lote privado; projeto na infraestrutura para mobilidade a pé"
+		  },
+		  {
+		    "label": "Outros",
+		    "option": "Outros"
+		  },
+		  {
+		    "label": "Bicicleta (incentivo)",
+		    "option": "Bicicleta [incentivo ao uso da bicicleta em geral]",
+		    "tooltip": "incentivo ao uso da bicicleta em geral"
+		  }
 		]
 	},
 	{

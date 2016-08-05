@@ -13,6 +13,12 @@ module.exports = function (app, options) {
   var questionsFullAngleSpan = twoPI * 4/9;
   
   /**
+   * Elements
+   */
+  var tooltip = d3.select('#viz-tooltip');
+  var tooltipDOMElement = document.querySelector('#viz-tooltip');
+  
+  /**
   * Generators
   */
   var drawQuestionArc = d3.arc()
@@ -248,6 +254,35 @@ module.exports = function (app, options) {
             uiUpdate(questionsSourceData);
           }
         }
+      })
+      .on('mousemove', function (d) {
+        switch (d.type) {
+          case 'closed-question':
+            
+            break;
+          case 'open-question':
+            
+            break;
+          case 'question-option':
+            
+            if (d._tooltip) {
+              
+              tooltip
+                .classed('active', true)
+                .html(d._tooltip);
+                
+              var rect = tooltipDOMElement.getBoundingClientRect();
+              
+              tooltip
+                .style('top', (d3.event.clientY - rect.height) + 'px')
+                .style('left', (d3.event.clientX) + 'px');
+            }
+            break;
+        }
+      })
+      .on('mouseout', function (d) {
+        tooltip
+          .classed('active', false);
       });
     
     // ENTER path
