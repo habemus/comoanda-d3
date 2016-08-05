@@ -24,13 +24,19 @@ h1, h2, h3 {
   font-size: 12px;
   text-decoration: none;
   color: #808080;
-  transition: color ease 0.3s;
+  opacity: 1;
+  transition: color ease 0.3s, opacity ease 0.5s;
 
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
 }
+
+#timeline-link.hide {
+  opacity: 0;
+}
+
 
 #timeline-link img {
   display: block;
@@ -50,8 +56,15 @@ h1, h2, h3 {
   z-index: 1;
   bottom: 20px;
   right: 20px;
+  opacity: 1;
+  text-decoration: none;
+  transition: opacity ease 0.5s;
   
   color: black;
+}
+
+#know-more-link.hide {
+  opacity: 0;
 }
 
 /**
@@ -171,17 +184,17 @@ h1, h2, h3 {
  * Data visualization tool
  * 
  */
-
 #viz-tooltip {
   position: fixed;
   z-index: 1000;
-  padding: 10px 10px;
+  padding: 8px;
   
   transition: opacity .1s ease;
   
-  background-color: #3c81bb;
+  background-color: #E9353A;
   color: white;
   font-size: 10px;
+  line-height: 12px;
   
   pointer-events: none;
   
@@ -312,9 +325,6 @@ h1, h2, h3 {
 /**
  * Year arc styles
  */
-#comoanda-viz .year-arc {
-  cursor: pointer;
-}
 #comoanda-viz .year-arc text {
   /* opacity: 0; */
   alignment-baseline: middle;
@@ -398,20 +408,29 @@ h1, h2, h3 {
   opacity: 0;
 }
 #map-container path {
-  opacity: 0.6;
+  opacity: 0.8;
   fill: white;
+  cursor: pointer;
   
   stroke: #e0e0e0;
+}
+
+#map-container path:hover {
+  fill: #8bb7dc;
 }
 
 #map-container path.active {
   fill: #3c81bb;
 }
+
+#map-container path.active:hover {
+  fill: #124e7f;
+}
 /**
  * Link lines
  */
 #comoanda-viz .link-line path {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 
@@ -504,7 +523,7 @@ h1, h2, h3 {
   background-color: transparent;
 }
 #intro-text-container.opaque {
-  background-color: #E0E0E0; /* same color of bg-color of body */
+  background-color: rgba(224,224,224,0.8); /* same color of bg-color of body, but with opacity */
 }
 
 #intro-text-scroller {
