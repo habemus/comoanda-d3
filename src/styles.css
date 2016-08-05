@@ -24,19 +24,13 @@ h1, h2, h3 {
   font-size: 12px;
   text-decoration: none;
   color: #808080;
-  opacity: 1;
-  transition: color ease 0.3s, opacity ease 0.5s;
+  transition: color ease 0.3s;
 
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
 }
-
-#timeline-link.hide {
-  opacity: 0;
-}
-
 
 #timeline-link img {
   display: block;
@@ -56,15 +50,8 @@ h1, h2, h3 {
   z-index: 1;
   bottom: 20px;
   right: 20px;
-  opacity: 1;
-  text-decoration: none;
-  transition: opacity ease 0.5s;
   
   color: black;
-}
-
-#know-more-link.hide {
-  opacity: 0;
 }
 
 /**
@@ -192,7 +179,8 @@ h1, h2, h3 {
   
   transition: opacity .1s ease;
   
-  background-color: red;
+  background-color: #3c81bb;
+  color: white;
   font-size: 10px;
   
   pointer-events: none;
@@ -324,6 +312,9 @@ h1, h2, h3 {
 /**
  * Year arc styles
  */
+#comoanda-viz .year-arc {
+  cursor: pointer;
+}
 #comoanda-viz .year-arc text {
   /* opacity: 0; */
   alignment-baseline: middle;
@@ -407,29 +398,20 @@ h1, h2, h3 {
   opacity: 0;
 }
 #map-container path {
-  opacity: 0.8;
+  opacity: 0.6;
   fill: white;
-  cursor: pointer;
   
   stroke: #e0e0e0;
-}
-
-#map-container path:hover {
-  fill: #8bb7dc;
 }
 
 #map-container path.active {
   fill: #3c81bb;
 }
-
-#map-container path.active:hover {
-  fill: #124e7f;
-}
 /**
  * Link lines
  */
 #comoanda-viz .link-line path {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 
@@ -522,7 +504,7 @@ h1, h2, h3 {
   background-color: transparent;
 }
 #intro-text-container.opaque {
-  background-color: rgba(224,224,224,0.8); /* same color of bg-color of body, but with opacity */
+  background-color: #E0E0E0; /* same color of bg-color of body */
 }
 
 #intro-text-scroller {
