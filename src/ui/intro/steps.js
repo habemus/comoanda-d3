@@ -22,6 +22,8 @@ module.exports = function (app, options) {
         // hide all graph elements
         app.ui.stats.hide();
         app.ui.map.hide();
+        elements.timelineLink.classList.add('hide');
+        elements.knowMoreLink.classList.add('hide');
         
         // hide text
         app.ui.entities.hideText();

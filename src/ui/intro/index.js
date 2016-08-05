@@ -30,7 +30,9 @@ module.exports = function (app, options) {
   elements.next     = document.querySelector('.next');
   elements.skip     = document.querySelector('.intro-skip');
   elements.menu     = document.querySelector('.menu');
-  
+  elements.timelineLink = document.querySelector('#timeline-link');
+  elements.knowMoreLink = document.querySelector('#know-more-link');
+
   // remove the 'is-visible' class from the menu at bootstrap
   elements.menu.classList.toggle('is-visible', false);
   
@@ -204,6 +206,8 @@ module.exports = function (app, options) {
     
     app.ui.stats.show();
     app.ui.map.show();
+    elements.timelineLink.classList.remove('hide');
+    elements.knowMoreLink.classList.remove('hide');
     
     app.ui.questions.showText();
     app.ui.entities.showText();
