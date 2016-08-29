@@ -6,17 +6,22 @@ module.exports = function (app, options) {
   const INNER_RADIUS = OUTER_RADIUS - ARC_WIDTH;
   const MAX_TEXT_WIDTH = 100;
   
-  // const GRAPH_HALF = OUTER_RADIUS + MAX_TEXT_WIDTH;
-  const GRAPH_HALF = window.innerHeight / 2;
   
-  const WINDOW_X_CENTER = window.innerWidth / 2;
-  const WINDOW_Y_CENTER = window.innerHeight / 2;
-
+  const MIN_HEIGHT = 600;
+  const MIN_WIDTH  = 1100;
+  
+  var HEIGHT = window.innerHeight > MIN_HEIGHT ? window.innerHeight : MIN_HEIGHT;
+  var WIDTH = window.innerWidth > MIN_WIDTH ? window.innerWidth : MIN_WIDTH;
+  
+  const GRAPH_HALF = HEIGHT / 2;
+  
+  const WINDOW_Y_CENTER = HEIGHT / 2;
+  const WINDOW_X_CENTER = WIDTH / 2;
+  
   app.svg = d3.select('body').append('svg')
     .attr('id', 'comoanda-viz')
-    // .attr('width', GRAPH_HALF * 2)
-    .attr('width', window.innerWidth)
-    .attr('height', window.innerHeight)
+    .attr('width', WIDTH)
+    .attr('height', HEIGHT);
 
   /**
    * The container of the graph.

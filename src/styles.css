@@ -99,11 +99,11 @@ h1, h2, h3 {
   overflow: auto;
 }
 
-/* #entity-details header h1 {
+#entity-details header h1 {
   font-size: 2em;
   letter-spacing: 0.02em;
   line-height: 1.2em;
-} */
+}
 
 #entity-details section h3 {
   font-size: 13px;
@@ -116,6 +116,7 @@ h1, h2, h3 {
 
 #entity-details section p {
   font-size: 12px;
+  padding-bottom: 20px;
 }
 
 #entity-details footer {
@@ -152,7 +153,7 @@ h1, h2, h3 {
 }
 
 #entity-details a:hover {
-  background-color: #497C32;
+  background-color: #608B43;
   color: white;
 }
 
@@ -209,10 +210,12 @@ h1, h2, h3 {
 }
 
 #comoanda-viz {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+/*   left: 50%;
+top: 50%;
+transform: translate(-50%, -50%); */
   z-index: 0;
 }
 
@@ -301,6 +304,11 @@ h1, h2, h3 {
 #comoanda-viz .entity-arc text {
   opacity: .5;
   alignment-baseline: middle;
+  font-family: sans-serif;
+}
+#comoanda-viz .entity-arc:hover text {
+  opacity: 1;
+  fill: #417295;
 }
 #comoanda-viz .entity-arc.active text {
   opacity: 1;
@@ -484,7 +492,7 @@ h1, h2, h3 {
   
   transition: opacity 1s;
   
-  opacity: 0;
+  opacity: 0.1;
 }
 #intro-container .intro-control.active {
   opacity: 1;
@@ -506,7 +514,8 @@ h1, h2, h3 {
   text-decoration: none;
   
   /* color: #bcbcbc; */
-  color: #8C8C8C;
+  /* color: #8C8C8C; */
+  color: black;
   font-size: 12px;
   font-weight: normal;
 }
