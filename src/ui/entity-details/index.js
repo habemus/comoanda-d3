@@ -3,7 +3,7 @@ const dialogPolyfill = require('dialog-polyfill');
 
 const aux = require('../auxiliary');
 
-const orgWebsites = require('../../data/org-websites.json');
+const orgFbWebsites = require('../../data/org-fb-websites.json');
 
 module.exports = function (app, options) {
   
@@ -26,6 +26,11 @@ module.exports = function (app, options) {
   function renderEntityData(entity) {
     aux.renderBindings(dialog, entity, {
       'Facebook da organização:': function (el, value, key) {
+        
+        var orgName = entity['Qual o nome da organização da qual faz parte?'];
+        
+        value = value || orgFbWebsites[orgName].fb;
+
         if (value) {
           el.innerHTML = '<a target="_blank" href="' + value + '">facebook</a>';
         } else {
@@ -36,7 +41,7 @@ module.exports = function (app, options) {
         
         var orgName = entity['Qual o nome da organização da qual faz parte?'];
       
-        value = value || orgWebsites[orgName];
+        value = value || orgFbWebsites[orgName].website;
         
         if (value) {
           el.innerHTML = '<a target="_blank" href="' + value + '">visitar site</a>';
