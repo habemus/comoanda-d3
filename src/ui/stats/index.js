@@ -18,6 +18,21 @@ module.exports = function (app, options) {
   return {
     update: function (filteredEntities) {
       
+      // helps debugging
+      // console.log(filteredEntities.length);
+      // console.log(options.entities.length);
+      
+      
+      // var out = options.entities.filter(function (ent) {
+      //   return !filteredEntities.some(function (fent) {
+      //     return ent['Qual o nome da organização da qual faz parte?'] === fent['Qual o nome da organização da qual faz parte?']
+      //   });
+      // });
+      
+      // out.forEach(function (e) {
+      //   console.log(e['Quando sua organização surgiu?']);
+      // });
+      
       var percentage = (filteredEntities.length / options.entities.length) * 100;
       
       var stats = {

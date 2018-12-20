@@ -62,6 +62,10 @@ module.exports = function (app, options) {
   var mapFilter = app.services.filter;
   
   d3.json(window.STATES_GEO_JSON_URL, function (err, geoData) {
+    if (err) {
+      console.log(err)
+      return
+    }
     var states = topojson.feature(geoData, geoData.objects.states);
     
     var mapPaths = mapContainer.selectAll('path')

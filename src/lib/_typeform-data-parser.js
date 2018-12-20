@@ -169,12 +169,22 @@ module.exports = function createTypeformParser(sourceData, displayQuestions) {
         }
       });
       
+      /**
+       * Make sure organizations have a defined year
+       * If none is defined, set the year to the current year
+       */
+      if (!parsedAnswer['Quando sua organização surgiu?']) {
+        parsedAnswer['Quando sua organização surgiu?'] =
+          (new Date()).getFullYear();
+      }
+      
       
       // loop through display questions and ensure that
       // questions that have no answers have at least 'Não informado'
       // as an option
       displayQuestions.forEach(function (dq) {
-        if (parsedAnswer[dq.question].length === 0) {
+        if (!parsedAnswer[dq.question] ||
+            parsedAnswer[dq.question].length === 0) {
           parsedAnswer[dq.question] = [dq.question + '--Não informado'];
         }
       })

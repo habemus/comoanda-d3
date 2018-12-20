@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title></title>
+  
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" media="all" />
+  
+  <link rel="stylesheet" href="style-test.css" type="text/css" media="all" /> -->
+
+  <link rel="stylesheet" type="text/css" href="node_modules/dialog-polyfill/dialog-polyfill.css">
+  
+  <link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <!-- standalone version only -->
+  <script type="text/javascript">
+    window.STATES_GEO_JSON_URL = window.location.protocol + "//" + window.location.host + '/src/data/br-states-simplified.json';
+    window.TYPEFORM_DATA_JSON_URL = window.location.protocol + "//" + window.location.host + '/src/data/tf-data-v2.json';
+
+  </script>
+  <script src="dist/index.bundle.js"></script>
+  
+  <div id="viz-tooltip"></div>
+  
+  <div id="stats">
+    <h1><span data-bind="percentage"></span>%</h1>
+    <h3>
+      <strong data-bind="filteredCount"></strong> das <strong data-bind="totalCount"></strong>
+    </h3>
+    <h3>organizações mapeadas<br>atendem a esses critérios de seleção</h3>
+  </div>
+  
+  <dialog id="entity-details">
+    <form method="dialog">  
+      <button type="submit">
+        <span class="fa fa-close"></span>
+      </button>
+    </form>
+    <header>
+      <h1 data-bind="Qual o nome da organização da qual faz parte?"></h1>
+    </header>
+    <section>
+      <header>
+        <h3>Localização da sede: <span data-bind="Cidade:"></span></h3>
+        <p data-bind="Mobilidade a pé é o foco principal da sua organização?"></p>
+
+      </header>
+      <h3>O que move a organização:</h3>
+      <p data-bind="O que move sua organização?"></p>
+      
+      <h3>Aspectos da mobilidade a pé:</h3>
+      <p data-bind="Com quais aspectos da mobilidade a pé sua organização trabalha ou como o tema está inserido na sua atuação?"></p>
+    </section>
+    
+    
+    <footer>
+      <span data-bind="Facebook da organização:"></span>
+      <span data-bind="Site da organização:"></span>
+    </footer>
+  </dialog>
+  
+  <a id="timeline-link" href="/marcos-da-mobilidade">
+    <img src="src/resources/img/plus.svg" alt="ver mais">
+    <div>ver marcos da<br> mobilidade a pé</div>
+  </a>
+  <a id="know-more-link" href="/pesquisa">saiba mais</a>
+
+</body>
+</html>

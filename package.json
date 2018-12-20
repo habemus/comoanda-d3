@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.1",
-    "d3": "^4.1.1",
+    "d3": "^4.10.0",
     "data-obj": "0.0.1",
     "dialog-polyfill": "^0.4.3",
     "object-query": "^0.1.4",
